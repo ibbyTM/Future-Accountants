@@ -1,16 +1,15 @@
 import { site } from '../site.config.js';
 
 const links = [
-  { href: '#offer', label: 'The Offer' },
-  { href: '#system', label: 'The System' },
-  { href: '#about', label: 'About Damon' },
+  { href: '/offer', label: 'The Offer' },
+  { href: '/about', label: 'About Damon' },
 ];
 
 export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ground/95 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
-        <a href="#top" className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
+        <a href="/" className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
           Damon Millar
         </a>
         <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted sm:flex">

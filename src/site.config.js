@@ -5,9 +5,13 @@
 export const site = {
   offerName: 'Future Accountant', // TODO confirm final offer name with Damon
 
-  // TODO: replace with the real Calendly / GHL booking link before launch.
-  bookingUrl: '#book',
+  // All CTAs route to the dedicated booking page.
+  bookingUrl: '/book',
   ctaLabel: 'Book a Call', // TODO confirm exact CTA (book / apply / waitlist)
+
+  // TODO: real Calendly / GHL embed URL — when set, /book renders the
+  // calendar iframe in place of the flagged placeholder.
+  calendarEmbedUrl: null,
 
   email: null, // TODO confirm contact email for footer, if wanted
 };
