@@ -26,7 +26,7 @@ npm run preview  # serve the production build
 | What | Where |
 | --- | --- |
 | Booking link, CTA label, offer name | `src/site.config.js` |
-| Brand colours (currently **placeholder** gold/navy) | `@theme` tokens in `src/index.css` |
+| Brand colours (charcoal/white/magenta, matched to dgm84.com) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |
 | SEO / OG meta | `index.html` |
 
@@ -37,7 +37,7 @@ unnoticed.
 ## ⚠️ Open questions — confirm with Damon before launch
 
 1. **Exact CTA + destination** — Calendly/GHL link or form → CRM? (`src/site.config.js`, currently `#book`)
-2. **Brand palette / assets** — gold-on-navy is a placeholder, not a decision
+2. **Brand palette** — magenta/charcoal matched to dgm84.com; confirm exact magenta hex + any brand assets
 3. **Real testimonials** — three flagged slots in `src/sections/Testimonials.jsx`; do not launch with placeholders
 4. **Real photography of Damon** — flagged slot in the About section (no stock/AI imagery)
 5. **Final offer name** — "Future Accountant" used throughout, pending sign-off

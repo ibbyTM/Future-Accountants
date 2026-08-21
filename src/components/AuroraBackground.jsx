@@ -20,7 +20,7 @@ export default function AuroraBackground() {
       {enabled && (
         <Suspense fallback={null}>
           <Aurora
-            colorStops={['#e3b458', '#4f7df9', '#e3b458']}
+            colorStops={['#d6156c', '#8b0f4a', '#d6156c']}
             amplitude={1.0}
             blend={0.55}
             speed={0.7}
