@@ -3,7 +3,7 @@ import { site } from '../site.config.js';
 
 export default function FinalCta() {
   return (
-    <section id="book" className="border-t border-white/5 bg-surface/60 px-5 py-24 text-center sm:py-32">
+    <section id="book" className="border-t border-black/8 bg-surface/60 px-5 py-24 text-center sm:py-32">
       <div className="mx-auto max-w-2xl">
         <h2 className="text-3xl font-extrabold leading-tight text-bright sm:text-5xl">
           The firms that move first <span className="text-accent">set the prices.</span>

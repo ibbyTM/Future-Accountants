@@ -16,11 +16,11 @@ export default function AuroraBackground() {
   }, []);
 
   return (
-    <div aria-hidden="true" className="absolute inset-x-0 top-0 h-[70vh] opacity-60">
+    <div aria-hidden="true" className="absolute inset-x-0 top-0 h-[70vh] opacity-35">
       {enabled && (
         <Suspense fallback={null}>
           <Aurora
-            colorStops={['#d6156c', '#8b0f4a', '#d6156c']}
+            colorStops={['#d6156c', '#f2a5c9', '#d6156c']}
             amplitude={1.0}
             blend={0.55}
             speed={0.7}

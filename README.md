@@ -26,7 +26,7 @@ npm run preview  # serve the production build
 | What | Where |
 | --- | --- |
 | Booking link, CTA label, offer name | `src/site.config.js` |
-| Brand colours (charcoal/white/magenta, matched to dgm84.com) | `@theme` tokens in `src/index.css` |
+| Brand colours (light base + magenta, matched to dgm84.com) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |
 | SEO / OG meta | `index.html` |
 

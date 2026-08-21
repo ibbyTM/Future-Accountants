@@ -20,7 +20,7 @@ export default function Testimonials() {
       <FadeContent duration={800} threshold={0.15}>
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {slots.map(slot => (
-            <figure key={slot} className="rounded-2xl border border-white/5 bg-surface p-7">
+            <figure key={slot} className="rounded-2xl border border-black/8 bg-surface p-7 shadow-sm">
               <blockquote className="text-sm leading-relaxed">
                 <Placeholder>[{slot}]</Placeholder>
               </blockquote>

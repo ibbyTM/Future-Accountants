@@ -24,7 +24,7 @@ export default function Problem() {
       </SectionHeading>
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
         {pains.map((p, i) => (
-          <div key={p.title} className="rounded-2xl border border-white/5 bg-surface p-7">
+          <div key={p.title} className="rounded-2xl border border-black/8 bg-surface p-7 shadow-sm">
             <p className="text-sm font-extrabold text-accent">0{i + 1}</p>
             <h3 className="mt-3 text-lg font-bold text-bright">{p.title}</h3>
             <p className="mt-3 text-sm leading-relaxed">{p.body}</p>

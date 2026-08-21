@@ -10,7 +10,7 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" className="border-y border-white/5 bg-surface/40 px-5 py-20 sm:py-28">
+    <section id="about" className="border-y border-black/8 bg-surface/40 px-5 py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">About Damon</p>
@@ -32,7 +32,7 @@ export default function About() {
           </ul>
         </div>
         <div className="order-1 lg:order-2">
-          <div className="flex aspect-[4/5] w-full items-center justify-center rounded-3xl border border-dashed border-accent/40 bg-ink">
+          <div className="flex aspect-[4/5] w-full items-center justify-center rounded-3xl border border-dashed border-accent/40 bg-surface">
             <p className="max-w-xs px-6 text-center text-sm">
               <Placeholder>Real photograph of Damon goes here — request from client (no stock / AI imagery)</Placeholder>
             </p>

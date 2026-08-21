@@ -5,15 +5,15 @@
 
   /*
    * BRAND PALETTE — matched to Damon's existing brand (dgm84.com):
-   * near-black charcoal + white + magenta accent, built for black &
-   * white photography. Confirm exact magenta hex with Damon/team.
+   * light neutral base + near-black type + magenta accent, built for
+   * black & white photography. Confirm exact magenta hex with team.
    */
-  --color-ink: #0b0b0d; /* page background (neutral charcoal, no colour cast) */
-  --color-surface: #151518; /* cards / raised panels */
+  --color-ink: #f6f5f4; /* page background (warm off-white, no colour cast) */
+  --color-surface: #ffffff; /* cards / raised panels */
   --color-accent: #d6156c; /* brand magenta (sampled from dgm84.com) */
-  --color-accent-soft: #f472b6;
-  --color-body: #a4a4ad; /* muted body text */
-  --color-bright: #f7f6f7; /* headings / high-contrast text */
+  --color-accent-soft: #a80f53; /* darker magenta for small text / hovers on light */
+  --color-body: #55555f; /* muted body text */
+  --color-bright: #141418; /* headings / high-contrast text */
 
   /* ReactBits StarBorder keyframes (per component docs) */
   --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;

@@ -30,7 +30,7 @@ const steps = [
 
 export default function Offer() {
   return (
-    <section id="offer" className="border-y border-white/5 bg-surface/40 px-5 py-20 sm:py-28">
+    <section id="offer" className="border-y border-black/8 bg-surface/40 px-5 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="The offer" title={`${site.offerName}: AI mentorship that pays for itself in hours saved.`}>
           Not a course you never finish. A working mentorship that installs AI into how your firm
@@ -38,7 +38,7 @@ export default function Offer() {
         </SectionHeading>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {included.map(item => (
-            <div key={item.title} className="rounded-2xl border border-white/5 bg-ink p-7">
+            <div key={item.title} className="rounded-2xl border border-black/8 bg-surface p-7 shadow-sm">
               <h3 className="text-lg font-bold text-bright">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed">{item.body}</p>
               {item.flag && (
@@ -52,7 +52,7 @@ export default function Offer() {
         <div className="mt-16 grid gap-6 sm:grid-cols-3">
           {steps.map(s => (
             <div key={s.step} className="text-center">
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-extrabold text-ink">
+              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-extrabold text-white">
                 {s.step}
               </div>
               <h3 className="mt-4 font-bold text-bright">{s.title}</h3>

@@ -22,10 +22,10 @@ function HeroPhotoPlaceholder() {
         aria-label="Placeholder for a photograph of Damon Millar"
         className="relative block w-full"
       >
-        <circle cx="200" cy="118" r="74" fill="#1e1e23" />
-        <path d="M64,460 C64,320 118,252 200,252 C282,252 336,320 336,460 Z" fill="#1e1e23" />
+        <circle cx="200" cy="118" r="74" fill="#dcdad9" />
+        <path d="M64,460 C64,320 118,252 200,252 C282,252 336,320 336,460 Z" fill="#dcdad9" />
       </svg>
-      <p className="absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-lg border border-dashed border-accent/50 bg-ink/85 p-3 text-center text-xs text-accent-soft">
+      <p className="absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-lg border border-dashed border-accent/50 bg-white/90 p-3 text-center text-xs text-accent-soft">
         Real cutout photo of Damon goes here — his image is the brand. Request
         a high-res, front-facing shot from the client (no stock / AI imagery) — black &amp; white to match his existing brand photography.
       </p>

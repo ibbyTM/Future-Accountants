@@ -14,7 +14,7 @@ export default function CtaButton({ className = '', children }) {
       speed="5s"
       className={`transition-transform duration-200 hover:scale-[1.03] focus-visible:scale-[1.03] ${className}`}
     >
-      <span className="font-bold tracking-wide text-bright">
+      <span className="font-bold tracking-wide text-white">
         {children ?? site.ctaLabel}
       </span>
     </StarBorder>

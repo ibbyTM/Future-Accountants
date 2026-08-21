@@ -22,7 +22,7 @@ const proofs = [
 
 export default function ProofBar() {
   return (
-    <section className="border-y border-white/5 bg-surface/60">
+    <section className="border-y border-black/8 bg-surface/60">
       <FadeContent duration={800} threshold={0.15}>
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
           {proofs.map(p => (
