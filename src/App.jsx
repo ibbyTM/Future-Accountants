@@ -3,9 +3,11 @@ import Hero from './sections/Hero.jsx';
 import ProofBar from './sections/ProofBar.jsx';
 import Problem from './sections/Problem.jsx';
 import Offer from './sections/Offer.jsx';
+import WhoItsFor from './sections/WhoItsFor.jsx';
 import System from './sections/System.jsx';
 import About from './sections/About.jsx';
 import Testimonials from './sections/Testimonials.jsx';
+import Faq from './sections/Faq.jsx';
 import FinalCta from './sections/FinalCta.jsx';
 import Footer from './sections/Footer.jsx';
 
@@ -18,9 +20,11 @@ export default function App() {
         <ProofBar />
         <Problem />
         <Offer />
+        <WhoItsFor />
         <System />
         <About />
         <Testimonials />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />
