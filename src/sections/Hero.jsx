@@ -4,11 +4,47 @@ import { site } from '../site.config.js';
 
 /*
  * Split hero: copy left, large cutout photo of Damon right — anchored to the
- * bottom edge of the section (Amy Porterfield / personal-brand pattern).
- * Replace the SVG silhouette with the real cutout PNG/WebP of Damon:
- * drop it in /public and swap <HeroPhotoPlaceholder /> for
- * <img src="/damon-cutout.png" alt="Damon Millar" ... />.
+ * bottom edge of the section (personal-brand funnel pattern).
+ *
+ * Drop the real background-removed photo at public/damon-cutout.png and it
+ * renders automatically; while the file is missing the flagged silhouette
+ * placeholder shows instead.
  */
+import { useEffect, useRef, useState } from 'react';
+function HeroPhoto() {
+  const [missing, setMissing] = useState(false);
+  const imgRef = useRef(null);
+
+  // onError alone is not enough: dev/preview servers answer missing files
+  // with a 200 index.html fallback, so also treat a decoded-but-empty image
+  // (naturalWidth 0) as missing.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) setMissing(true);
+  }, []);
+
+  if (missing) return <HeroPhotoPlaceholder />;
+  return (
+    <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-8 bottom-0 top-12 rounded-t-full bg-accent/10 blur-2xl"
+      />
+      <img
+        ref={imgRef}
+        src="/damon-cutout.png"
+        alt="Damon Millar"
+        fetchPriority="high"
+        className="relative block w-full"
+        onError={() => setMissing(true)}
+        onLoad={e => {
+          if (e.currentTarget.naturalWidth === 0) setMissing(true);
+        }}
+      />
+    </div>
+  );
+}
+
 function HeroPhotoPlaceholder() {
   return (
     <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
@@ -66,7 +102,7 @@ export default function Hero() {
           </p>
         </div>
         <div className="flex items-end justify-center">
-          <HeroPhotoPlaceholder />
+          <HeroPhoto />
         </div>
       </div>
     </section>
