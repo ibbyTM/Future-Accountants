@@ -1,16 +1,27 @@
-import AuroraBackground from '../components/AuroraBackground.jsx';
+import { useEffect, useRef, useState } from 'react';
+import Noise from '../components/reactbits/Noise.jsx';
 import CtaButton from '../components/CtaButton.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Split hero: copy left, large cutout photo of Damon right — anchored to the
- * bottom edge of the section (personal-brand funnel pattern).
+ * Editorial split hero: asymmetric 12-col composition. Copy sits on a wide
+ * left measure; Damon's B&W cutout stands on a flat ink plate (book-cover
+ * treatment) offset to the right, breaking the plate's top edge.
  *
  * Drop the real background-removed photo at public/damon-cutout.png and it
- * renders automatically; while the file is missing the flagged silhouette
- * placeholder shows instead.
+ * renders automatically; while the file is missing an honest asset slot
+ * shows instead.
  */
-import { useEffect, useRef, useState } from 'react';
+function PhotoPlate({ children }) {
+  return (
+    <div className="relative">
+      {/* ink plate — flat, sharp-cornered, honest shadow */}
+      <div className="absolute inset-x-0 bottom-0 top-16 bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]" />
+      {children}
+    </div>
+  );
+}
+
 function HeroPhoto() {
   const [missing, setMissing] = useState(false);
   const imgRef = useRef(null);
@@ -23,13 +34,21 @@ function HeroPhoto() {
     if (img && img.complete && img.naturalWidth === 0) setMissing(true);
   }, []);
 
-  if (missing) return <HeroPhotoPlaceholder />;
+  if (missing) {
+    return (
+      <PhotoPlate>
+        <div className="relative flex aspect-[3/4] items-end justify-center">
+          <p className="mb-16 max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
+            Real B&amp;W cutout photo of Damon goes here — his image is the
+            brand. High-res, front-facing, background removed (no stock / AI
+            imagery).
+          </p>
+        </div>
+      </PhotoPlate>
+    );
+  }
   return (
-    <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-8 bottom-0 top-12 rounded-t-full bg-accent/10 blur-2xl"
-      />
+    <PhotoPlate>
       <img
         ref={imgRef}
         src="/damon-cutout.png"
@@ -41,67 +60,47 @@ function HeroPhoto() {
           if (e.currentTarget.naturalWidth === 0) setMissing(true);
         }}
       />
-    </div>
-  );
-}
-
-function HeroPhotoPlaceholder() {
-  return (
-    <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-8 bottom-0 top-12 rounded-t-full bg-accent/10 blur-2xl"
-      />
-      <svg
-        viewBox="0 0 400 460"
-        role="img"
-        aria-label="Placeholder for a photograph of Damon Millar"
-        className="relative block w-full"
-      >
-        <circle cx="200" cy="118" r="74" fill="#dcdad9" />
-        <path d="M64,460 C64,320 118,252 200,252 C282,252 336,320 336,460 Z" fill="#dcdad9" />
-      </svg>
-      <p className="absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-lg border border-dashed border-accent/50 bg-white/90 p-3 text-center text-xs text-accent-soft">
-        Real cutout photo of Damon goes here — his image is the brand. Request
-        a high-res, front-facing shot from the client (no stock / AI imagery) — black &amp; white to match his existing brand photography.
-      </p>
-    </div>
+    </PhotoPlate>
   );
 }
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 sm:pt-36">
-      <AuroraBackground />
-      <div className="relative mx-auto grid max-w-6xl items-end gap-x-8 px-5 lg:grid-cols-[7fr_5fr]">
-        <div className="pb-16 text-center sm:pb-24 lg:text-left">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-accent sm:text-sm">
-            {site.offerName} — AI mentorship with Damon Millar
+    <section id="top" className="relative overflow-hidden pt-16">
+      {/* ReactBits Noise — paper grain over the bone ground */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden opacity-60">
+        <Noise patternSize={220} patternAlpha={9} patternRefreshInterval={4} />
+      </div>
+      <div className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-6 px-5">
+        <div className="col-span-12 pt-16 sm:pt-20 lg:col-span-7 lg:pb-20 lg:pt-28">
+          <p className="mb-8 border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+            {site.offerName}
+            <span className="font-semibold text-muted"> · AI mentorship with Damon Millar</span>
           </p>
-          <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-bright sm:text-5xl xl:text-6xl">
-            AI is rewriting the rules of accountancy.
-            <span className="block text-accent">Learn them first.</span>
+          <h1 className="font-display text-[2.75rem] font-medium leading-[1.08] tracking-[-0.01em] text-ink sm:text-6xl xl:text-[4.25rem]">
+            AI is rewriting the rules of accountancy.{' '}
+            <em className="text-accent">Learn them first.</em>
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed lg:mx-0 sm:text-xl">
+          <p className="mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl">
             No-fluff mentorship from a bestselling author and practising tax partner — showing
             accountants and ambitious business owners exactly how to put AI to work in their
             firm, step by step.
           </p>
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-10 flex flex-wrap items-center gap-7">
             <CtaButton />
             <a
               href="#offer"
-              className="text-sm font-semibold text-bright/80 transition-colors hover:text-bright"
+              className="font-sans text-sm font-semibold text-ink underline decoration-line decoration-2 underline-offset-8 transition-colors hover:decoration-accent"
             >
-              See how it works ↓
+              See how it works
             </a>
           </div>
-          <p className="mt-9 text-xs font-medium uppercase tracking-widest text-body/70">
+          <p className="mt-14 border-t border-line pt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
             Bestselling author · Managing Partner, Thompson Millar Wright &amp; Partners · UK
             keynote speaker
           </p>
         </div>
-        <div className="flex items-end justify-center">
+        <div className="col-span-12 mx-auto w-full max-w-xs pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pt-24">
           <HeroPhoto />
         </div>
       </div>

@@ -1,44 +1,28 @@
 @import 'tailwindcss';
 
 @theme {
+  /* UI sans — nav, captions, small caps only */
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  /* Editorial body serif */
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  /* Display serif — headlines, italic emphasis */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
 
   /*
-   * BRAND PALETTE — matched to Damon's existing brand (dgm84.com):
-   * light neutral base + near-black type + magenta accent, built for
-   * black & white photography. Confirm exact magenta hex with team.
+   * BRAND PALETTE — stripe-press editorial recipe carrying Damon's magenta
+   * as the single foil-stamp accent. Confirm exact magenta hex with team.
    */
-  --color-ink: #f6f5f4; /* page background (warm off-white, no colour cast) */
-  --color-surface: #ffffff; /* cards / raised panels */
-  --color-accent: #d6156c; /* brand magenta (sampled from dgm84.com) */
-  --color-accent-soft: #a80f53; /* darker magenta for small text / hovers on light */
-  --color-body: #55555f; /* muted body text */
-  --color-bright: #141418; /* headings / high-contrast text */
+  --color-ink: #1a1a18; /* warm near-black — text, plates, primary CTA */
+  --color-ground: #f1ecde; /* warm bone page ground */
+  --color-surface: #e6dcc4; /* darker bone for section breaks */
+  --color-accent: #b0104f; /* Damon's magenta, deepened for cream ground */
+  --color-accent-soft: #8e0c40; /* hover state of the accent */
+  --color-body: #4a463c; /* warm dark gray body text */
+  --color-muted: #736d5a; /* secondary text, captions */
+  --color-line: #c8bea4; /* hairlines */
 
-  /* ReactBits StarBorder keyframes (per component docs) */
-  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
-  --animate-star-movement-top: star-movement-top linear infinite alternate;
-
-  @keyframes star-movement-bottom {
-    0% {
-      transform: translate(0%, 0%);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-100%, 0%);
-      opacity: 0;
-    }
-  }
-  @keyframes star-movement-top {
-    0% {
-      transform: translate(0%, 0%);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(100%, 0%);
-      opacity: 0;
-    }
-  }
+  /* Legacy aliases so unconverted sections keep rendering during the pass */
+  --color-bright: #1a1a18;
 }
 
 html {
@@ -52,5 +36,8 @@ html {
 }
 
 body {
-  @apply bg-ink text-body font-sans antialiased;
+  @apply bg-ground text-body font-serif antialiased;
+  font-size: 18px;
+  line-height: 1.65;
+  text-wrap: pretty;
 }

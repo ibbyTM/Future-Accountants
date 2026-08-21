@@ -8,21 +8,21 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/8 bg-ink/80 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="text-sm font-extrabold uppercase tracking-[0.25em] text-bright">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ground/95 backdrop-blur-sm">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
+        <a href="#top" className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
           Damon Millar
         </a>
-        <div className="hidden items-center gap-8 text-sm font-semibold sm:flex">
+        <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted sm:flex">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="transition-colors hover:text-bright">
+            <a key={l.href} href={l.href} className="transition-colors hover:text-ink">
               {l.label}
             </a>
           ))}
         </div>
         <a
           href={site.bookingUrl}
-          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-accent-soft"
+          className="bg-ink px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.14em] text-ground transition-colors hover:bg-accent"
         >
           {site.ctaLabel}
         </a>

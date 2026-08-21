@@ -1,22 +1,29 @@
-import StarBorder from './reactbits/StarBorder.jsx';
+import GlareHover from './reactbits/GlareHover.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Primary conversion button — ReactBits StarBorder with the brand accent.
- * Used in the hero and the final CTA only, so the effect stays special.
+ * Primary conversion button — a flat ink rectangle (radius 0, editorial
+ * system) with a ReactBits GlareHover sweep on hover. Used in the hero
+ * and final CTA only.
  */
-export default function CtaButton({ className = '', children }) {
+export default function CtaButton({ children }) {
   return (
-    <StarBorder
-      as="a"
-      href={site.bookingUrl}
-      color="var(--color-accent)"
-      speed="5s"
-      className={`transition-transform duration-200 hover:scale-[1.03] focus-visible:scale-[1.03] ${className}`}
-    >
-      <span className="font-bold tracking-wide text-white">
-        {children ?? site.ctaLabel}
-      </span>
-    </StarBorder>
+    <a href={site.bookingUrl} className="inline-block">
+      <GlareHover
+        width="auto"
+        height="auto"
+        background="var(--color-ink)"
+        borderRadius="0px"
+        borderColor="var(--color-ink)"
+        glareColor="#f1ecde"
+        glareOpacity={0.25}
+        glareSize={220}
+        transitionDuration={700}
+      >
+        <span className="block px-9 py-4 font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#f1ecde]">
+          {children ?? site.ctaLabel}
+        </span>
+      </GlareHover>
+    </a>
   );
 }
