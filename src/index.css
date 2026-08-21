@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * PLACEHOLDER BRAND PALETTE — Damon has no confirmed brand system yet.
+   * Swap these four tokens once colours are confirmed; everything on the
+   * site derives from them.
+   */
+  --color-ink: #070b14; /* page background */
+  --color-surface: #0d1424; /* cards / raised panels */
+  --color-accent: #e3b458; /* primary accent (placeholder gold) */
+  --color-accent-soft: #f0cf8e;
+  --color-body: #94a0b8; /* muted body text */
+  --color-bright: #f5f3ee; /* headings / high-contrast text */
+
+  /* ReactBits StarBorder keyframes (per component docs) */
+  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --animate-star-movement-top: star-movement-top linear infinite alternate;
+
+  @keyframes star-movement-bottom {
+    0% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-100%, 0%);
+      opacity: 0;
+    }
+  }
+  @keyframes star-movement-top {
+    0% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(100%, 0%);
+      opacity: 0;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-ink text-body font-sans antialiased;
+}
