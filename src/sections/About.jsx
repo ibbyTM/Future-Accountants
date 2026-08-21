@@ -1,5 +1,3 @@
-import Placeholder from '../components/Placeholder.jsx';
-
 const facts = [
   'Accountant by training, entrepreneur and business builder by instinct',
   'Managing Partner of Thompson Millar Wright & Partners — niche tax consultancy for high-net-worth businesses — and head of SA Tax Law Partnership',
@@ -10,33 +8,36 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" className="border-y border-black/8 bg-surface/40 px-5 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-        <div className="order-2 lg:order-1">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">About Damon</p>
-          <h2 className="text-3xl font-extrabold leading-tight text-bright sm:text-4xl">
-            He’s not teaching theory. He’s running the playbook in his own firms.
+    <section id="about" className="border-y border-line bg-surface">
+      <div className="mx-auto grid max-w-6xl grid-cols-12 gap-x-6 gap-y-12 px-5 py-24 sm:py-32">
+        <div className="col-span-12 lg:col-span-7">
+          <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+            About Damon
+          </p>
+          <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
+            He’s not teaching theory. He’s running the playbook{' '}
+            <em className="text-accent">in his own firms.</em>
           </h2>
-          <p className="mt-5 leading-relaxed">
+          <p className="mt-6 max-w-xl">
             Damon Millar still sits across the table from clients every week. Everything in this
             mentorship is being used — right now — inside a real practice with real fees, real
             deadlines and real clients.
           </p>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-10 border-t border-line">
             {facts.map(f => (
-              <li key={f} className="flex gap-3 text-sm leading-relaxed">
-                <span aria-hidden="true" className="mt-0.5 font-bold text-accent">✓</span>
-                <span>{f}</span>
+              <li key={f} className="border-b border-line py-4 text-[16px] leading-relaxed text-body">
+                {f}
               </li>
             ))}
           </ul>
         </div>
-        <div className="order-1 lg:order-2">
-          <div className="flex aspect-[4/5] w-full items-center justify-center rounded-3xl border border-dashed border-accent/40 bg-surface">
-            <p className="max-w-xs px-6 text-center text-sm">
-              <Placeholder>Real photograph of Damon goes here — request from client (no stock / AI imagery)</Placeholder>
-            </p>
-          </div>
+        <div className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
+          <figure className="relative flex aspect-[4/5] items-center justify-center bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
+            <figcaption className="max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
+              Real B&amp;W photograph of Damon goes here — request from client (no stock / AI
+              imagery).
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

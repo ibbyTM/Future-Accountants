@@ -8,9 +8,9 @@ dgm84.com brochure site with one page, one goal: **book a call**.
 
 - **Vite + React 19 + Tailwind CSS 4** (no router needed — anchor nav)
 - **ReactBits** components (vendored in `src/components/reactbits/`, exactly 3 per brief):
-  - `Aurora` — animated WebGL hero background (lazy-loaded, disabled for `prefers-reduced-motion`)
-  - `FadeContent` — scroll-reveal on the proof bar and testimonials
-  - `StarBorder` — animated border on the two primary CTA buttons
+  - `Noise` — subtle animated paper grain over the hero
+  - `FadeContent` — scroll-reveal on the proof strip and testimonials
+  - `GlareHover` — light sweep on the two primary CTA buttons
 
 ## Run it
 
@@ -26,7 +26,7 @@ npm run preview  # serve the production build
 | What | Where |
 | --- | --- |
 | Booking link, CTA label, offer name | `src/site.config.js` |
-| Brand colours (light base + magenta, matched to dgm84.com) | `@theme` tokens in `src/index.css` |
+| Brand colours (stripe-press editorial: bone/ink/magenta) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |
 | SEO / OG meta | `index.html` |
 

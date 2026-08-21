@@ -1,4 +1,3 @@
-import SectionHeading from '../components/SectionHeading.jsx';
 import Placeholder from '../components/Placeholder.jsx';
 import { site } from '../site.config.js';
 
@@ -23,24 +22,33 @@ const included = [
 ];
 
 const steps = [
-  { step: '1', title: 'Book a call', body: 'A straight conversation about where your firm is and whether this is the right fit. No hard sell.' },
-  { step: '2', title: 'Get your roadmap', body: 'Leave with a clear picture of what AI should be doing in your practice — whether you join or not.' },
-  { step: '3', title: 'Implement, week by week', body: 'Join the mentorship and work the system: one practical move at a time, with Damon in your corner.' },
+  { title: 'Book a call', body: 'A straight conversation about where your firm is and whether this is the right fit. No hard sell.' },
+  { title: 'Get your roadmap', body: 'Leave with a clear picture of what AI should be doing in your practice — whether you join or not.' },
+  { title: 'Implement, week by week', body: 'Join the mentorship and work the system: one practical move at a time, with Damon in your corner.' },
 ];
 
 export default function Offer() {
   return (
-    <section id="offer" className="border-y border-black/8 bg-surface/40 px-5 py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading eyebrow="The offer" title={`${site.offerName}: AI mentorship that pays for itself in hours saved.`}>
-          Not a course you never finish. A working mentorship that installs AI into how your firm
-          actually runs — pricing, delivery, client work and growth.
-        </SectionHeading>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+    <section id="offer" className="border-y border-line bg-surface">
+      <div className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+        <div className="grid grid-cols-12 items-end gap-x-6 gap-y-8">
+          <div className="col-span-12 lg:col-span-7">
+            <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
+              {site.offerName}: mentorship that{' '}
+              <em className="text-accent">pays for itself in hours saved.</em>
+            </h2>
+          </div>
+          <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">
+            Not a course you never finish. A working mentorship that installs AI into how your
+            firm actually runs — pricing, delivery, client work and growth.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {included.map(item => (
-            <div key={item.title} className="rounded-2xl border border-black/8 bg-surface p-7 shadow-sm">
-              <h3 className="text-lg font-bold text-bright">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed">{item.body}</p>
+            <div key={item.title} className="border-t-2 border-ink pt-5">
+              <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
+              <p className="mt-3 text-[17px] leading-relaxed text-muted">{item.body}</p>
               {item.flag && (
                 <p className="mt-3 text-xs">
                   <Placeholder>{item.flag}</Placeholder>
@@ -49,14 +57,19 @@ export default function Offer() {
             </div>
           ))}
         </div>
-        <div className="mt-16 grid gap-6 sm:grid-cols-3">
-          {steps.map(s => (
-            <div key={s.step} className="text-center">
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-extrabold text-white">
-                {s.step}
+
+        <div className="mt-20 grid gap-x-10 gap-y-8 border-t border-line pt-10 sm:grid-cols-3">
+          {steps.map((s, i) => (
+            <div key={s.title} className="flex gap-4">
+              <span aria-hidden="true" className="font-display text-3xl font-medium italic leading-none text-accent">
+                {i + 1}.
+              </span>
+              <div>
+                <h3 className="font-sans text-sm font-bold uppercase tracking-[0.14em] text-ink">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.body}</p>
               </div>
-              <h3 className="mt-4 font-bold text-bright">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed">{s.body}</p>
             </div>
           ))}
         </div>

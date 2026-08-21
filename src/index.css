@@ -20,9 +20,6 @@
   --color-body: #4a463c; /* warm dark gray body text */
   --color-muted: #736d5a; /* secondary text, captions */
   --color-line: #c8bea4; /* hairlines */
-
-  /* Legacy aliases so unconverted sections keep rendering during the pass */
-  --color-bright: #1a1a18;
 }
 
 html {

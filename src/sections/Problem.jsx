@@ -1,5 +1,3 @@
-import SectionHeading from '../components/SectionHeading.jsx';
-
 const pains = [
   {
     title: 'You are the bottleneck',
@@ -17,19 +15,33 @@ const pains = [
 
 export default function Problem() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-      <SectionHeading eyebrow="The problem" title="Working harder isn’t a strategy.">
-        Most accountants and business owners are running a model built for a world that no longer
-        exists. Three things are breaking it:
-      </SectionHeading>
-      <div className="mt-12 grid gap-6 sm:grid-cols-3">
-        {pains.map((p, i) => (
-          <div key={p.title} className="rounded-2xl border border-black/8 bg-surface p-7 shadow-sm">
-            <p className="text-sm font-extrabold text-accent">0{i + 1}</p>
-            <h3 className="mt-3 text-lg font-bold text-bright">{p.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed">{p.body}</p>
-          </div>
-        ))}
+    <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+      <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+        <div className="col-span-12 lg:col-span-5">
+          <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
+            Working harder <em className="text-accent">isn’t a strategy.</em>
+          </h2>
+          <p className="mt-6 max-w-md">
+            Most accountants and business owners are running a model built for a world that no
+            longer exists. Three things are breaking it:
+          </p>
+        </div>
+        <ol className="col-span-12 border-t border-line lg:col-span-7">
+          {pains.map((p, i) => (
+            <li
+              key={p.title}
+              className="grid grid-cols-[3.5rem_1fr] gap-x-5 border-b border-line py-8 sm:grid-cols-[4.5rem_1fr]"
+            >
+              <span aria-hidden="true" className="font-display text-4xl font-medium italic leading-none text-accent">
+                {i + 1}.
+              </span>
+              <div>
+                <h3 className="text-xl font-semibold text-ink">{p.title}</h3>
+                <p className="mt-2 text-[17px] leading-relaxed text-muted">{p.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
