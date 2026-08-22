@@ -27,15 +27,19 @@ const steps = [
   { title: 'Implement, week by week', body: 'Join the mentorship and work the system: one practical move at a time, with Damon in your corner.' },
 ];
 
-export default function Offer() {
+export default function Offer({ heading }) {
   return (
     <section id="offer" className="border-y border-line bg-surface">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <div className="grid grid-cols-12 items-end gap-x-6 gap-y-8">
           <div className="col-span-12 lg:col-span-7">
             <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
-              {site.offerName}: mentorship that{' '}
-              <em className="text-accent">pays for itself in hours saved.</em>
+              {heading ?? (
+                <>
+                  {site.offerName}: mentorship that{' '}
+                  <em className="text-accent">pays for itself in hours saved.</em>
+                </>
+              )}
             </h2>
           </div>
           <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">

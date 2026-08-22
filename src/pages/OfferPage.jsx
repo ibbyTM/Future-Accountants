@@ -24,7 +24,13 @@ export default function OfferPage() {
             works week to week, who it’s for, and the questions worth asking before you book.
           </p>
         </section>
-        <Offer />
+        <Offer
+          heading={
+            <>
+              What’s inside — <em className="text-accent">and how it works.</em>
+            </>
+          }
+        />
         <WhoItsFor />
         <System />
         <Faq />
