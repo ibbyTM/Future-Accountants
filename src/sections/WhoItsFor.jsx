@@ -3,15 +3,15 @@
  * Two rule-topped columns, em-dash lists, no cards.
  */
 const forYou = [
-  'You run an accountancy practice — or an ambitious business — and you’re done trading hours for fees',
-  'You want a step-by-step system for putting AI to work, not another pile of tools to evaluate',
-  'You’re prepared to implement, week by week, with direct feedback on your own firm',
+  'You’re done trading hours for fees',
+  'You want a system, not another pile of tools',
+  'You’ll implement, week by week',
 ];
 
 const notForYou = [
-  'You’re looking for a magic button instead of a working system',
-  'You want theory and motivation rather than implementation',
-  'You’re not willing to change how your firm actually operates',
+  'You want a magic button',
+  'You want theory, not implementation',
+  'You won’t change how your firm operates',
 ];
 
 function List({ title, items, accent }) {

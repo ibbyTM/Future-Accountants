@@ -21,8 +21,7 @@ export default function OfferPage() {
             {site.offerName}: everything it is, <em className="text-accent">nothing it isn’t.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            The short version is on the home page. This is the long one — what’s inside, how it
-            works week to week, who it’s for, and the questions worth asking before you book.
+            The short version is on the home page. This is the long one.
           </p>
         </section>
         <Offer

@@ -11,9 +11,8 @@ const faqs = [
     q: 'I’m not technical. Will I keep up?',
     a: (
       <>
-        Yes — that’s the point. This is built for practitioners, not programmers. Every move is
-        explained step by step, in plain English, with the exact prompts and workflows to copy.
-        If you can run a firm, you can run this.
+        Yes — it’s built for practitioners, not programmers. Every move comes step by step, in
+        plain English, with the exact prompts to copy.
       </>
     ),
   },
@@ -21,9 +20,8 @@ const faqs = [
     q: 'How is this different from a course?',
     a: (
       <>
-        A course gives you videos and wishes you luck. This is live mentorship applied to your
-        firm — your pricing, your clients, your bottlenecks — built on The Business DNA System™,
-        a methodology refined over 15+ years. You implement as you go, with Damon in your corner.
+        A course gives you videos and wishes you luck. This is live mentorship on your firm —
+        your pricing, your clients — built on The Business DNA System™.
       </>
     ),
   },
@@ -31,9 +29,8 @@ const faqs = [
     q: 'I run a business, not an accountancy practice. Is this still for me?',
     a: (
       <>
-        Yes. The system was built with ambitious business owners as much as accountants — Damon
-        has spent his career on both sides of that table. If you want AI working inside how your
-        business runs, the method is the same.
+        Yes. It was built for ambitious business owners as much as accountants — Damon has
+        spent his career on both sides of that table.
       </>
     ),
   },
@@ -41,7 +38,7 @@ const faqs = [
     q: 'How much time does it take each week?',
     a: (
       <>
-        It’s designed around a working week — one practical move at a time, not a second job.{' '}
+        One practical move at a time — designed around a working week, not a second job.{' '}
         <Placeholder>Exact weekly time commitment — confirm with Damon</Placeholder>
       </>
     ),
@@ -50,8 +47,7 @@ const faqs = [
     q: 'What does it cost?',
     a: (
       <>
-        That’s covered on the call, once we know whether the fit is right — it depends on where
-        your firm is and what you need.{' '}
+        Covered on the call — it depends on where your firm is.{' '}
         <Placeholder>Confirm pricing approach / whether to state a figure — ask Damon</Placeholder>
       </>
     ),
@@ -60,8 +56,8 @@ const faqs = [
     q: 'How do I join?',
     a: (
       <>
-        Book a call. It’s a straight conversation about where your firm is — you’ll leave with a
-        clear picture of what AI should be doing in your practice, whether you join or not.
+        Book a call. You’ll leave with a clear picture of what AI should be doing in your
+        practice — whether you join or not.
       </>
     ),
   },

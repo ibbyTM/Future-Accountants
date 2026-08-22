@@ -1,37 +1,48 @@
 import Placeholder from '../components/Placeholder.jsx';
 import { site } from '../site.config.js';
 
+/*
+ * "What's included" as an asymmetric bento grid — cell rhythm adapted from
+ * 21st.dev "Feature Section with Bento Grid" (@tommyjepsen), re-skinned to
+ * the editorial system: sharp corners, hairline borders, one ink feature
+ * cell, one-line copy. Steps: connector-line timeline adapted from
+ * 21st.dev "How It Works Timeline" (@7ovr), serif numerals in place of
+ * icon circles.
+ */
 const included = [
   {
     title: 'Live mentorship with Damon',
-    body: 'Regular live sessions working directly on your firm — what to automate, what to charge for, what to stop doing. Direct answers, not theory.',
+    body: 'Live sessions on your firm — what to automate, what to charge, what to stop doing.',
+    wide: true,
+    ink: true,
   },
   {
-    title: 'AI-assisted coaching, on demand',
-    body: 'Damon’s methods, available between sessions through AI-powered coaching — so you’re never stuck waiting a week for an answer.',
+    title: 'AI coaching, on demand',
+    body: 'Damon’s methods between sessions — never stuck waiting a week.',
     flag: 'Confirm exact AI coaching mechanism with Damon',
   },
   {
     title: 'Playbooks & templates',
-    body: 'The prompts, workflows and client-facing templates already working inside real firms. Copy, adapt, deploy.',
+    body: 'Prompts and workflows already working in real firms. Copy, deploy.',
   },
   {
     title: 'Built on a proven system',
-    body: 'Everything sits on The Business DNA System™ — the 52-week methodology Damon has refined over 15+ years. AI is the accelerant, not the gimmick.',
+    body: 'The 52-week Business DNA System™ underneath. AI is the accelerant, not the gimmick.',
+    wide: true,
   },
 ];
 
 const steps = [
-  { title: 'Book a call', body: 'A straight conversation about where your firm is and whether this is the right fit. No hard sell.' },
-  { title: 'Get your roadmap', body: 'Leave with a clear picture of what AI should be doing in your practice — whether you join or not.' },
-  { title: 'Implement, week by week', body: 'Join the mentorship and work the system: one practical move at a time, with Damon in your corner.' },
+  { title: 'Book a call', body: 'A straight conversation. No hard sell.' },
+  { title: 'Get your roadmap', body: 'A clear picture for your firm — join or not.' },
+  { title: 'Implement, weekly', body: 'One practical move at a time, Damon in your corner.' },
 ];
 
 export default function Offer({ heading }) {
   return (
     <section id="offer" className="border-y border-line bg-surface">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
-        <div className="grid grid-cols-12 items-end gap-x-6 gap-y-8">
+        <div className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
           <div className="col-span-12 lg:col-span-7">
             <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
               {heading ?? (
@@ -43,40 +54,62 @@ export default function Offer({ heading }) {
             </h2>
           </div>
           <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">
-            Not a course you never finish. A working mentorship that installs AI into how your
-            firm actually runs — pricing, delivery, client work and growth.
+            Not a course. A working mentorship that installs AI into how your firm actually runs.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {included.map(item => (
-            <div key={item.title} className="border-t-2 border-ink pt-5">
-              <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
-              <p className="mt-3 text-[17px] leading-relaxed text-muted">{item.body}</p>
-              {item.flag && (
-                <p className="mt-3 text-xs">
-                  <Placeholder>{item.flag}</Placeholder>
+            <div
+              key={item.title}
+              className={`flex min-h-[200px] flex-col justify-between border p-7 ${
+                item.wide ? 'lg:col-span-2' : ''
+              } ${
+                item.ink
+                  ? 'border-ink bg-ink text-ground'
+                  : 'border-line bg-ground'
+              }`}
+            >
+              <h3 className={`font-display text-2xl font-medium italic ${item.ink ? 'text-ground' : 'text-ink'}`}>
+                {item.title}
+              </h3>
+              <div>
+                <p className={`text-[16px] leading-relaxed ${item.ink ? 'text-ground/70' : 'text-muted'}`}>
+                  {item.body}
                 </p>
-              )}
+                {item.flag && (
+                  <p className="mt-3 text-xs">
+                    <Placeholder>{item.flag}</Placeholder>
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 grid gap-x-10 gap-y-8 border-t border-line pt-10 sm:grid-cols-3">
+        <ol className="mt-20 grid gap-y-10 border-t border-line pt-12 sm:grid-cols-3 sm:gap-x-0">
           {steps.map((s, i) => (
-            <div key={s.title} className="flex gap-4">
-              <span aria-hidden="true" className="font-display text-3xl font-medium italic leading-none text-accent">
-                {i + 1}.
-              </span>
-              <div>
+            <li key={s.title} className="flex gap-5 sm:block sm:pr-8">
+              <div className="flex flex-col items-center sm:mb-5 sm:flex-row">
+                <span className="flex size-12 shrink-0 items-center justify-center border border-ink font-display text-xl font-medium italic text-accent">
+                  {i + 1}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className={`mt-1 w-px flex-1 bg-line sm:ml-1 sm:mt-0 sm:h-px sm:w-auto ${
+                    i === steps.length - 1 ? 'sm:hidden' : ''
+                  }`}
+                />
+              </div>
+              <div className="pb-2 sm:pb-0">
                 <h3 className="font-sans text-sm font-bold uppercase tracking-[0.14em] text-ink">
                   {s.title}
                 </h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.body}</p>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -1,9 +1,9 @@
 const facts = [
-  'Accountant by training, entrepreneur and business builder by instinct',
-  'Managing Partner of Thompson Millar Wright & Partners — niche tax consultancy for high-net-worth businesses — and head of SA Tax Law Partnership',
-  'Bestselling author of Business DNA and Covid BOUNCE BACK!, with a new book on AI for business forthcoming',
-  'Creator of The Business DNA System™, developed over 15+ years with Clare Thompson',
-  'In-demand UK keynote speaker, known for direct, step-by-step delivery',
+  'Accountant by training, entrepreneur by instinct',
+  'Managing Partner, Thompson Millar Wright & Partners · head of SA Tax Law Partnership',
+  'Bestselling author of Business DNA and Covid BOUNCE BACK!',
+  'Creator of The Business DNA System™, with Clare Thompson',
+  'UK keynote speaker — direct, step-by-step, no fluff',
 ];
 
 export default function About() {
@@ -19,9 +19,8 @@ export default function About() {
             <em className="text-accent">in his own firms.</em>
           </h2>
           <p className="mt-6 max-w-xl">
-            Damon Millar still sits across the table from clients every week. Everything in this
-            mentorship is being used — right now — inside a real practice with real fees, real
-            deadlines and real clients.
+            Damon Millar still sits across the table from clients every week. Nothing in this
+            mentorship is theory.
           </p>
           <ul className="mt-10 border-t border-line">
             {facts.map(f => (

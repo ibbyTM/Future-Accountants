@@ -7,10 +7,9 @@ export default function System() {
         </p>
       </blockquote>
       <p className="mt-10 max-w-2xl pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
-        This isn’t AI hype bolted onto guesswork. The mentorship runs on{' '}
-        <strong className="font-semibold text-ink">The Business DNA System™</strong> — the 52-week
-        growth methodology Damon developed with Clare Thompson over 15+ years, and the system
-        behind his bestselling book <em>Business DNA</em>. AI simply makes it faster to execute.
+        Not hype bolted onto guesswork. The mentorship runs on{' '}
+        <strong className="font-semibold text-ink">The Business DNA System™</strong> — 52 weeks,
+        refined over 15+ years with Clare Thompson. AI just makes it faster.
       </p>
     </section>
   );

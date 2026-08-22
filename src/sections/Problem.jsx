@@ -1,15 +1,15 @@
 const pains = [
   {
     title: 'You are the bottleneck',
-    body: 'If the work stops when you stop, you don’t own a practice — it owns you. Every hour is sold once, and there are no hours left.',
+    body: 'If the work stops when you stop, you don’t own a practice — it owns you.',
   },
   {
     title: 'Compliance is being commoditised',
-    body: 'AI already does the grunt work clients used to pay for. Firms that only sell compliance are now competing on price — and losing.',
+    body: 'AI already does the grunt work. Compliance-only firms now compete on price.',
   },
   {
     title: 'You know AI matters. Nobody shows you how.',
-    body: 'Endless tools, endless noise, no system. What’s missing isn’t another app — it’s a step-by-step plan built for how a firm actually runs.',
+    body: 'Endless tools, no system. What’s missing is a plan built for how a firm runs.',
   },
 ];
 
@@ -22,8 +22,7 @@ export default function Problem() {
             Working harder <em className="text-accent">isn’t a strategy.</em>
           </h2>
           <p className="mt-6 max-w-md">
-            Most accountants and business owners are running a model built for a world that no
-            longer exists. Three things are breaking it:
+            The old model is breaking. Three ways:
           </p>
         </div>
         <ol className="col-span-12 border-t border-line lg:col-span-7">

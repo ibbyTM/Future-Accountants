@@ -13,19 +13,19 @@ const books = [
   {
     title: 'Business DNA',
     edition: '10th Anniversary Edition',
-    line: 'The bestselling blueprint behind The Business DNA System™ — how to build a business that serves you, not the other way round.',
+    line: 'The bestselling blueprint behind The Business DNA System™.',
     cover: 'Real cover artwork needed — request from Damon',
   },
   {
     title: 'Covid BOUNCE BACK!',
     edition: 'Co-authored with Clare Thompson',
-    line: 'The practical playbook for rebuilding through disruption — written in the thick of it, used by real firms.',
+    line: 'The practical playbook for rebuilding through disruption.',
     cover: 'Real cover artwork needed — request from Damon',
   },
   {
     title: 'The AI book',
     edition: 'Forthcoming',
-    line: 'Damon’s next book: putting AI to work inside real businesses. The mentorship is where the method runs live, ahead of print.',
+    line: 'Putting AI to work inside real businesses — the mentorship runs the method ahead of print.',
     cover: 'Title & cover TBC — confirm with Damon',
   },
 ];
@@ -66,10 +66,9 @@ export default function AboutPage() {
             Accountant by training. <em className="text-accent">Business builder by instinct.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            Damon Millar is Managing Partner of Thompson Millar Wright &amp; Partners — a niche
-            tax consultancy for high-net-worth businesses — and heads SA Tax Law Partnership. He
-            still sits across the table from clients every week, which is why nothing he teaches
-            is theory.
+            Managing Partner of Thompson Millar Wright &amp; Partners, head of SA Tax Law
+            Partnership — and still across the table from clients every week. Nothing he
+            teaches is theory.
           </p>
         </section>
 
@@ -94,9 +93,8 @@ export default function AboutPage() {
           </blockquote>
           <p className="mt-10 max-w-2xl pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
             That line became <strong className="font-semibold text-ink">The Business DNA System™</strong>{' '}
-            — a 52-week growth methodology developed with Clare Thompson over 15+ years and used
-            inside real firms. It’s the foundation everything else here is built on, including
-            the Future Accountant mentorship.
+            — 52 weeks, developed with Clare Thompson over 15+ years. The foundation of
+            everything here.
           </p>
         </section>
 
@@ -107,9 +105,7 @@ export default function AboutPage() {
                 On stage.
               </h2>
               <p className="mt-5 max-w-md text-[17px] leading-relaxed text-muted">
-                An in-demand UK keynote speaker, known for direct, no-fluff, step-by-step
-                delivery — every claim backed by “here’s the actual system”, never vague
-                motivation.
+                Direct, no-fluff, step-by-step keynotes — always “here’s the actual system”.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-6">
@@ -117,8 +113,7 @@ export default function AboutPage() {
                 Live, every week.
               </h2>
               <p className="mt-5 max-w-md text-[17px] leading-relaxed text-muted">
-                “Ask Damon Anything” — a weekly live webinar where business owners bring real
-                problems and get unscripted answers. It’s the fastest way to hear how he thinks.
+                “Ask Damon Anything” — real problems, unscripted answers, every week.
               </p>
             </div>
           </div>

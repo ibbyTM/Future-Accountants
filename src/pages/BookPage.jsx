@@ -6,9 +6,9 @@ import { site } from '../site.config.js';
  * Set site.calendarEmbedUrl to render the real Calendly/GHL iframe.
  */
 const steps = [
-  { title: 'Where you are', body: 'A straight conversation about your firm — what’s working, what’s eating your hours.' },
-  { title: 'What AI should be doing', body: 'You leave with a clear picture for your practice, whether you join or not.' },
-  { title: 'Whether this is the right fit', body: 'If it is, you’ll know the next step. If it isn’t, you’ll be told straight.' },
+  { title: 'Where you are', body: 'What’s working, what’s eating your hours.' },
+  { title: 'What AI should be doing', body: 'A clear picture for your practice — join or not.' },
+  { title: 'Whether this is the right fit', body: 'If it isn’t, you’ll be told straight.' },
 ];
 
 export default function BookPage() {
