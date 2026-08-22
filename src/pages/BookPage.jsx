@@ -39,7 +39,7 @@ export default function BookPage() {
             {steps.map((s, i) => (
               <li key={s.title} className="grid grid-cols-[3rem_1fr] gap-x-4">
                 <span aria-hidden="true" className="font-display text-3xl font-medium italic leading-none text-accent">
-                  {i + 1}.
+                  {String(i + 1).padStart(2, '0')}.
                 </span>
                 <div>
                   <h2 className="text-lg font-semibold text-ink">{s.title}</h2>

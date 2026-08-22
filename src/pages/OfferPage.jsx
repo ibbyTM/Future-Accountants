@@ -178,22 +178,32 @@ export default function OfferPage() {
                   <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-muted">
                     What you get
                   </th>
-                  <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                  <th className="py-4 pr-4 text-right font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
                     Build it with you
                   </th>
-                  <th className="py-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                  <th className="py-4 text-right font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
                     Build it for you
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {comparison.map(([what, a, b]) => (
-                  <tr key={what} className="border-b border-line transition-colors duration-200 hover:bg-surface/60">
-                    <td className="py-4 pr-4 text-[15px] font-semibold text-ink">{what}</td>
-                    <td className="py-4 pr-4 text-[15px] text-body">{a}</td>
-                    <td className="py-4 text-[15px] text-body">{b}</td>
-                  </tr>
-                ))}
+                {comparison.map(([what, a, b], ri) => {
+                  const total = ri === comparison.length - 1;
+                  return (
+                    <tr
+                      key={what}
+                      className={`transition-colors duration-200 hover:bg-surface/60 ${
+                        total
+                          ? 'border-t border-ink [border-bottom:3px_double_var(--color-ink)]'
+                          : 'border-b border-line'
+                      }`}
+                    >
+                      <td className="py-4 pr-4 text-[15px] font-semibold text-ink">{what}</td>
+                      <td className="py-4 pr-4 text-right text-[15px] tabular-nums text-body">{a}</td>
+                      <td className="py-4 text-right text-[15px] tabular-nums text-body">{b}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -246,7 +256,7 @@ export default function OfferPage() {
                 practice. One system. One goal: build a better firm and live a better life.
               </p>
             </div>
-            <ul className="col-span-12 border-t border-line lg:col-span-7">
+            <ul className="relative col-span-12 border-t border-line pl-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60 lg:col-span-7">
               {beyond.map(b => (
                 <li key={b} className="group flex items-center gap-4 border-b border-line py-4">
                   <span aria-hidden="true" className="size-1.5 shrink-0 bg-accent transition-transform duration-200 group-hover:scale-150" />

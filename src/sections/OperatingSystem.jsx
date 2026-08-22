@@ -40,7 +40,7 @@ export default function OperatingSystem() {
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
           <Reveal className="flex min-h-[220px] flex-col justify-between border border-ink bg-ink p-7 text-ground lg:row-span-2">
             <div>
-              <p className="font-display text-3xl font-medium italic text-accent-soft brightness-150">1</p>
+              <p className="font-display text-3xl font-medium italic text-accent-soft brightness-150">01</p>
               <h3 className="mt-3 font-display text-2xl font-medium italic">AI Firm Brain</h3>
             </div>
             <p className="text-[16px] leading-relaxed text-ground/70">
@@ -54,7 +54,7 @@ export default function OperatingSystem() {
               delay={60 + i * 60}
               className="group border border-line bg-ground p-6 transition-colors duration-300 hover:border-ink"
             >
-              <p className="font-display text-xl font-medium italic text-accent">{i + 2}</p>
+              <p className="font-display text-xl font-medium italic text-accent">{String(i + 2).padStart(2, '0')}</p>
               <h3 className="mt-2 text-lg font-semibold text-ink">{e.name}</h3>
               <p className="mt-1 text-[15px] leading-relaxed text-muted">{e.role}</p>
             </Reveal>

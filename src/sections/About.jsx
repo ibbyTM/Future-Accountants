@@ -24,7 +24,7 @@ export default function About() {
             Real practice experience combined with deep technical knowledge. His own firm runs at
             65% AI coverage, so nothing he teaches is theory.
           </p>
-          <ul className="mt-10 border-t border-line">
+          <ul className="relative mt-10 border-t border-line pl-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60">
             {facts.map(f => (
               <li key={f} className="border-b border-line py-4 text-[16px] leading-relaxed text-body transition-colors duration-200 hover:text-ink">
                 {f}

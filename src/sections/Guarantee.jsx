@@ -6,7 +6,13 @@ import Reveal from '../components/Reveal.jsx';
  */
 export default function Guarantee() {
   return (
-    <section className="border-y border-line bg-surface">
+    <section
+      className="border-y border-line bg-surface"
+      style={{
+        backgroundImage:
+          'repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(200, 190, 164, 0.45) 27px, rgba(200, 190, 164, 0.45) 28px)',
+      }}
+    >
       <Reveal className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">
         <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-accent">
           100% risk-free guarantee

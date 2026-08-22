@@ -106,7 +106,7 @@ export default function Offer({ heading }) {
             <Reveal as="li" key={s.title} delay={i * 80} className="flex gap-5 sm:block sm:pr-6">
               <div className="flex flex-col items-center sm:mb-4 sm:flex-row">
                 <span className="flex size-11 shrink-0 items-center justify-center border border-ink font-display text-lg font-medium italic text-accent">
-                  {i + 1}
+                  {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   aria-hidden="true"

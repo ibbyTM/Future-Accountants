@@ -24,11 +24,14 @@ function Stat({ s, i }) {
       </p>
       <span
         aria-hidden="true"
-        className={`mt-3 block h-0.5 w-10 origin-left bg-accent transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+        className={`mt-3 block w-12 origin-left transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
           inView ? 'scale-x-100' : 'scale-x-0'
         }`}
         style={{ transitionDelay: `${300 + i * 120}ms` }}
-      />
+      >
+        <span className="block h-px bg-accent" />
+        <span className="mt-[3px] block h-px bg-accent" />
+      </span>
       <p className="mt-3 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ground/60">
         {s.label}
       </p>
