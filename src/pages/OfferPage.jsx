@@ -1,19 +1,33 @@
 import Navbar from '../sections/Navbar.jsx';
-import OperatingSystem from '../sections/OperatingSystem.jsx';
-import Offer from '../sections/Offer.jsx';
 import Guarantee from '../sections/Guarantee.jsx';
-import WhoItsFor from '../sections/WhoItsFor.jsx';
-import Faq from '../sections/Faq.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Offer deep dive: the system, the two routes, the comparison rows, the
- * AI Academy tiers and the guarantee. No pricing on the site: investment
- * is covered on the scoping call.
+ * Offer deep dive, built from the programme deck. Each route gets its own
+ * full panel (the deck's option slides), then the comparison table, the
+ * AI Academy tiers and the Beyond AI system. No pricing on the site:
+ * investment is covered on the scoping call.
  */
+const withYou = [
+  { tag: 'Weekly', name: 'Power Hour with Damon' },
+  { tag: 'Tools', name: 'Baseline AI tool suite' },
+  { tag: 'Support', name: 'Technical help between sessions' },
+  { tag: 'Train', name: 'Use, implement and optimise' },
+  { tag: 'Build', name: 'Step-by-step implementation' },
+  { tag: 'Maximise', name: 'Troubleshoot and refine' },
+];
+
+const forYouStages = ['Scope', 'Build', 'Tailor', 'Implement', 'Test', 'Optimise'];
+
+const forYouTimeline = [
+  { period: '90 days', detail: 'Full build, tailoring, implementation and training' },
+  { period: '6 months', detail: 'One-to-one mentoring and strategic advisory with Damon' },
+  { period: '12 months', detail: 'Unlimited technical support, troubleshooting and optimisation' },
+];
+
 const comparison = [
   ['Foundational AI System', 'Included', 'Included'],
   ['Proven AI tools', 'Included', 'Included'],
@@ -47,94 +61,202 @@ const academy = [
   },
 ];
 
+const beyond = [
+  'Roadmap for success',
+  'Premium pricing',
+  'Branding and positioning',
+  'Products, services and advisory',
+  'Educational marketing',
+  'Sales and customer maximisation',
+  'Teams and systems',
+];
+
 export default function OfferPage() {
   return (
     <>
       <Navbar />
       <main>
-        <section className="mx-auto max-w-6xl px-5 pb-4 pt-36 sm:pt-44">
+        <section className="mx-auto max-w-6xl px-5 pb-20 pt-36 sm:pt-44">
           <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
             The programmes, in full
           </p>
           <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
-            Your {site.offerName}: <em className="text-accent">every route in.</em>
+            Two ways to build your {site.offerName}.{' '}
+            <em className="text-accent">Same destination. Different journey.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            The short version is on the home page. This is the long one.
+            Both routes build your Foundational Practice AI System: the ten AI employees, in the
+            right order, working across your whole practice. The difference is who does the work
+            and how fast.
           </p>
         </section>
-        <OperatingSystem />
-        <Offer
-          heading={
-            <>
-              Two ways in. <em className="text-accent">Same destination.</em>
-            </>
-          }
-        />
 
+        {/* Option 1: mentored */}
         <section className="border-y border-line bg-surface">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-            <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
-              Side by side.
-            </h2>
-            <div className="mt-10 overflow-x-auto">
-              <table className="w-full min-w-[560px] border-t border-line text-left">
-                <thead>
-                  <tr className="border-b border-ink">
-                    <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-muted">
-                      What you get
-                    </th>
-                    <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
-                      Build it with you
-                    </th>
-                    <th className="py-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
-                      Build it for you
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparison.map(([what, a, b]) => (
-                    <tr key={what} className="border-b border-line">
-                      <td className="py-4 pr-4 text-[15px] font-semibold text-ink">{what}</td>
-                      <td className="py-4 pr-4 text-[15px] text-body">{a}</td>
-                      <td className="py-4 text-[15px] text-body">{b}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+              <div className="col-span-12 lg:col-span-4">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                  Option 1 · Mentored implementation
+                </p>
+                <h2 className="mt-3 font-display text-4xl font-medium italic leading-[1.1] text-ink sm:text-5xl">
+                  We build it with you.
+                </h2>
+                <p className="mt-6 max-w-sm text-[17px] leading-relaxed text-muted">
+                  Your team implements. We provide the system, the roadmap, the expertise and
+                  the support.
+                </p>
+              </div>
+              <div className="col-span-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
+                {withYou.map(item => (
+                  <div key={item.tag} className="border-t-2 border-ink pt-4">
+                    <p className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent">
+                      {item.tag}
+                    </p>
+                    <p className="mt-2 text-[16px] font-semibold leading-snug text-ink">{item.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="grid grid-cols-12 items-end gap-x-6 gap-y-4">
-            <div className="col-span-12 lg:col-span-7">
-              <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
-                Not ready for a full programme?{' '}
-                <em className="text-accent">Start with the AI Academy.</em>
-              </h2>
-            </div>
-            <p className="col-span-12 max-w-md text-[16px] leading-relaxed text-muted lg:col-span-5">
-              The complete AI learning journey for accountants and finance professionals who
-              want to lead, not follow.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {academy.map(t => (
-              <div key={t.name} className="border border-line bg-ground p-7">
-                <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
-                  {t.level} · {t.verb}
+        {/* Option 2: done for you */}
+        <section className="bg-ink text-ground">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+            <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+              <div className="col-span-12 lg:col-span-4">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent-soft brightness-150">
+                  Option 2 · Done-for-you implementation
                 </p>
-                <h3 className="mt-2 font-display text-2xl font-medium italic text-ink">{t.name}</h3>
-                <p className="mt-4 text-[15px] leading-relaxed text-muted">{t.body}</p>
+                <h2 className="mt-3 font-display text-4xl font-medium italic leading-[1.1] sm:text-5xl">
+                  We build it for you.
+                </h2>
+                <p className="mt-6 max-w-sm text-[17px] leading-relaxed text-ground/70">
+                  You make the decisions. We do the heavy lifting. Our dedicated AI development
+                  team builds, implements and optimises the system with your team.
+                </p>
               </div>
-            ))}
+              <div className="col-span-12 lg:col-span-8">
+                <ol className="flex flex-wrap items-center gap-y-3">
+                  {forYouStages.map((s, i) => (
+                    <li key={s} className="flex items-center">
+                      <span className="border border-ground/40 px-4 py-2 font-sans text-xs font-bold uppercase tracking-[0.16em]">
+                        {s}
+                      </span>
+                      {i < forYouStages.length - 1 && (
+                        <span aria-hidden="true" className="mx-1 h-px w-4 bg-ground/40 sm:w-6" />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-10 grid gap-x-10 gap-y-8 border-t border-ground/25 pt-8 sm:grid-cols-3">
+                  {forYouTimeline.map(t => (
+                    <div key={t.period}>
+                      <p className="font-display text-3xl font-medium italic text-ground">{t.period}</p>
+                      <p className="mt-2 font-sans text-[13px] leading-relaxed text-ground/60">
+                        {t.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison */}
+        <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+          <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
+            Side by side.
+          </h2>
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full min-w-[560px] border-t border-line text-left">
+              <thead>
+                <tr className="border-b border-ink">
+                  <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-muted">
+                    What you get
+                  </th>
+                  <th className="py-4 pr-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                    Build it with you
+                  </th>
+                  <th className="py-4 font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                    Build it for you
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map(([what, a, b]) => (
+                  <tr key={what} className="border-b border-line">
+                    <td className="py-4 pr-4 text-[15px] font-semibold text-ink">{what}</td>
+                    <td className="py-4 pr-4 text-[15px] text-body">{a}</td>
+                    <td className="py-4 text-[15px] text-body">{b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-5 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+            Investment is covered on your scoping call, once we know what your firm needs.
+          </p>
+        </section>
+
+        {/* Academy */}
+        <section className="border-y border-line bg-surface">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+            <div className="grid grid-cols-12 items-end gap-x-6 gap-y-4">
+              <div className="col-span-12 lg:col-span-7">
+                <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
+                  Not ready for a full programme?{' '}
+                  <em className="text-accent">Start with the AI Academy.</em>
+                </h2>
+              </div>
+              <p className="col-span-12 max-w-md text-[16px] leading-relaxed text-muted lg:col-span-5">
+                The complete AI learning journey for accountants and finance professionals who
+                want to lead, not follow.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-4 lg:grid-cols-3">
+              {academy.map(t => (
+                <div key={t.name} className="border border-line bg-ground p-7">
+                  <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                    {t.level} · {t.verb}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-medium italic text-ink">{t.name}</h3>
+                  <p className="mt-4 text-[15px] leading-relaxed text-muted">{t.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Beyond AI */}
+        <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+          <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+            <div className="col-span-12 lg:col-span-5">
+              <p className="mb-6 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+                Beyond AI
+              </p>
+              <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
+                AI is only <em className="text-accent">the foundation.</em>
+              </h2>
+              <p className="mt-6 max-w-sm text-[17px] leading-relaxed text-muted">
+                Once your core AI systems are in place, we can help you develop the whole
+                practice. One system. One goal: build a better firm and live a better life.
+              </p>
+            </div>
+            <ul className="col-span-12 border-t border-line lg:col-span-7">
+              {beyond.map(b => (
+                <li key={b} className="flex items-center gap-4 border-b border-line py-4">
+                  <span aria-hidden="true" className="size-1.5 shrink-0 bg-accent" />
+                  <span className="text-[17px] text-body">{b}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         <Guarantee />
-        <WhoItsFor />
-        <Faq />
         <FinalCta />
       </main>
       <Footer />

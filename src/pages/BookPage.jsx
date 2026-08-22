@@ -51,6 +51,20 @@ export default function BookPage() {
           <p className="mt-10 border-t border-line pt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
             Your firm. Your priorities. Your AI roadmap.
           </p>
+          <figure className="mt-10 border-l-2 border-accent pl-6">
+            <blockquote className="font-display text-lg font-medium italic leading-[1.45] text-ink">
+              “There is nobody in the world I would rather take business advice from than
+              Damon.”
+            </blockquote>
+            <figcaption className="mt-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-muted">
+              Paul · IFA Firm Owner, UK
+            </figcaption>
+          </figure>
+          <p className="mt-8 text-[15px] leading-relaxed text-muted">
+            Every programme comes with the 100% risk-free guarantee: if you’re unhappy with
+            the progress made in your first 90 days, we keep working with you at no extra cost
+            until you are 100% happy.
+          </p>
         </div>
         <div className="col-span-12 lg:col-span-7">
           {site.calendarEmbedUrl ? (
