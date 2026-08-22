@@ -10,6 +10,7 @@ import Testimonials from '../sections/Testimonials.jsx';
 import Faq from '../sections/Faq.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
+import StickyMobileCta from '../components/StickyMobileCta.jsx';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <StickyMobileCta />
     </>
   );
 }

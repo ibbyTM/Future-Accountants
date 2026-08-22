@@ -5,6 +5,7 @@ import System from '../sections/System.jsx';
 import Faq from '../sections/Faq.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
+import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import { site } from '../site.config.js';
 
 export default function OfferPage() {
@@ -37,6 +38,7 @@ export default function OfferPage() {
         <FinalCta />
       </main>
       <Footer />
+      <StickyMobileCta />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Navbar from '../sections/Navbar.jsx';
 import CtaButton from '../components/CtaButton.jsx';
 import Footer from '../sections/Footer.jsx';
+import StickyMobileCta from '../components/StickyMobileCta.jsx';
 
 /*
  * Author-detail page — where the stripe-press recipe does its real work:
@@ -137,6 +138,7 @@ export default function AboutPage() {
         </section>
       </main>
       <Footer />
+      <StickyMobileCta />
     </>
   );
 }
