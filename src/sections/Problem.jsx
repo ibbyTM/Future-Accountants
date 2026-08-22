@@ -1,15 +1,15 @@
 const pains = [
   {
-    title: 'You are the bottleneck',
-    body: 'If the work stops when you stop, you don’t own a practice — it owns you.',
+    title: 'The AI space is full of fakers',
+    body: 'Coaches chasing a bandwagon and kids with demo data. Almost none of them have run a firm.',
   },
   {
-    title: 'Compliance is being commoditised',
-    body: 'AI already does the grunt work. Compliance-only firms now compete on price.',
+    title: 'Your hours are already spoken for',
+    body: 'Compliance, emails, chasing clients. The work that grows the firm never gets the time.',
   },
   {
-    title: 'You know AI matters. Nobody shows you how.',
-    body: 'Endless tools, no system. What’s missing is a plan built for how a firm runs.',
+    title: 'Tools are not a strategy',
+    body: 'Subscriptions pile up and nothing joins together. What a firm needs is one system.',
   },
 ];
 
@@ -19,11 +19,9 @@ export default function Problem() {
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <div className="col-span-12 lg:col-span-5">
           <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
-            Working harder <em className="text-accent">isn’t a strategy.</em>
+            Cheap promises <em className="text-accent">don’t build great firms.</em>
           </h2>
-          <p className="mt-6 max-w-md">
-            The old model is breaking. Three ways:
-          </p>
+          <p className="mt-6 max-w-md">AI isn’t magic. It’s leverage. Three problems first:</p>
         </div>
         <ol className="col-span-12 border-t border-line lg:col-span-7">
           {pains.map((p, i) => (

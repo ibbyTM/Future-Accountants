@@ -1,8 +1,9 @@
-# Future Accountant — Damon Millar Funnel Site
+# Firm of the Future | Damon Millar Funnel Site
 
-Conversion funnel for Damon Millar's AI mentorship offer ("Future
-Accountant"), built by Nexus Edge (Lucrum AI Ltd). Replaces the old
-dgm84.com brochure site. Four pages, one goal: **book a call**.
+Conversion funnel for Damon Millar's Firm of the Future AI programmes,
+built by Nexus Edge (Lucrum AI Ltd). Content is sourced from the "AI
+Programmes for Firms" deck. Four pages, one goal: **book a scoping call**.
+No pricing appears on the site by design; investment is covered on the call.
 
 | Page | Purpose |
 | --- | --- |
@@ -46,15 +47,10 @@ Anything still awaiting real content renders inside a dashed gold
 `Placeholder` marker (`src/components/Placeholder.jsx`) so it can't ship
 unnoticed.
 
-## ⚠️ Open questions — confirm with Damon before launch
+## Open questions before launch
 
-1. **Calendar embed URL** — Calendly/GHL link for `/book` (`calendarEmbedUrl` in `src/site.config.js`, currently unset)
-2. **Brand palette** — magenta/charcoal matched to dgm84.com; confirm exact magenta hex + any brand assets
-3. **Real testimonials** — three flagged slots in `src/sections/Testimonials.jsx`; do not launch with placeholders
-4. **Real photography of Damon** — flagged slot in the About section (no stock/AI imagery)
-5. **Final offer name** — "Future Accountant" used throughout, pending sign-off
-6. **Final domain + OG image** — `og:url` and `og-image.jpg` in `index.html` are placeholders
-7. **"As seen in" media mentions** — flagged in the proof bar; needs real logos or removal
-8. **AI coaching mechanism copy** — the "AI-assisted coaching" card needs Damon's confirmation of what it actually is
-9. **Book cover artwork** — three flagged slots on `/about`
-10. **Weekly time commitment + pricing stance** — flagged in the FAQ answers
+1. **Calendar embed URL** for `/book` (`calendarEmbedUrl` in `src/site.config.js`, currently unset)
+2. **Real cutout photo of Damon** at `public/damon-cutout.png` (B&W, background removed)
+3. **Book cover artwork** for the three flagged slots on `/about`
+4. **Final domain + OG image** (`og:url` and `og-image.jpg` in the four HTML files)
+5. **Exact magenta hex** sign-off (tokens in `src/index.css`)

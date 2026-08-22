@@ -1,9 +1,11 @@
+import Placeholder from '../components/Placeholder.jsx';
+
 const facts = [
-  'Accountant by training, entrepreneur by instinct',
-  'Managing Partner, Thompson Millar Wright & Partners · head of SA Tax Law Partnership',
-  'Bestselling author of Business DNA and Covid BOUNCE BACK!',
-  'Creator of The Business DNA System™, with Clare Thompson',
-  'UK keynote speaker — direct, step-by-step, no fluff',
+  'Pioneer in AI implementation for accounting firms',
+  'Founder of the AI Accountant™ and Firm of the Future™ frameworks',
+  'Built his own firm, Switch Accountants, to 8 UK offices and 117+ people',
+  'Author of 20+ business books, including Business DNA and Artificially Intelligent!',
+  'Helping firms across the UK, Australia, North America and beyond',
 ];
 
 export default function About() {
@@ -15,12 +17,11 @@ export default function About() {
             About Damon
           </p>
           <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
-            He’s not teaching theory. He’s running the playbook{' '}
-            <em className="text-accent">in his own firms.</em>
+            The accountant <em className="text-accent">building the future.</em>
           </h2>
           <p className="mt-6 max-w-xl">
-            Damon Millar still sits across the table from clients every week. Nothing in this
-            mentorship is theory.
+            Real practice experience combined with deep technical knowledge. His own firm runs at
+            65% AI coverage, so nothing he teaches is theory.
           </p>
           <ul className="mt-10 border-t border-line">
             {facts.map(f => (
@@ -33,8 +34,7 @@ export default function About() {
         <div className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
           <figure className="relative flex aspect-[4/5] items-center justify-center bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
             <figcaption className="max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
-              Real B&amp;W photograph of Damon goes here — request from client (no stock / AI
-              imagery).
+              <Placeholder>Real B&amp;W photograph of Damon goes here. Request from client.</Placeholder>
             </figcaption>
           </figure>
         </div>

@@ -4,7 +4,7 @@ import Footer from '../sections/Footer.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 
 /*
- * Author-detail page — where the stripe-press recipe does its real work:
+ * Author-detail page, where the stripe-press recipe does its real work:
  * books laid out as featured objects (never a card grid), the system's
  * story, speaking and the weekly webinar. Cover images are honest asset
  * slots until real artwork is supplied.
@@ -13,20 +13,20 @@ const books = [
   {
     title: 'Business DNA',
     edition: '10th Anniversary Edition',
-    line: 'The bestselling blueprint behind The Business DNA System™.',
-    cover: 'Real cover artwork needed — request from Damon',
+    line: 'The bestselling blueprint for unlocking the hidden potential in your business.',
+    cover: 'Real cover artwork needed. Request from Damon',
+  },
+  {
+    title: 'Artificially Intelligent!',
+    edition: 'With Clare Thompson',
+    line: '101 ways to unleash the power of AI for your business.',
+    cover: 'Real cover artwork needed. Request from Damon',
   },
   {
     title: 'Covid BOUNCE BACK!',
-    edition: 'Co-authored with Clare Thompson',
-    line: 'The practical playbook for rebuilding through disruption.',
-    cover: 'Real cover artwork needed — request from Damon',
-  },
-  {
-    title: 'The AI book',
-    edition: 'Forthcoming',
-    line: 'Putting AI to work inside real businesses — the mentorship runs the method ahead of print.',
-    cover: 'Title & cover TBC — confirm with Damon',
+    edition: 'With Clare Thompson',
+    line: 'The practical playbook for how your business can thrive through disruption.',
+    cover: 'Real cover artwork needed. Request from Damon',
   },
 ];
 
@@ -66,9 +66,10 @@ export default function AboutPage() {
             Accountant by training. <em className="text-accent">Business builder by instinct.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            Managing Partner of Thompson Millar Wright &amp; Partners, head of SA Tax Law
-            Partnership — and still across the table from clients every week. Nothing he
-            teaches is theory.
+            Pioneer in AI implementation for accounting firms and founder of Switch
+            Accountants, an eight-office UK firm running at 65% AI coverage. Real practice
+            experience, deep technical knowledge, and still across the table from clients
+            every week.
           </p>
         </section>
 
@@ -77,6 +78,10 @@ export default function AboutPage() {
             <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
               The books.
             </h2>
+            <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-muted">
+              20+ business books on profit, growth, AI and building valuable businesses.
+              Three of the best known:
+            </p>
             <div className="mt-12">
               {books.map((b, i) => (
                 <BookRow key={b.title} book={b} flip={i % 2 === 1} />
@@ -88,13 +93,16 @@ export default function AboutPage() {
         <section className="mx-auto max-w-4xl px-5 py-20 sm:py-28">
           <blockquote className="border-l-2 border-accent pl-8 sm:pl-12">
             <p className="font-display text-3xl font-medium italic leading-[1.25] text-ink sm:text-[2.6rem]">
-              “Business should serve you — <span className="text-accent">not the other way round.”</span>
+              “My mission: to help practice owners build highly profitable,{' '}
+              <span className="text-accent">future-ready firms.”</span>
             </p>
           </blockquote>
           <p className="mt-10 max-w-2xl pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
-            That line became <strong className="font-semibold text-ink">The Business DNA System™</strong>{' '}
-            — 52 weeks, developed with Clare Thompson over 15+ years. The foundation of
-            everything here.
+            Using the power of AI, strategic thinking and proven systems. Founder of the{' '}
+            <strong className="font-semibold text-ink">AI Accountant™</strong> and{' '}
+            <strong className="font-semibold text-ink">Firm of the Future™</strong> frameworks,
+            The Business DNA System™, the Accountant’s Bootcamp and the AI Academy for
+            accountants.
           </p>
         </section>
 
@@ -105,7 +113,8 @@ export default function AboutPage() {
                 On stage.
               </h2>
               <p className="mt-5 max-w-md text-[17px] leading-relaxed text-muted">
-                Direct, no-fluff, step-by-step keynotes — always “here’s the actual system”.
+                Direct, no-fluff, step-by-step keynotes at conferences, events and mastermind
+                groups worldwide. Always “here’s the actual system”.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-6">
@@ -113,7 +122,7 @@ export default function AboutPage() {
                 Live, every week.
               </h2>
               <p className="mt-5 max-w-md text-[17px] leading-relaxed text-muted">
-                “Ask Damon Anything” — real problems, unscripted answers, every week.
+                “Ask Damon Anything”: real problems, unscripted answers, every week.
               </p>
             </div>
           </div>

@@ -4,9 +4,8 @@ import CtaButton from '../components/CtaButton.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Editorial split hero: asymmetric 12-col composition. Copy sits on a wide
- * left measure; Damon's B&W cutout stands on a flat ink plate (book-cover
- * treatment) offset to the right, breaking the plate's top edge.
+ * Editorial split hero. Copy sits on a wide left measure; Damon's B&W
+ * cutout stands on a flat ink plate offset right.
  *
  * Drop the real background-removed photo at public/damon-cutout.png and it
  * renders automatically; while the file is missing an honest asset slot
@@ -15,7 +14,6 @@ import { site } from '../site.config.js';
 function PhotoPlate({ children }) {
   return (
     <div className="relative">
-      {/* ink plate — flat, sharp-cornered, honest shadow */}
       <div className="absolute inset-x-0 bottom-0 top-16 bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]" />
       {children}
     </div>
@@ -39,9 +37,8 @@ function HeroPhoto() {
       <PhotoPlate>
         <div className="relative flex aspect-[3/4] items-end justify-center">
           <p className="mb-16 max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
-            Real B&amp;W cutout photo of Damon goes here — his image is the
-            brand. High-res, front-facing, background removed (no stock / AI
-            imagery).
+            Real B&amp;W cutout photo of Damon goes here. His image is the brand: high-res,
+            front-facing, background removed. No stock or AI imagery.
           </p>
         </div>
       </PhotoPlate>
@@ -67,24 +64,20 @@ function HeroPhoto() {
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-16">
-      {/* ReactBits Noise — paper grain over the bone ground */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden opacity-60">
         <Noise patternSize={220} patternAlpha={9} patternRefreshInterval={4} />
       </div>
       <div className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-6 px-5">
         <div className="col-span-12 pt-16 sm:pt-20 lg:col-span-7 lg:pb-20 lg:pt-28">
           <p className="mb-8 border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
-            {site.offerName}
-            <span className="font-semibold text-muted"> · AI mentorship with Damon Millar</span>
+            AI. Strategy. Systems. Growth.
           </p>
           <h1 className="font-display text-[2.75rem] font-medium leading-[1.08] tracking-[-0.01em] text-ink sm:text-6xl xl:text-[4.25rem]">
-            AI is rewriting the rules of accountancy.{' '}
-            <em className="text-accent">Learn them first.</em>
+            Building the <em className="text-accent">Firm of the Future.</em>
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl">
-            No-fluff mentorship from a bestselling author and practising tax partner — showing
-            accountants and ambitious business owners exactly how to put AI to work in their
-            firm, step by step.
+          <p className="mx-auto mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl">
+            A practical AI roadmap for accounting firms, from the man who built his own firm to
+            65% AI coverage. We build it in our firm. Now we help other firms build theirs.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-7">
             <CtaButton />
@@ -96,8 +89,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="mt-14 border-t border-line pt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-            Bestselling author · Managing Partner, Thompson Millar Wright &amp; Partners · UK
-            keynote speaker
+            Author of 20+ business books · Founder, Switch Accountants · UK keynote speaker
           </p>
         </div>
         <div className="col-span-12 mx-auto w-full max-w-xs pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pt-24">

@@ -6,9 +6,9 @@ import { site } from '../site.config.js';
  * Set site.calendarEmbedUrl to render the real Calendly/GHL iframe.
  */
 const steps = [
-  { title: 'Where you are', body: 'What’s working, what’s eating your hours.' },
-  { title: 'What AI should be doing', body: 'A clear picture for your practice — join or not.' },
-  { title: 'Whether this is the right fit', body: 'If it isn’t, you’ll be told straight.' },
+  { title: 'Scope', body: 'We get to know your firm, current systems, team and priorities.' },
+  { title: 'Prioritise', body: 'We identify where AI makes the biggest and fastest impact.' },
+  { title: 'Choose', body: 'We help you decide which route and level of support fits.' },
 ];
 
 export default function BookPage() {
@@ -30,10 +30,10 @@ export default function BookPage() {
             {site.offerName}
           </p>
           <h1 className="font-display text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
-            Book your call.
+            Book your scoping call.
           </h1>
           <p className="mt-6 max-w-md text-lg leading-[1.65]">
-            Thirty minutes, three things covered:
+            No pressure. No big decision today. Just the next conversation.
           </p>
           <ol className="mt-8 space-y-7">
             {steps.map((s, i) => (
@@ -49,7 +49,7 @@ export default function BookPage() {
             ))}
           </ol>
           <p className="mt-10 border-t border-line pt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-            No hard sell. No obligation.
+            Your firm. Your priorities. Your AI roadmap.
           </p>
         </div>
         <div className="col-span-12 lg:col-span-7">
@@ -62,7 +62,7 @@ export default function BookPage() {
           ) : (
             <div className="flex min-h-[560px] items-center justify-center border border-dashed border-accent/60 bg-surface p-8 lg:min-h-[680px]">
               <p className="max-w-sm text-center font-sans text-sm leading-relaxed text-accent">
-                Calendar embed goes here — set <code className="font-semibold">calendarEmbedUrl</code>{' '}
+                Calendar embed goes here. Set <code className="font-semibold">calendarEmbedUrl</code>{' '}
                 in <code className="font-semibold">src/site.config.js</code> to the confirmed
                 Calendly / GHL link and the booking calendar renders in this slot.
               </p>

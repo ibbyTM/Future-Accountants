@@ -2,7 +2,9 @@ import Navbar from '../sections/Navbar.jsx';
 import Hero from '../sections/Hero.jsx';
 import ProofBar from '../sections/ProofBar.jsx';
 import Problem from '../sections/Problem.jsx';
+import OperatingSystem from '../sections/OperatingSystem.jsx';
 import Offer from '../sections/Offer.jsx';
+import Guarantee from '../sections/Guarantee.jsx';
 import WhoItsFor from '../sections/WhoItsFor.jsx';
 import System from '../sections/System.jsx';
 import About from '../sections/About.jsx';
@@ -20,7 +22,9 @@ export default function Home() {
         <Hero />
         <ProofBar />
         <Problem />
+        <OperatingSystem />
         <Offer />
+        <Guarantee />
         <WhoItsFor />
         <System />
         <About />

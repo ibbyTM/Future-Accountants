@@ -1,45 +1,36 @@
-import Placeholder from '../components/Placeholder.jsx';
 import { site } from '../site.config.js';
 
 /*
  * Flat editorial FAQ: native <details> accordions with hairline rules and
- * a typographic +/− indicator. No cards, no icon library, no JS state.
- * Answers with unconfirmed facts carry visible placeholder flags.
+ * a typographic +/x indicator. Answers are grounded in the programme deck.
  */
 const faqs = [
+  {
+    q: 'What exactly is the Foundational Practice AI System?',
+    a: (
+      <>
+        Ten AI employees built for your firm in the right order, starting with the AI Firm
+        Brain that learns your practice and powers everything else. It covers meetings, email,
+        bookkeeping, client success, marketing, finance, tax and strategy.
+      </>
+    ),
+  },
+  {
+    q: 'What’s the difference between the two routes?',
+    a: (
+      <>
+        The destination is the same. With the mentored route your team implements with Damon’s
+        weekly guidance and full support. With the done-for-you route his AI development team
+        builds, tailors and implements the whole system in 90 days.
+      </>
+    ),
+  },
   {
     q: 'I’m not technical. Will I keep up?',
     a: (
       <>
-        Yes — it’s built for practitioners, not programmers. Every move comes step by step, in
-        plain English, with the exact prompts to copy.
-      </>
-    ),
-  },
-  {
-    q: 'How is this different from a course?',
-    a: (
-      <>
-        A course gives you videos and wishes you luck. This is live mentorship on your firm —
-        your pricing, your clients — built on The Business DNA System™.
-      </>
-    ),
-  },
-  {
-    q: 'I run a business, not an accountancy practice. Is this still for me?',
-    a: (
-      <>
-        Yes. It was built for ambitious business owners as much as accountants — Damon has
-        spent his career on both sides of that table.
-      </>
-    ),
-  },
-  {
-    q: 'How much time does it take each week?',
-    a: (
-      <>
-        One practical move at a time — designed around a working week, not a second job.{' '}
-        <Placeholder>Exact weekly time commitment — confirm with Damon</Placeholder>
+        Yes. This is built for practitioners, not programmers. Every move comes step by step,
+        in plain English, and on the done-for-you route the technical work is done for you.
       </>
     ),
   },
@@ -47,17 +38,27 @@ const faqs = [
     q: 'What does it cost?',
     a: (
       <>
-        Covered on the call — it depends on where your firm is.{' '}
-        <Placeholder>Confirm pricing approach / whether to state a figure — ask Damon</Placeholder>
+        Investment is covered on your scoping call, once we understand your firm and which
+        route fits. No pressure and no big decision on the day. Just the next conversation.
       </>
     ),
   },
   {
-    q: 'How do I join?',
+    q: 'What if it doesn’t work for my firm?',
     a: (
       <>
-        Book a call. You’ll leave with a clear picture of what AI should be doing in your
-        practice — whether you join or not.
+        Every programme client gets the 100% risk-free guarantee. If you’re unhappy with the
+        progress made in your first 90 days, we keep working with you at no extra cost until
+        you are 100% happy.
+      </>
+    ),
+  },
+  {
+    q: 'How do I start?',
+    a: (
+      <>
+        Book a scoping call. We look at your firm, your systems and your priorities, and you
+        leave with a clear picture of what AI should be doing in your practice.
       </>
     ),
   },
@@ -72,7 +73,7 @@ export default function Faq() {
             Fair <em className="text-accent">questions.</em>
           </h2>
           <p className="mt-5 max-w-xs text-[17px] leading-relaxed text-muted">
-            Anything else — ask on the call. You’ll get a straight answer.
+            Anything else, ask on the call. You’ll get a straight answer.
           </p>
         </div>
         <div className="col-span-12 border-t border-line lg:col-span-8">

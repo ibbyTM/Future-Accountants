@@ -1,11 +1,11 @@
 /*
- * Qualification block — filters call quality for a high-ticket offer.
- * Two rule-topped columns, em-dash lists, no cards.
+ * Qualification block. Two rule-topped columns, em-dash list markers,
+ * no cards.
  */
 const forYou = [
-  'You’re done trading hours for fees',
-  'You want a system, not another pile of tools',
-  'You’ll implement, week by week',
+  'You run an accounting or professional services firm',
+  'You want proof and systems, not hype',
+  'You’ll put the work in, or have us do it for you',
 ];
 
 const notForYou = [
