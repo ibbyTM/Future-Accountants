@@ -77,7 +77,10 @@ export default function Offer({ heading }) {
             <ul className={`mt-6 space-y-3 border-t pt-6 ${r.ink ? 'border-ground/25' : 'border-line'}`}>
               {r.points.map(p => (
                 <li key={p} className={`flex gap-3 text-[16px] leading-relaxed ${r.ink ? 'text-ground/80' : 'text-body'}`}>
-                  <span aria-hidden="true" className={r.ink ? 'text-accent-soft brightness-150' : 'text-accent'}>—</span>
+                  <span
+                    aria-hidden="true"
+                    className={`mt-2.5 size-1.5 shrink-0 ${r.ink ? 'bg-ground/60' : 'bg-accent'}`}
+                  />
                   <span>{p}</span>
                 </li>
               ))}

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 /*
- * Count-up number adapted from 21st.dev "Number Ticker" (@danielpetho) —
+ * Count-up number adapted from 21st.dev "Number Ticker" (@danielpetho):
  * the tween-triggered-on-view pattern, reimplemented on rAF so it needs no
  * animation library. Renders the final value straight away under
  * prefers-reduced-motion.

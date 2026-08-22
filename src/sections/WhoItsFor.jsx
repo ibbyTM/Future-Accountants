@@ -1,5 +1,5 @@
 /*
- * Qualification block. Two rule-topped columns, em-dash list markers,
+ * Qualification block. Two rule-topped columns, square list markers,
  * no cards.
  */
 const forYou = [
@@ -20,10 +20,11 @@ function List({ title, items, accent }) {
       <h3 className="font-display text-2xl font-medium italic text-ink sm:text-3xl">{title}</h3>
       <ul className="mt-6 space-y-4">
         {items.map(item => (
-          <li key={item} className="flex gap-4 text-[17px] leading-relaxed text-body">
-            <span aria-hidden="true" className={accent ? 'text-accent' : 'text-muted'}>
-              —
-            </span>
+          <li key={item} className="flex items-baseline gap-4 text-[17px] leading-relaxed text-body">
+            <span
+              aria-hidden="true"
+              className={`size-1.5 shrink-0 self-center ${accent ? 'bg-accent' : 'bg-muted'}`}
+            />
             <span>{item}</span>
           </li>
         ))}

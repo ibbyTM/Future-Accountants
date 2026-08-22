@@ -3,7 +3,7 @@ import { site } from '../site.config.js';
 
 /*
  * Mobile-only sticky booking bar. Scroll evaluation adapted from the
- * 21st.dev "Hide On Scroll" component (@ddoemonn) — its rAF-throttled
+ * 21st.dev "Hide On Scroll" component (@ddoemonn): its rAF-throttled
  * scroll listener pattern, with the direction accumulator swapped for
  * past-the-hero logic. An IntersectionObserver hides the bar while the
  * final CTA section (#book) is on screen so the two never stack.

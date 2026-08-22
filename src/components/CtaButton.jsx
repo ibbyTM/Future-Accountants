@@ -2,7 +2,7 @@ import GlareHover from './reactbits/GlareHover.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Primary conversion button — a flat rectangle (radius 0, editorial system)
+ * Primary conversion button: a flat rectangle (radius 0, editorial system)
  * with a ReactBits GlareHover sweep on hover. tone="ink" for cream grounds,
  * tone="ground" for the ink final-CTA band.
  */

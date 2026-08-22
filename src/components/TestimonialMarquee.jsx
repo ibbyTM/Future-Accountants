@@ -1,5 +1,5 @@
 /*
- * Testimonial marquee — adapted from the shadcn-style TestimonialMarquee
+ * Testimonial marquee, adapted from the shadcn-style TestimonialMarquee
  * (flush variant) to this project's plain-JSX editorial system: sharp
  * corners, hairline dividers, serif italic quotes, ground-colour edge
  * fades. Pauses on hover and under prefers-reduced-motion.
