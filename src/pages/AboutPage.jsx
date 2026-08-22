@@ -2,6 +2,7 @@ import Navbar from '../sections/Navbar.jsx';
 import CtaButton from '../components/CtaButton.jsx';
 import CountUp from '../components/CountUp.jsx';
 import Footer from '../sections/Footer.jsx';
+import Reveal from '../components/Reveal.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 
 /*
@@ -58,7 +59,7 @@ const switchStats = [
 
 function BookRow({ book, flip }) {
   return (
-    <div className="grid grid-cols-12 items-center gap-x-6 gap-y-8 border-t border-line py-14">
+    <Reveal className="grid grid-cols-12 items-center gap-x-6 gap-y-8 border-t border-line py-14">
       <div className={`col-span-12 sm:col-span-4 lg:col-span-3 ${flip ? 'sm:order-2 sm:col-start-10 lg:col-start-10' : ''}`}>
         <div className="mx-auto flex aspect-[3/4] w-full max-w-[240px] items-center justify-center bg-ink p-5 shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
           <p className="border border-dashed border-ground/50 p-3 text-center font-sans text-xs leading-relaxed text-ground/90">
@@ -75,7 +76,7 @@ function BookRow({ book, flip }) {
         </h3>
         <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-muted">{book.line}</p>
       </div>
-    </div>
+    </Reveal>
   );
 }
 
@@ -101,13 +102,13 @@ export default function AboutPage() {
         {/* Identity blocks */}
         <section className="mx-auto max-w-6xl px-5 pb-20">
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-            {identities.map(i => (
-              <div key={i.role} className="border-t-2 border-ink pt-4">
+            {identities.map((i, idx) => (
+              <Reveal key={i.role} delay={idx * 80} className="border-t-2 border-ink pt-4">
                 <h2 className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-accent">
                   {i.role}
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{i.detail}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>

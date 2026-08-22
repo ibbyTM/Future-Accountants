@@ -1,4 +1,5 @@
 import Placeholder from '../components/Placeholder.jsx';
+import Reveal from '../components/Reveal.jsx';
 
 const facts = [
   'Pioneer in AI implementation for accounting firms',
@@ -12,7 +13,7 @@ export default function About() {
   return (
     <section id="about" className="border-y border-line bg-surface">
       <div className="mx-auto grid max-w-6xl grid-cols-12 gap-x-6 gap-y-12 px-5 py-24 sm:py-32">
-        <div className="col-span-12 lg:col-span-7">
+        <Reveal className="col-span-12 lg:col-span-7">
           <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
             About Damon
           </p>
@@ -25,19 +26,19 @@ export default function About() {
           </p>
           <ul className="mt-10 border-t border-line">
             {facts.map(f => (
-              <li key={f} className="border-b border-line py-4 text-[16px] leading-relaxed text-body">
+              <li key={f} className="border-b border-line py-4 text-[16px] leading-relaxed text-body transition-colors duration-200 hover:text-ink">
                 {f}
               </li>
             ))}
           </ul>
-        </div>
-        <div className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
+        </Reveal>
+        <Reveal delay={140} className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
           <figure className="relative flex aspect-[4/5] items-center justify-center bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
             <figcaption className="max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
               <Placeholder>Real B&amp;W photograph of Damon goes here. Request from client.</Placeholder>
             </figcaption>
           </figure>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

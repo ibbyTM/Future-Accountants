@@ -34,6 +34,39 @@
   }
 }
 
+/* Hero entrance: one-time staggered arrival. Collapses under reduced motion. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.hero-enter {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.rule-enter {
+  transform-origin: left;
+  animation: rule-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .rule-enter {
+    animation: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

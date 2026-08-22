@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal.jsx';
+
 /*
  * Qualification block. Two rule-topped columns, square list markers,
  * no cards.
@@ -36,12 +38,14 @@ function List({ title, items, accent }) {
 export default function WhoItsFor() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
-      <h2 className="max-w-2xl font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
-        This works. But only <em className="text-accent">for the right people.</em>
-      </h2>
+      <Reveal>
+        <h2 className="max-w-2xl font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
+          This works. But only <em className="text-accent">for the right people.</em>
+        </h2>
+      </Reveal>
       <div className="mt-14 grid gap-x-10 gap-y-12 lg:grid-cols-2">
-        <List title="This is for you if…" items={forYou} accent />
-        <List title="This isn’t for you if…" items={notForYou} />
+        <Reveal><List title="This is for you if…" items={forYou} accent /></Reveal>
+        <Reveal delay={120}><List title="This isn’t for you if…" items={notForYou} /></Reveal>
       </div>
     </section>
   );

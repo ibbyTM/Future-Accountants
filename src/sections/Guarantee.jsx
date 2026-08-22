@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal.jsx';
+
 /*
  * The 100% risk-free guarantee, verbatim in substance from the deck.
  * Offered to every programme client.
@@ -5,7 +7,7 @@
 export default function Guarantee() {
   return (
     <section className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">
+      <Reveal className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">
         <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-accent">
           100% risk-free guarantee
         </p>
@@ -17,7 +19,7 @@ export default function Guarantee() {
         <p className="mt-6 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
           Offered to every single programme client
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

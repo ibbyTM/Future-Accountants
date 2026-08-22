@@ -14,7 +14,11 @@ export default function Navbar() {
         </a>
         <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted sm:flex">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="transition-colors hover:text-ink">
+            <a
+              key={l.href}
+              href={l.href}
+              className="relative transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-ink after:transition-transform after:duration-300 hover:text-ink hover:after:scale-x-100 motion-reduce:after:transition-none"
+            >
               {l.label}
             </a>
           ))}

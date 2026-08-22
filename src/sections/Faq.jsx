@@ -1,3 +1,4 @@
+import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
 /*
@@ -77,10 +78,11 @@ export default function Faq() {
           </p>
         </div>
         <div className="col-span-12 border-t border-line lg:col-span-8">
-          {faqs.map(f => (
-            <details key={f.q} className="group border-b border-line">
+          {faqs.map((f, i) => (
+            <Reveal key={f.q} delay={i * 60}>
+            <details className="group border-b border-line">
               <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
-                <span className="font-display text-xl font-medium text-ink sm:text-2xl">
+                <span className="font-display text-xl font-medium text-ink transition-colors duration-200 group-hover:text-accent sm:text-2xl">
                   {f.q}
                 </span>
                 <span
@@ -92,6 +94,7 @@ export default function Faq() {
               </summary>
               <div className="max-w-2xl pb-8 text-[17px] leading-relaxed text-body">{f.a}</div>
             </details>
+            </Reveal>
           ))}
         </div>
       </div>

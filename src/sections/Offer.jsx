@@ -1,3 +1,4 @@
+import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
 /*
@@ -43,7 +44,7 @@ const steps = [
 export default function Offer({ heading }) {
   return (
     <section id="offer" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
-      <div className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
+      <Reveal className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
         <div className="col-span-12 lg:col-span-7">
           <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
             {heading ?? (
@@ -58,12 +59,13 @@ export default function Offer({ heading }) {
           Both routes build your Foundational Practice AI System. The difference is who does the
           work and how fast.
         </p>
-      </div>
+      </Reveal>
 
       <div className="mt-14 grid gap-4 lg:grid-cols-2">
-        {routes.map(r => (
-          <div
+        {routes.map((r, ri) => (
+          <Reveal
             key={r.name}
+            delay={ri * 120}
             className={`border p-8 ${
               r.ink ? 'border-ink bg-ink text-ground' : 'border-line bg-surface'
             }`}
@@ -85,7 +87,7 @@ export default function Offer({ heading }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         ))}
       </div>
       <p className="mt-6 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
@@ -101,7 +103,7 @@ export default function Offer({ heading }) {
         </p>
         <ol className="mt-10 grid gap-y-10 sm:grid-cols-5 sm:gap-x-0">
           {steps.map((s, i) => (
-            <li key={s.title} className="flex gap-5 sm:block sm:pr-6">
+            <Reveal as="li" key={s.title} delay={i * 80} className="flex gap-5 sm:block sm:pr-6">
               <div className="flex flex-col items-center sm:mb-4 sm:flex-row">
                 <span className="flex size-11 shrink-0 items-center justify-center border border-ink font-display text-lg font-medium italic text-accent">
                   {i + 1}
@@ -119,7 +121,7 @@ export default function Offer({ heading }) {
                 </h4>
                 <p className="mt-2 text-[14px] leading-relaxed text-muted">{s.body}</p>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>

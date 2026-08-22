@@ -3,6 +3,7 @@ import Guarantee from '../sections/Guarantee.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
+import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
 /*
@@ -108,13 +109,13 @@ export default function OfferPage() {
                 </p>
               </div>
               <div className="col-span-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
-                {withYou.map(item => (
-                  <div key={item.tag} className="border-t-2 border-ink pt-4">
+                {withYou.map((item, i) => (
+                  <Reveal key={item.tag} delay={i * 70} className="border-t-2 border-ink pt-4">
                     <p className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent">
                       {item.tag}
                     </p>
                     <p className="mt-2 text-[16px] font-semibold leading-snug text-ink">{item.name}</p>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -187,7 +188,7 @@ export default function OfferPage() {
               </thead>
               <tbody>
                 {comparison.map(([what, a, b]) => (
-                  <tr key={what} className="border-b border-line">
+                  <tr key={what} className="border-b border-line transition-colors duration-200 hover:bg-surface/60">
                     <td className="py-4 pr-4 text-[15px] font-semibold text-ink">{what}</td>
                     <td className="py-4 pr-4 text-[15px] text-body">{a}</td>
                     <td className="py-4 text-[15px] text-body">{b}</td>
@@ -217,14 +218,14 @@ export default function OfferPage() {
               </p>
             </div>
             <div className="mt-10 grid gap-4 lg:grid-cols-3">
-              {academy.map(t => (
-                <div key={t.name} className="border border-line bg-ground p-7">
+              {academy.map((t, i) => (
+                <Reveal key={t.name} delay={i * 90} className="border border-line bg-ground p-7 transition-colors duration-300 hover:border-ink">
                   <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
                     {t.level} · {t.verb}
                   </p>
                   <h3 className="mt-2 font-display text-2xl font-medium italic text-ink">{t.name}</h3>
                   <p className="mt-4 text-[15px] leading-relaxed text-muted">{t.body}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -247,9 +248,9 @@ export default function OfferPage() {
             </div>
             <ul className="col-span-12 border-t border-line lg:col-span-7">
               {beyond.map(b => (
-                <li key={b} className="flex items-center gap-4 border-b border-line py-4">
-                  <span aria-hidden="true" className="size-1.5 shrink-0 bg-accent" />
-                  <span className="text-[17px] text-body">{b}</span>
+                <li key={b} className="group flex items-center gap-4 border-b border-line py-4">
+                  <span aria-hidden="true" className="size-1.5 shrink-0 bg-accent transition-transform duration-200 group-hover:scale-150" />
+                  <span className="text-[17px] text-body transition-colors duration-200 group-hover:text-ink">{b}</span>
                 </li>
               ))}
             </ul>
