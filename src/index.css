@@ -13,13 +13,13 @@
    * as the single foil-stamp accent. Confirm exact magenta hex with team.
    */
   --color-ink: #1a1a18; /* warm near-black — text, plates, primary CTA */
-  --color-ground: #f1ecde; /* warm bone page ground */
-  --color-surface: #e6dcc4; /* darker bone for section breaks */
+  --color-ground: #f4f2ec; /* warm paper, yellow pulled back */
+  --color-surface: #eae6db; /* warm greige for section breaks */
   --color-accent: #b0104f; /* Damon's magenta, deepened for cream ground */
   --color-accent-soft: #8e0c40; /* hover state of the accent */
-  --color-body: #4a463c; /* warm dark gray body text */
-  --color-muted: #736d5a; /* secondary text, captions */
-  --color-line: #c8bea4; /* hairlines */
+  --color-body: #46443c; /* warm dark gray body text */
+  --color-muted: #6f6a5e; /* secondary text, captions */
+  --color-line: #cec8ba; /* hairlines */
 
   /* Testimonial marquee */
   --animate-marquee-left: marquee-left var(--marquee-duration, 40s) linear infinite;
@@ -82,4 +82,10 @@ body {
   font-size: 18px;
   line-height: 1.65;
   text-wrap: pretty;
+  background-image: radial-gradient(
+    1100px 520px at 18% -5%,
+    rgba(255, 255, 255, 0.55),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
 }

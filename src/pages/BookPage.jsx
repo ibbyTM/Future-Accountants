@@ -1,3 +1,4 @@
+import PageGrain from '../components/PageGrain.jsx';
 import { site } from '../site.config.js';
 
 /*
@@ -14,6 +15,7 @@ const steps = [
 export default function BookPage() {
   return (
     <>
+      <PageGrain />
       <header className="border-b border-line">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
           <a href="/" className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">

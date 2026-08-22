@@ -1,3 +1,4 @@
+import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import Hero from '../sections/Hero.jsx';
 import ProofBar from '../sections/ProofBar.jsx';
@@ -17,6 +18,7 @@ import StickyMobileCta from '../components/StickyMobileCta.jsx';
 export default function Home() {
   return (
     <>
+      <PageGrain />
       <Navbar />
       <main>
         <Hero />

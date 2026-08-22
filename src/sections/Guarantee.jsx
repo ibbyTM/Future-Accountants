@@ -10,7 +10,7 @@ export default function Guarantee() {
       className="border-y border-line bg-surface"
       style={{
         backgroundImage:
-          'repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(200, 190, 164, 0.45) 27px, rgba(200, 190, 164, 0.45) 28px)',
+          'repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(206, 200, 186, 0.55) 27px, rgba(206, 200, 186, 0.55) 28px)',
       }}
     >
       <Reveal className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">

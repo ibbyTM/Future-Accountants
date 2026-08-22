@@ -1,3 +1,4 @@
+import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import CtaButton from '../components/CtaButton.jsx';
 import CountUp from '../components/CountUp.jsx';
@@ -83,6 +84,7 @@ function BookRow({ book, flip }) {
 export default function AboutPage() {
   return (
     <>
+      <PageGrain />
       <Navbar />
       <main>
         <section className="mx-auto max-w-6xl px-5 pb-16 pt-36 sm:pt-44">

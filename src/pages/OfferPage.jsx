@@ -1,3 +1,4 @@
+import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import Guarantee from '../sections/Guarantee.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
@@ -75,6 +76,7 @@ const beyond = [
 export default function OfferPage() {
   return (
     <>
+      <PageGrain />
       <Navbar />
       <main>
         <section className="mx-auto max-w-6xl px-5 pb-20 pt-36 sm:pt-44">

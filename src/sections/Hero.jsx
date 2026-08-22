@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Noise from '../components/reactbits/Noise.jsx';
 import CtaButton from '../components/CtaButton.jsx';
 import { site } from '../site.config.js';
 
@@ -64,9 +63,6 @@ function HeroPhoto() {
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-16">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden opacity-60">
-        <Noise patternSize={220} patternAlpha={9} patternRefreshInterval={4} />
-      </div>
       <div className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-6 px-5">
         <div className="col-span-12 pt-16 sm:pt-20 lg:col-span-7 lg:pb-20 lg:pt-28">
           <div className="rule-enter mb-0 border-t-2 border-ink" />
@@ -76,7 +72,7 @@ export default function Hero() {
           <h1 className="hero-enter font-display text-[2.75rem] font-medium leading-[1.08] tracking-[-0.01em] text-ink sm:text-6xl xl:text-[4.25rem]" style={{ animationDelay: '180ms' }}>
             Building the <em className="text-accent">Firm of the Future.</em>
           </h1>
-          <p className="hero-enter mx-auto mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl" style={{ animationDelay: '320ms' }}>
+          <p className="hero-enter mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl" style={{ animationDelay: '320ms' }}>
             A practical AI roadmap for accounting firms, from the man who built his own firm to
             65% AI coverage. We build it in our firm. Now we help other firms build theirs.
           </p>
