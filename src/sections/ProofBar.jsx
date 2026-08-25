@@ -5,13 +5,13 @@ import { useInView } from '../components/Reveal.jsx';
 /*
  * Colophon stats band. All figures from Damon's own deck: Switch
  * Accountants runs 8 UK offices with 117+ staff at 65% AI coverage,
- * and he has written 20+ business books.
+ * and hundreds of firms have been helped along the way.
  */
 const stats = [
   { n: 8, suffix: '', label: 'UK offices, our own firm' },
   { n: 117, suffix: '+', label: 'People, one team' },
   { n: 65, suffix: '%', label: 'Of work now done by AI' },
-  { n: 20, suffix: '+', label: 'Business books written' },
+  { n: 100, suffix: 's', label: 'Of firms helped' },
 ];
 
 function Stat({ s, i }) {
