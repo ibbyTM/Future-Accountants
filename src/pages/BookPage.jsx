@@ -1,5 +1,5 @@
 import PageGrain from '../components/PageGrain.jsx';
-import { site } from '../site.config.js';
+import { site, withBase } from '../site.config.js';
 
 /*
  * Dedicated conversion page. Deliberately minimal: wordmark, what happens
@@ -18,10 +18,10 @@ export default function BookPage() {
       <PageGrain />
       <header className="border-b border-line">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
-          <a href="/" className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
+          <a href={withBase('')} className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
             Damon Millar
           </a>
-          <a href="/" className="text-[13px] font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-ink">
+          <a href={withBase('')} className="text-[13px] font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-ink">
             ← Back to site
           </a>
         </div>

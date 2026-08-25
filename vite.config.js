@@ -26,6 +26,9 @@ const cleanUrls = () => ({
 });
 
 export default defineConfig({
+  // VITE_BASE lets the GitHub Pages workflow build for the repo subpath;
+  // local dev/preview and the eventual real domain use the default '/'.
+  base: process.env.VITE_BASE || '/',
   plugins: [react(), tailwindcss(), cleanUrls()],
   build: {
     rollupOptions: {

@@ -12,6 +12,11 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/about` | Author page — books, Business DNA System, speaking, weekly webinar |
 | `/book` | Distraction-free booking page; renders the calendar embed once `calendarEmbedUrl` is set in `src/site.config.js` |
 
+**Temporary preview**: every push to the working branch deploys to
+GitHub Pages at https://ibbytm.github.io/Future-Accountants/ (via
+`.github/workflows/deploy-pages.yml`). The real launch targets the
+client's domain; `vercel.json` is already in place for that.
+
 Built as a Vite multi-page app (real HTML per page, per-page meta).
 Clean URLs: `vercel.json` has `cleanUrls: true`; Netlify's "Pretty URLs"
 does the same; the Vite dev/preview servers rewrite `/about` etc. via a

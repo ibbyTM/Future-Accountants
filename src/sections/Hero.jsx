@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import CtaButton from '../components/CtaButton.jsx';
-import { site } from '../site.config.js';
+import { site, withBase } from '../site.config.js';
 
 /*
  * Editorial split hero. Copy sits on a wide left measure; Damon's B&W
@@ -47,7 +47,7 @@ function HeroPhoto() {
     <PhotoPlate>
       <img
         ref={imgRef}
-        src="/damon-cutout.png"
+        src={withBase('damon-cutout.png')}
         alt="Damon Millar"
         fetchPriority="high"
         className="relative block w-full"
