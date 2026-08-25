@@ -62,7 +62,7 @@ function HeroPhoto() {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-16">
+    <section id="top" className="relative pt-16">
       <div className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-6 px-5">
         <div className="col-span-12 pt-16 sm:pt-20 lg:col-span-7 lg:pb-20 lg:pt-28">
           <div className="rule-enter mb-0 border-t-2 border-ink" />
@@ -89,8 +89,10 @@ export default function Hero() {
             Author of 20+ business books · Founder, Switch Accountants · UK keynote speaker
           </p>
         </div>
-        <div className="hero-enter col-span-12 mx-auto w-full max-w-xs pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pt-24" style={{ animationDelay: '300ms' }}>
-          <HeroPhoto />
+        <div className="hero-enter relative z-10 col-span-12 mx-auto w-full max-w-xs pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pt-24" style={{ animationDelay: '300ms' }}>
+          <div className="lg:translate-y-20">
+            <HeroPhoto />
+          </div>
         </div>
       </div>
     </section>

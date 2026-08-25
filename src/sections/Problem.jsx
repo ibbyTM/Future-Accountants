@@ -17,7 +17,14 @@ const pains = [
 
 export default function Problem() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section className="relative overflow-hidden py-24 sm:py-32">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-20 left-[-3rem] hidden select-none font-display italic leading-none text-ink/[0.04] lg:block lg:text-[24rem]"
+      >
+        01
+      </span>
+      <div className="relative mx-auto max-w-6xl px-5">
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <Reveal className="col-span-12 lg:col-span-5">
           <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
@@ -43,6 +50,7 @@ export default function Problem() {
             </Reveal>
           ))}
         </ol>
+      </div>
       </div>
     </section>
   );

@@ -116,7 +116,13 @@ export default function AboutPage() {
         </section>
 
         {/* Switch proof band */}
-        <section className="bg-ink text-ground">
+        <section className="relative overflow-hidden bg-ink text-ground">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-8 -top-16 hidden select-none font-display italic leading-none text-ground/[0.05] lg:block lg:text-[20rem]"
+          >
+            65%
+          </span>
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
             <div className="grid grid-cols-12 gap-x-6 gap-y-12">
               <div className="col-span-12 lg:col-span-5">
@@ -170,8 +176,8 @@ export default function AboutPage() {
         </section>
 
         {/* Mission */}
-        <section className="mx-auto max-w-4xl px-5 py-20 sm:py-28">
-          <blockquote className="border-l-2 border-accent pl-8 sm:pl-12">
+        <section className="mx-auto max-w-4xl px-5 pb-20 sm:pb-28">
+          <blockquote className="relative z-10 -mt-10 border-l-2 border-accent bg-transparent pl-8 sm:pl-12">
             <p className="font-display text-3xl font-medium italic leading-[1.25] text-ink sm:text-[2.6rem]">
               “My mission: to help practice owners build highly profitable,{' '}
               <span className="text-accent">future-ready firms.”</span>

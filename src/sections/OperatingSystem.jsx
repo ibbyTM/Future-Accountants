@@ -38,7 +38,7 @@ export default function OperatingSystem() {
         </Reveal>
 
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
-          <Reveal className="flex min-h-[220px] flex-col justify-between border border-ink bg-ink p-7 text-ground lg:row-span-2">
+          <Reveal className="relative z-10 flex min-h-[220px] flex-col justify-between border border-ink bg-ink p-7 text-ground lg:-mt-6 lg:row-span-2">
             <div>
               <p className="font-display text-3xl font-medium italic text-accent-soft brightness-150">01</p>
               <h3 className="mt-3 font-display text-2xl font-medium italic">AI Firm Brain</h3>
