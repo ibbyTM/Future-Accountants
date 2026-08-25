@@ -43,7 +43,7 @@ export default function ProofBar() {
   return (
     <section className="border-y border-ink/80 bg-ink text-ground">
       <FadeContent duration={800} threshold={0.15}>
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-10 gap-y-10 px-5 py-14 lg:grid-cols-4 lg:pt-20">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-10 gap-y-10 px-5 py-14 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Stat key={s.label} s={s} i={i} />
           ))}
