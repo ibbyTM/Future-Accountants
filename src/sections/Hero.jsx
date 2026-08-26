@@ -11,7 +11,7 @@ import { site, withBase } from '../site.config.js';
 function PhotoPlate({ children }) {
   return (
     <div className="relative">
-      <div className="absolute inset-x-0 bottom-0 top-16 overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
+      <div className="absolute inset-x-0 bottom-0 top-16 overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)] lg:top-4">
         <div
           className="absolute inset-0"
           style={{ background: 'radial-gradient(80% 62% at 50% 26%, rgba(244,242,236,0.26), transparent 74%)' }}
