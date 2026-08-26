@@ -1,3 +1,4 @@
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
@@ -20,8 +21,9 @@ const employees = [
 
 export default function OperatingSystem() {
   return (
-    <section id="system" className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section id="system" className="relative overflow-hidden border-y border-line bg-surface">
+      <GhostNumeral className="-top-16 right-[-2rem] lg:text-[20rem]">02</GhostNumeral>
+      <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <Reveal className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
           <div className="col-span-12 lg:col-span-7">
             <p className="mb-6 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">

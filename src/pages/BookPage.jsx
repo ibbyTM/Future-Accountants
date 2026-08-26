@@ -1,3 +1,4 @@
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import { site, withBase } from '../site.config.js';
 
@@ -26,7 +27,9 @@ export default function BookPage() {
           </a>
         </div>
       </header>
-      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-x-10 gap-y-14 px-5 py-16 sm:py-24">
+      <div className="relative overflow-hidden">
+      <GhostNumeral className="-top-10 left-[-2rem] lg:text-[14rem]">01</GhostNumeral>
+      <main className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-10 gap-y-14 px-5 py-16 sm:py-24">
         <div className="col-span-12 lg:col-span-5">
           <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
             {site.offerName}
@@ -86,6 +89,7 @@ export default function BookPage() {
           )}
         </div>
       </main>
+      </div>
       <footer className="border-t border-line px-5 py-8 text-center font-sans text-xs text-muted">
         © {new Date().getFullYear()} Damon Millar
       </footer>

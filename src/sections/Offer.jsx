@@ -1,3 +1,4 @@
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
@@ -43,7 +44,9 @@ const steps = [
 
 export default function Offer({ heading }) {
   return (
-    <section id="offer" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section id="offer" className="relative overflow-hidden">
+      <GhostNumeral className="bottom-[-4rem] left-[-3rem] lg:text-[22rem]">03</GhostNumeral>
+      <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
       <Reveal className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
         <div className="col-span-12 lg:col-span-7">
           <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
@@ -124,6 +127,7 @@ export default function Offer({ heading }) {
             </Reveal>
           ))}
         </ol>
+      </div>
       </div>
     </section>
   );

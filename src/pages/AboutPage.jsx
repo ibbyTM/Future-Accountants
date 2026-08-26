@@ -1,3 +1,4 @@
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import CtaButton from '../components/CtaButton.jsx';
@@ -135,12 +136,7 @@ export default function AboutPage() {
 
         {/* Switch proof band */}
         <section className="relative overflow-hidden bg-ink text-ground">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-16 hidden select-none font-display italic leading-none text-ground/[0.05] lg:block lg:text-[20rem]"
-          >
-            65%
-          </span>
+          <GhostNumeral tone="ground" className="-right-8 -top-16 lg:text-[20rem]">65%</GhostNumeral>
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
             <div className="grid grid-cols-12 gap-x-6 gap-y-12">
               <div className="col-span-12 lg:col-span-5">

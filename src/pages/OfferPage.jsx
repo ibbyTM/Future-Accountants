@@ -4,6 +4,7 @@ import Guarantee from '../sections/Guarantee.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
@@ -95,8 +96,9 @@ export default function OfferPage() {
         </section>
 
         {/* Option 1: mentored */}
-        <section className="border-y border-line bg-surface">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <section className="relative overflow-hidden border-y border-line bg-surface">
+          <GhostNumeral className="-top-12 left-[-2rem] lg:text-[18rem]">01</GhostNumeral>
+          <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
             <div className="grid grid-cols-12 gap-x-6 gap-y-10">
               <div className="col-span-12 lg:col-span-4">
                 <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
@@ -125,8 +127,9 @@ export default function OfferPage() {
         </section>
 
         {/* Option 2: done for you */}
-        <section className="bg-ink text-ground">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <section className="relative overflow-hidden bg-ink text-ground">
+          <GhostNumeral tone="ground" className="-top-12 right-[-2rem] lg:text-[18rem]">02</GhostNumeral>
+          <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
             <div className="grid grid-cols-12 gap-x-6 gap-y-10">
               <div className="col-span-12 lg:col-span-4">
                 <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent-soft brightness-150">

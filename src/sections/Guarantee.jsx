@@ -1,3 +1,4 @@
+import GhostNumeral from '../components/GhostNumeral.jsx';
 import Reveal from '../components/Reveal.jsx';
 
 /*
@@ -7,13 +8,14 @@ import Reveal from '../components/Reveal.jsx';
 export default function Guarantee() {
   return (
     <section
-      className="border-y border-line bg-surface"
+      className="relative overflow-hidden border-y border-line bg-surface"
       style={{
         backgroundImage:
           'repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(206, 200, 186, 0.55) 27px, rgba(206, 200, 186, 0.55) 28px)',
       }}
     >
-      <Reveal className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">
+      <GhostNumeral className="right-[-1rem] top-1/2 -translate-y-1/2 lg:text-[16rem]">90</GhostNumeral>
+      <Reveal className="relative mx-auto max-w-4xl px-5 py-20 text-center sm:py-24">
         <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-accent">
           100% risk-free guarantee
         </p>
