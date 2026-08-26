@@ -4,6 +4,7 @@ import CtaButton from '../components/CtaButton.jsx';
 import CountUp from '../components/CountUp.jsx';
 import Footer from '../sections/Footer.jsx';
 import Reveal from '../components/Reveal.jsx';
+import { withBase } from '../site.config.js';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 
 /*
@@ -33,22 +34,25 @@ const identities = [
 
 const books = [
   {
+    title: 'The AI Accountant?',
+    edition: 'Forthcoming',
+    line: 'Building the Firm of the Future. The book behind these programmes.',
+    cover: 'images/cover-ai-accountant.jpg',
+    alt: 'The AI Accountant? Building the Firm of the Future, by Damon Millar',
+  },
+  {
     title: 'Business DNA',
     edition: '10th Anniversary Edition',
     line: 'The bestselling blueprint for unlocking the hidden potential in your business.',
-    cover: 'Real cover artwork needed. Request from Damon',
+    cover: 'images/cover-business-dna.jpg',
+    alt: 'Business DNA, 10th Anniversary Edition, by Damon Millar and Clare Thompson',
   },
   {
     title: 'Artificially Intelligent!',
     edition: 'With Clare Thompson',
     line: '101 ways to unleash the power of AI for your business.',
-    cover: 'Real cover artwork needed. Request from Damon',
-  },
-  {
-    title: 'Covid BOUNCE BACK!',
-    edition: 'With Clare Thompson',
-    line: 'The practical playbook for how your business can thrive through disruption.',
-    cover: 'Real cover artwork needed. Request from Damon',
+    cover: 'images/cover-artificially-intelligent.jpg',
+    alt: 'Artificially Intelligent! by Damon Millar and Clare Thompson',
   },
 ];
 
@@ -62,11 +66,12 @@ function BookRow({ book, flip }) {
   return (
     <Reveal className="grid grid-cols-12 items-center gap-x-6 gap-y-8 border-t border-line py-14">
       <div className={`col-span-12 sm:col-span-4 lg:col-span-3 ${flip ? 'sm:order-2 sm:col-start-10 lg:col-start-10' : ''}`}>
-        <div className="mx-auto flex aspect-[3/4] w-full max-w-[240px] items-center justify-center bg-ink p-5 shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
-          <p className="border border-dashed border-ground/50 p-3 text-center font-sans text-xs leading-relaxed text-ground/90">
-            {book.cover}
-          </p>
-        </div>
+        <img
+          src={withBase(book.cover)}
+          alt={book.alt}
+          loading="lazy"
+          className="mx-auto w-full max-w-[240px] shadow-[0_24px_48px_rgba(26,26,24,0.18)]"
+        />
       </div>
       <div className={`col-span-12 sm:col-span-8 lg:col-span-7 ${flip ? 'sm:order-1' : 'lg:col-start-5'}`}>
         <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
@@ -87,18 +92,31 @@ export default function AboutPage() {
       <PageGrain />
       <Navbar />
       <main>
-        <section className="mx-auto max-w-6xl px-5 pb-16 pt-36 sm:pt-44">
-          <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
-            AI expert · Practice builder · Author · Speaker
-          </p>
-          <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.05] text-ink sm:text-7xl">
-            The accountant <em className="text-accent">building the future.</em>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            Pioneer in AI implementation for accounting firms. Founder of the AI Accountant™
-            and Firm of the Future™ frameworks. Real practice experience combined with deep
-            technical knowledge, and still across the table from clients every week.
-          </p>
+        <section className="mx-auto grid max-w-6xl grid-cols-12 gap-x-6 gap-y-12 px-5 pb-16 pt-36 sm:pt-44">
+          <div className="col-span-12 lg:col-span-7">
+            <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+              AI expert · Practice builder · Author · Speaker
+            </p>
+            <h1 className="font-display text-5xl font-medium leading-[1.05] text-ink sm:text-7xl">
+              The accountant <em className="text-accent">building the future.</em>
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
+              Pioneer in AI implementation for accounting firms. Founder of the AI Accountant™
+              and Firm of the Future™ frameworks. Real practice experience combined with deep
+              technical knowledge, and still across the table from clients every week.
+            </p>
+          </div>
+          <div className="col-span-12 mx-auto w-full max-w-xs sm:max-w-sm lg:col-span-5 lg:max-w-none">
+            <div className="relative">
+              <div className="absolute inset-x-0 bottom-0 top-12 bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]" />
+              <img
+                src={withBase('images/damon-stairs.jpg')}
+                alt="Damon Millar"
+                fetchPriority="high"
+                className="relative mx-auto block w-[88%]"
+              />
+            </div>
+          </div>
         </section>
 
         {/* Identity blocks */}
@@ -169,9 +187,18 @@ export default function AboutPage() {
                 <BookRow key={b.title} book={b} flip={i % 2 === 1} />
               ))}
             </div>
-            <p className="border-t border-line pt-6 font-sans text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-              Also: The AI Accountant · The Accountant’s Handbook · Legal Tax Planning · and more
-            </p>
+            <div className="border-t border-line pt-10">
+              <img
+                src={withBase('images/book-montage.jpg')}
+                alt="A montage of eighteen business books by Damon Millar and Clare Thompson"
+                loading="lazy"
+                className="w-full shadow-[0_24px_48px_rgba(26,26,24,0.18)]"
+              />
+              <p className="mt-5 font-sans text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
+                20+ business books and counting. Covid BOUNCE BACK!, Legal Tax Planning, The
+                Accountant’s Handbook and more.
+              </p>
+            </div>
           </div>
         </section>
 

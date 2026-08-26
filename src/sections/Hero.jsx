@@ -4,11 +4,8 @@ import { site, withBase } from '../site.config.js';
 
 /*
  * Editorial split hero. Copy sits on a wide left measure; Damon's B&W
- * cutout stands on a flat ink plate offset right.
- *
- * Drop the real background-removed photo at public/damon-cutout.png and it
- * renders automatically; while the file is missing an honest asset slot
- * shows instead.
+ * portrait sits on a flat ink plate offset right. The photo's dark
+ * background merges into the plate.
  */
 function PhotoPlate({ children }) {
   return (
@@ -34,12 +31,7 @@ function HeroPhoto() {
   if (missing) {
     return (
       <PhotoPlate>
-        <div className="relative flex aspect-[3/4] items-end justify-center">
-          <p className="mb-16 max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
-            Real B&amp;W cutout photo of Damon goes here. His image is the brand: high-res,
-            front-facing, background removed. No stock or AI imagery.
-          </p>
-        </div>
+        <div className="relative aspect-[3/4]" />
       </PhotoPlate>
     );
   }
@@ -47,7 +39,7 @@ function HeroPhoto() {
     <PhotoPlate>
       <img
         ref={imgRef}
-        src={withBase('damon-cutout.png')}
+        src={withBase('images/damon-hero.jpg')}
         alt="Damon Millar"
         fetchPriority="high"
         className="relative block w-full"

@@ -1,5 +1,5 @@
-import Placeholder from '../components/Placeholder.jsx';
 import Reveal from '../components/Reveal.jsx';
+import { withBase } from '../site.config.js';
 
 const facts = [
   'Pioneer in AI implementation for accounting firms',
@@ -33,10 +33,13 @@ export default function About() {
           </ul>
         </Reveal>
         <Reveal delay={140} className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
-          <figure className="relative flex aspect-[4/5] items-center justify-center bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
-            <figcaption className="max-w-[240px] border border-dashed border-ground/50 p-4 text-center font-sans text-xs leading-relaxed text-ground/90">
-              <Placeholder>Real B&amp;W photograph of Damon goes here. Request from client.</Placeholder>
-            </figcaption>
+          <figure className="relative aspect-[4/5] overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
+            <img
+              src={withBase('images/damon-about.jpg')}
+              alt="Damon Millar"
+              loading="lazy"
+              className="size-full object-cover"
+            />
           </figure>
         </Reveal>
       </div>

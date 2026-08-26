@@ -55,7 +55,8 @@ unnoticed.
 ## Open questions before launch
 
 1. **Calendar embed URL** for `/book` (`calendarEmbedUrl` in `src/site.config.js`, currently unset)
-2. **Real cutout photo of Damon** at `public/damon-cutout.png` (B&W, background removed)
-3. **Book cover artwork** for the three flagged slots on `/about`
-4. **Final domain + OG image** (`og:url` and `og-image.jpg` in the four HTML files)
-5. **Exact magenta hex** sign-off (tokens in `src/index.css`)
+2. **Final domain + OG image** (`og:url` and `og-image.jpg` in the four HTML files)
+3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
+
+Photos and book covers are live in `public/images/` (source assets from
+Damon's pack, optimised).
