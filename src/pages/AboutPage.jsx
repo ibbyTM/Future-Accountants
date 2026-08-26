@@ -95,7 +95,7 @@ function BookRow({ book, flip }) {
           src={withBase(book.cover)}
           alt={book.alt}
           loading="lazy"
-          className="mx-auto w-full max-w-[240px] shadow-[0_24px_48px_rgba(26,26,24,0.18)]"
+          className="mx-auto w-full max-w-[240px] shadow-[0_24px_48px_rgba(26,26,24,0.18)] ring-1 ring-line/70"
         />
       </div>
       <div className={`col-span-12 sm:col-span-8 lg:col-span-7 ${flip ? 'sm:order-1' : 'lg:col-start-5'}`}>
