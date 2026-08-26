@@ -1,3 +1,4 @@
+import BookCarousel from '../components/BookCarousel.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
@@ -56,6 +57,29 @@ const books = [
     alt: 'Artificially Intelligent! by Damon Millar and Clare Thompson',
   },
 ];
+
+/* The wider catalogue, cut from the montage. The three featured books
+   above are excluded so nothing repeats. */
+const catalogue = [
+  '101 Business Growth Strategies',
+  '101 Unbreakable Rules for Business Success',
+  '101 Ways to Save Business Taxes',
+  'Covid Fight Back',
+  'The Family Business Bible',
+  'Research and Development Tax Relief',
+  'Damon Makes You Smarter Than a Business Professor',
+  'Legal Tax Planning',
+  'The Ultimate Guide to Productivity and Time Management',
+  'Covid Bounce Back!',
+  'Millar on Marketing',
+  'From the Trenches',
+  'The Accidental Accountant',
+  'Legal Tax Planning for Business Owners',
+  'Did You Miss The Revolution?',
+].map((title, i) => ({
+  src: `images/books/cover-${String(i + 1).padStart(2, '0')}.jpg`,
+  alt: `${title}, book cover`,
+}));
 
 const switchStats = [
   { n: 8, suffix: '', label: 'Offices across the UK' },
@@ -184,12 +208,7 @@ export default function AboutPage() {
               ))}
             </div>
             <div className="border-t border-line pt-10">
-              <img
-                src={withBase('images/book-montage.jpg')}
-                alt="A montage of eighteen business books by Damon Millar and Clare Thompson"
-                loading="lazy"
-                className="w-full shadow-[0_24px_48px_rgba(26,26,24,0.18)]"
-              />
+              <BookCarousel covers={catalogue} />
               <p className="mt-5 font-sans text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
                 20+ business books and counting. Covid BOUNCE BACK!, Legal Tax Planning, The
                 Accountant’s Handbook and more.
