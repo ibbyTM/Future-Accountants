@@ -3,14 +3,20 @@ import CtaButton from '../components/CtaButton.jsx';
 import { site, withBase } from '../site.config.js';
 
 /*
- * Editorial split hero. Copy sits on a wide left measure; Damon's B&W
- * portrait sits on a flat ink plate offset right. The photo's dark
- * background merges into the plate.
+ * Editorial split hero. Copy sits on a wide left measure; a cutout of
+ * Damon stands on an ink plate offset right. The figure breaks the
+ * plate's top edge, with a soft backdrop light behind the head so the
+ * dark suit separates from the near-black plate.
  */
 function PhotoPlate({ children }) {
   return (
     <div className="relative">
-      <div className="absolute inset-x-0 bottom-0 top-16 bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]" />
+      <div className="absolute inset-x-0 bottom-0 top-16 overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(80% 62% at 50% 26%, rgba(244,242,236,0.26), transparent 74%)' }}
+        />
+      </div>
       {children}
     </div>
   );
@@ -39,10 +45,10 @@ function HeroPhoto() {
     <PhotoPlate>
       <img
         ref={imgRef}
-        src={withBase('images/damon-hero.jpg')}
+        src={withBase('images/damon-hero-cutout.webp')}
         alt="Damon Millar"
         fetchPriority="high"
-        className="relative block w-full"
+        className="relative mx-auto block w-[86%] [filter:drop-shadow(0_8px_16px_rgba(26,26,24,0.45))_drop-shadow(26px_34px_48px_rgba(26,26,24,0.32))]"
         onError={() => setMissing(true)}
         onLoad={e => {
           if (e.currentTarget.naturalWidth === 0) setMissing(true);
