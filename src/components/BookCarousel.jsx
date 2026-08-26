@@ -20,7 +20,7 @@ export default function BookCarousel({ covers, speed = 55 }) {
           src={withBase(c.src)}
           alt={c.alt}
           loading="lazy"
-          className="w-36 shrink-0 shadow-[0_18px_36px_rgba(26,26,24,0.22)] transition-transform duration-300 hover:-translate-y-2 sm:w-44"
+          className="w-36 shrink-0 shadow-[0_18px_36px_rgba(26,26,24,0.22)] ring-1 ring-line/70 transition-transform duration-300 hover:-translate-y-2 sm:w-44"
         />
       ))}
     </div>
