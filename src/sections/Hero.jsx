@@ -91,7 +91,7 @@ export default function Hero() {
             Author of 20+ business books · Founder, Switch Accountants · UK keynote speaker
           </p>
         </div>
-        <div className="hero-enter col-span-12 mx-auto w-full max-w-xs pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pt-24" style={{ animationDelay: '300ms' }}>
+        <div className="hero-enter col-span-12 mx-auto w-full max-w-xs pb-14 pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pb-20 lg:pt-24" style={{ animationDelay: '300ms' }}>
           <HeroPhoto />
         </div>
       </div>
