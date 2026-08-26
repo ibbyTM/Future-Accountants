@@ -37,23 +37,27 @@ function HeroPhoto() {
   if (missing) {
     return (
       <PhotoPlate>
-        <div className="relative aspect-[3/4]" />
+        <div className="relative aspect-[945/1417]" />
       </PhotoPlate>
     );
   }
+  // The wrapper keeps the plate at the original photo's footprint; the
+  // cutout sits inside it at the scale the figure had in that photo.
   return (
     <PhotoPlate>
-      <img
-        ref={imgRef}
-        src={withBase('images/damon-hero-cutout.webp')}
-        alt="Damon Millar"
-        fetchPriority="high"
-        className="relative mx-auto block w-[86%] [filter:drop-shadow(0_8px_16px_rgba(26,26,24,0.45))_drop-shadow(26px_34px_48px_rgba(26,26,24,0.32))]"
-        onError={() => setMissing(true)}
-        onLoad={e => {
-          if (e.currentTarget.naturalWidth === 0) setMissing(true);
-        }}
-      />
+      <div className="relative aspect-[945/1417]">
+        <img
+          ref={imgRef}
+          src={withBase('images/damon-hero-cutout.webp')}
+          alt="Damon Millar"
+          fetchPriority="high"
+          className="absolute bottom-0 left-1/2 w-[68.4%] -translate-x-1/2 [filter:drop-shadow(0_8px_16px_rgba(26,26,24,0.45))_drop-shadow(26px_34px_48px_rgba(26,26,24,0.32))]"
+          onError={() => setMissing(true)}
+          onLoad={e => {
+            if (e.currentTarget.naturalWidth === 0) setMissing(true);
+          }}
+        />
+      </div>
     </PhotoPlate>
   );
 }
