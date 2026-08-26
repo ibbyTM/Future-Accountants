@@ -33,7 +33,7 @@ export default function About() {
           </ul>
         </Reveal>
         <Reveal delay={140} className="col-span-12 mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6">
-          <figure className="relative aspect-[4/5] overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
+          <figure className="relative aspect-[4/5] overflow-hidden bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)] lg:aspect-auto lg:h-full">
             <img
               src={withBase('images/damon-about.jpg')}
               alt="Damon Millar"
