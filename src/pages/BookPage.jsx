@@ -19,17 +19,17 @@ export default function BookPage() {
       <PageGrain />
       <header className="border-b border-line">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
-          <a href={withBase('')} className="text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
+          <a href={withBase('')} className="flex h-16 items-center text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
             Damon Millar
           </a>
-          <a href={withBase('')} className="text-[13px] font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-ink">
+          <a href={withBase('')} className="flex h-16 items-center text-[13px] font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-ink">
             ← Back to site
           </a>
         </div>
       </header>
       <div className="relative overflow-hidden">
       <GhostNumeral className="-top-10 left-[-2rem] lg:text-[14rem]">01</GhostNumeral>
-      <main className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-10 gap-y-14 px-5 py-16 sm:py-24">
+      <main className="relative mx-auto grid max-w-6xl grid-cols-12 gap-x-6 gap-y-14 px-5 py-16 sm:py-24 lg:gap-x-10">
         <div className="col-span-12 lg:col-span-5">
           <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
             {site.offerName}
