@@ -57,7 +57,7 @@ export default function BookPage() {
             Your firm. Your priorities. Your AI roadmap.
           </p>
           <figure className="mt-10 border-l-2 border-accent pl-6">
-            <blockquote className="font-display text-lg font-medium italic leading-[1.45] text-ink">
+            <blockquote className="hang-quote font-display text-lg font-medium italic leading-[1.45] text-ink">
               “There is nobody in the world I would rather take business advice from than
               Damon.”
             </blockquote>

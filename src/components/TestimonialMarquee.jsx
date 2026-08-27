@@ -26,7 +26,7 @@ function MarqueeRow({ children, speed = 40 }) {
 function TestimonialCard({ item }) {
   return (
     <figure className="flex w-[340px] shrink-0 flex-col justify-between border-r border-line p-8 sm:w-[400px]">
-      <blockquote className="font-display text-lg font-medium italic leading-[1.45] text-ink">
+      <blockquote className="hang-quote font-display text-lg font-medium italic leading-[1.45] text-ink">
         “{item.text}”
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3">

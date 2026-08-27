@@ -67,6 +67,15 @@
   }
 }
 
+/*
+ * Hanging punctuation: pulls an opening quote mark into the left margin so
+ * the first letter sits on the text edge. 0.556em is the advance width of
+ * Newsreader's opening curly quote, so it holds at every size.
+ */
+.hang-quote {
+  text-indent: -0.556em;
+}
+
 html {
   scroll-behavior: smooth;
 }

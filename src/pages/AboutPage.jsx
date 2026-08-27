@@ -219,7 +219,7 @@ export default function AboutPage() {
         {/* Mission */}
         <section className="mx-auto max-w-4xl px-5 pb-20 pt-20 sm:pb-28 sm:pt-24">
           <blockquote className="border-l-2 border-accent pl-8 sm:pl-12">
-            <p className="font-display text-3xl font-medium italic leading-[1.25] text-ink [text-indent:-0.556em] sm:text-[2.6rem]">
+            <p className="font-display text-3xl font-medium italic leading-[1.25] hang-quote text-ink sm:text-[2.6rem]">
               “My mission: to help practice owners build highly profitable,{' '}
               <span className="text-accent">future-ready firms.”</span>
             </p>
