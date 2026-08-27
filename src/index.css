@@ -76,6 +76,39 @@
   text-indent: -0.556em;
 }
 
+/*
+ * Stage flow: the process chips on the offer page. A fixed column count per
+ * breakpoint keeps row boundaries known, so the connector after each chip can
+ * be hidden on the last cell of every row instead of dangling at a wrap.
+ */
+.stage-flow {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: start;
+  row-gap: 0.75rem;
+}
+.stage-connector {
+  flex: 1 1 1rem;
+  min-width: 1rem;
+}
+.stage-flow > li:nth-child(2n) .stage-connector {
+  display: none;
+}
+@media (min-width: 640px) {
+  .stage-flow {
+    grid-template-columns: repeat(3, max-content);
+  }
+  .stage-flow > li:nth-child(2n) .stage-connector {
+    display: block;
+  }
+  .stage-flow > li:nth-child(3n) .stage-connector {
+    display: none;
+  }
+}
+.stage-flow > li:last-child .stage-connector {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }

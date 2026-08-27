@@ -101,7 +101,7 @@ export default function OfferPage() {
           <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
             <div className="grid grid-cols-12 gap-x-6 gap-y-10">
               <div className="col-span-12 lg:col-span-4">
-                <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                <p className="border-t-2 border-transparent pt-4 font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent">
                   Option 1 · Mentored implementation
                 </p>
                 <h2 className="mt-3 font-display text-4xl font-medium italic leading-[1.1] text-ink sm:text-5xl">
@@ -144,15 +144,13 @@ export default function OfferPage() {
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-8">
-                <ol className="flex flex-wrap items-center gap-y-3">
-                  {forYouStages.map((s, i) => (
+                <ol className="stage-flow">
+                  {forYouStages.map(s => (
                     <li key={s} className="flex items-center">
                       <span className="border border-ground/40 px-4 py-2 font-sans text-xs font-bold uppercase tracking-[0.16em]">
                         {s}
                       </span>
-                      {i < forYouStages.length - 1 && (
-                        <span aria-hidden="true" className="mx-1 h-px w-4 bg-ground/40 sm:w-6" />
-                      )}
+                      <span aria-hidden="true" className="stage-connector mx-2 h-px bg-ground/40" />
                     </li>
                   ))}
                 </ol>
@@ -261,9 +259,9 @@ export default function OfferPage() {
                 practice. One system. One goal: build a better firm and live a better life.
               </p>
             </div>
-            <ul className="relative col-span-12 border-t border-line pl-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60 lg:col-span-7">
+            <ul className="relative col-span-12 border-t border-line before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60 lg:col-span-7">
               {beyond.map(b => (
-                <li key={b} className="group flex items-center gap-4 border-b border-line py-4">
+                <li key={b} className="group flex items-center gap-4 border-b border-line py-4 pl-6">
                   <span aria-hidden="true" className="size-1.5 shrink-0 bg-accent transition-transform duration-200 group-hover:scale-150" />
                   <span className="text-[17px] text-body transition-colors duration-200 group-hover:text-ink">{b}</span>
                 </li>

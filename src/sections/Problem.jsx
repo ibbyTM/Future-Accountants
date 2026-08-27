@@ -28,13 +28,13 @@ export default function Problem() {
           </h2>
           <p className="mt-6 max-w-md">AI isn’t magic. It’s leverage. Three problems first:</p>
         </Reveal>
-        <ol className="relative col-span-12 border-t border-line pl-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60 lg:col-span-7">
+        <ol className="relative col-span-12 border-t border-line before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-accent/60 lg:col-span-7">
           {pains.map((p, i) => (
             <Reveal
               as="li"
               key={p.title}
               delay={i * 90}
-              className="grid grid-cols-[3.5rem_1fr] gap-x-5 border-b border-line py-8 sm:grid-cols-[4.5rem_1fr]"
+              className="grid grid-cols-[3.5rem_1fr] gap-x-5 border-b border-line py-8 pl-6 sm:grid-cols-[4.5rem_1fr]"
             >
               <span aria-hidden="true" className="font-display text-4xl font-medium italic leading-none text-accent">
                 {String(i + 1).padStart(2, '0')}.
