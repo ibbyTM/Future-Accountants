@@ -219,12 +219,12 @@ export default function AboutPage() {
         {/* Mission */}
         <section className="mx-auto max-w-4xl px-5 pb-20 sm:pb-28">
           <blockquote className="relative z-10 -mt-10 border-l-2 border-accent bg-transparent pl-8 sm:pl-12">
-            <p className="font-display text-3xl font-medium italic leading-[1.25] text-ink sm:text-[2.6rem]">
+            <p className="font-display text-3xl font-medium italic leading-[1.25] text-ink [text-indent:-0.556em] sm:text-[2.6rem]">
               “My mission: to help practice owners build highly profitable,{' '}
               <span className="text-accent">future-ready firms.”</span>
             </p>
           </blockquote>
-          <p className="mt-10 max-w-2xl pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
+          <p className="mt-10 max-w-2xl border-l-2 border-transparent pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
             Using the power of AI, strategic thinking and proven systems. Founder of{' '}
             <strong className="font-semibold text-ink">The Business DNA System™</strong>, the
             Accountant’s Bootcamp, the AI Academy for accountants and the Switch Accountants
