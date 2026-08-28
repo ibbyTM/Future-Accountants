@@ -131,15 +131,12 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="col-span-12 mx-auto w-full max-w-xs sm:max-w-sm lg:col-span-5 lg:max-w-none">
-            <div className="relative">
-              <div className="absolute inset-x-0 bottom-0 top-12 bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]" />
-              <img
-                src={withBase('images/damon-stairs.jpg')}
-                alt="Damon Millar"
-                fetchPriority="high"
-                className="relative mx-auto block w-[88%]"
-              />
-            </div>
+            <img
+              src={withBase('images/damon-stairs.jpg')}
+              alt="Damon Millar"
+              fetchPriority="high"
+              className="block w-full shadow-[0_24px_48px_rgba(26,26,24,0.18)]"
+            />
           </div>
         </section>
 
