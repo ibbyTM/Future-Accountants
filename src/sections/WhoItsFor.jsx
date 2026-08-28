@@ -43,7 +43,7 @@ export default function WhoItsFor() {
           This works. But only <em className="text-accent">for the right people.</em>
         </h2>
       </Reveal>
-      <div className="mt-14 grid gap-x-10 gap-y-12 lg:grid-cols-2">
+      <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
         <Reveal><List title="This is for you if…" items={forYou} accent /></Reveal>
         <Reveal delay={120}><List title="This isn’t for you if…" items={notForYou} /></Reveal>
       </div>

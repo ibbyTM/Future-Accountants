@@ -64,7 +64,7 @@ export default function Offer({ heading }) {
         </p>
       </Reveal>
 
-      <div className="mt-14 grid gap-4 lg:grid-cols-2">
+      <div className="mt-14 grid gap-4 sm:grid-cols-2">
         {routes.map((r, ri) => (
           <Reveal
             key={r.name}
@@ -104,21 +104,21 @@ export default function Offer({ heading }) {
         <p className="mt-3 text-[17px] text-muted">
           No pressure. No big decision today. Just the next conversation.
         </p>
-        <ol className="mt-10 grid gap-y-10 sm:grid-cols-5 sm:gap-x-0">
+        <ol className="mt-10 grid gap-y-10 lg:grid-cols-5 lg:gap-x-0">
           {steps.map((s, i) => (
-            <Reveal as="li" key={s.title} delay={i * 80} className="flex gap-5 sm:block sm:pr-6">
-              <div className="flex flex-col items-center sm:mb-4 sm:flex-row">
+            <Reveal as="li" key={s.title} delay={i * 80} className="flex gap-5 lg:block lg:pr-6">
+              <div className="flex flex-col items-center lg:mb-4 lg:flex-row">
                 <span className="flex size-11 shrink-0 items-center justify-center border border-ink font-display text-lg font-medium italic text-accent">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   aria-hidden="true"
-                  className={`mt-1 w-px flex-1 bg-line sm:ml-1 sm:mt-0 sm:h-px sm:w-auto ${
-                    i === steps.length - 1 ? 'sm:hidden' : ''
+                  className={`mt-1 w-px flex-1 bg-line lg:ml-1 lg:mt-0 lg:h-px lg:w-auto ${
+                    i === steps.length - 1 ? 'hidden' : ''
                   }`}
                 />
               </div>
-              <div className="pb-2 sm:pb-0">
+              <div className="pb-2 lg:pb-0">
                 <h4 className="font-sans text-sm font-bold uppercase tracking-[0.14em] text-ink">
                   {s.title}
                 </h4>
