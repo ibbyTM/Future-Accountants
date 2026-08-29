@@ -26,11 +26,17 @@ the whole site, built for a domain root (not a subfolder), including a
 
 ## 2. Create the subdomain (once)
 
-This is two steps, because **DNS for `nexusedge.tech` is managed at GoDaddy,
-not at Bluehost**. The domain's nameservers are `ns51/ns52.domaincontrol.com`
-(GoDaddy), so Bluehost cannot create the record for you. cPanel will look like
-it succeeded and the subdomain still will not resolve until you add the record
-at GoDaddy.
+This is two steps, because **DNS for `nexusedge.tech` is served by 123-reg's
+nameservers, not Bluehost's**. Bluehost hosts the files; 123-reg answers the
+DNS queries. cPanel will look like it succeeded and the subdomain still will
+not resolve until you add the record at 123-reg.
+
+> The live nameservers are `ns51.domaincontrol.com` and
+> `ns52.domaincontrol.com`. Those look like GoDaddy's because 123-reg is a
+> GoDaddy company and runs on the same DNS platform, but you manage them from
+> the 123-reg control panel. If DNS were delegated to Bluehost you would see
+> `ns1.bluehost.com` / `ns2.bluehost.com` instead. Worth re-checking if you
+> ever change nameservers: `nslookup -type=NS nexusedge.tech`.
 
 ### 2a. Tell Bluehost to serve it
 
@@ -47,17 +53,17 @@ main page, or under **General Information**). You need it for the next step.
 It should match the IP `nexusedge.tech` already points at: **162.241.252.128**.
 If cPanel shows a different IP, use cPanel's.
 
-### 2b. Add the DNS record at GoDaddy
+### 2b. Add the DNS record at 123-reg
 
-In the GoDaddy account holding `nexusedge.tech`: **My Products → Domains →
-nexusedge.tech → DNS → Add New Record**
+In the 123-reg control panel: **Domain names → nexusedge.tech → Manage DNS**
+(sometimes listed as *Advanced DNS* or *Manage DNS records*), then add a record:
 
 | Field | Value |
 | --- | --- |
 | Type | `A` |
-| Name | `damon` (just that, not the full hostname) |
-| Value | the Bluehost shared IP from step 2a |
-| TTL | 1 hour (default) |
+| Hostname | `damon` (just that, not the full hostname) |
+| Destination / Points to | the Bluehost shared IP from step 2a |
+| TTL | leave the default (1 hour) |
 
 Save. Propagation is usually minutes, occasionally up to an hour. Check it with
 `nslookup damon.nexusedge.tech` in a terminal, or an online DNS checker: when it
@@ -141,11 +147,11 @@ The build was made for the GitHub Pages subpath. Rebuild with
 trim it. Every block is already wrapped so an unavailable Apache module is
 skipped rather than fatal.
 
-**Site does not resolve at all.** Almost certainly the GoDaddy A record
+**Site does not resolve at all.** Almost certainly the 123-reg A record
 (step 2b) is missing, misnamed or still propagating. Creating the subdomain in
-cPanel alone is not enough on this domain, because GoDaddy holds the DNS. Check
-the record's Name is `damon` and not `damon.nexusedge.tech` (GoDaddy appends the
-domain itself, so the latter becomes `damon.nexusedge.tech.nexusedge.tech`).
+cPanel alone is not enough on this domain, because 123-reg holds the DNS. Check
+the hostname is `damon` and not `damon.nexusedge.tech`: the panel appends the
+domain itself, so the latter becomes `damon.nexusedge.tech.nexusedge.tech`.
 If it looks right, wait, and try mobile data to rule out local DNS caching.
 
 **AutoSSL fails to issue.** The hostname was not resolving when it ran. Confirm
