@@ -26,6 +26,14 @@ the whole site, built for a domain root (not a subfolder), including a
 
 ## 2. Create the subdomain (once)
 
+This is two steps, because **DNS for `nexusedge.tech` is managed at GoDaddy,
+not at Bluehost**. The domain's nameservers are `ns51/ns52.domaincontrol.com`
+(GoDaddy), so Bluehost cannot create the record for you. cPanel will look like
+it succeeded and the subdomain still will not resolve until you add the record
+at GoDaddy.
+
+### 2a. Tell Bluehost to serve it
+
 In cPanel:
 
 1. **Domains → Create A New Domain**
@@ -34,8 +42,29 @@ In cPanel:
 4. Document root: `public_html/damon`
 5. Create.
 
-Bluehost adds the DNS record itself because `nexusedge.tech` is already on the
-account. It usually resolves within minutes, occasionally up to an hour.
+While you are in cPanel, note the **Shared IP Address** (right sidebar of the
+main page, or under **General Information**). You need it for the next step.
+It should match the IP `nexusedge.tech` already points at: **162.241.252.128**.
+If cPanel shows a different IP, use cPanel's.
+
+### 2b. Add the DNS record at GoDaddy
+
+In the GoDaddy account holding `nexusedge.tech`: **My Products → Domains →
+nexusedge.tech → DNS → Add New Record**
+
+| Field | Value |
+| --- | --- |
+| Type | `A` |
+| Name | `damon` (just that, not the full hostname) |
+| Value | the Bluehost shared IP from step 2a |
+| TTL | 1 hour (default) |
+
+Save. Propagation is usually minutes, occasionally up to an hour. Check it with
+`nslookup damon.nexusedge.tech` in a terminal, or an online DNS checker: when it
+returns the Bluehost IP, you are ready to continue.
+
+Do not run AutoSSL (step 4) until this resolves. The certificate authority has
+to reach the hostname to issue the certificate, so it fails otherwise.
 
 ---
 
@@ -112,9 +141,15 @@ The build was made for the GitHub Pages subpath. Rebuild with
 trim it. Every block is already wrapped so an unavailable Apache module is
 skipped rather than fatal.
 
-**Site does not resolve at all.** DNS has not propagated. Check
-**Domains** in cPanel shows the subdomain, then wait; try a different network
-or your phone on mobile data to rule out local DNS caching.
+**Site does not resolve at all.** Almost certainly the GoDaddy A record
+(step 2b) is missing, misnamed or still propagating. Creating the subdomain in
+cPanel alone is not enough on this domain, because GoDaddy holds the DNS. Check
+the record's Name is `damon` and not `damon.nexusedge.tech` (GoDaddy appends the
+domain itself, so the latter becomes `damon.nexusedge.tech.nexusedge.tech`).
+If it looks right, wait, and try mobile data to rule out local DNS caching.
+
+**AutoSSL fails to issue.** The hostname was not resolving when it ran. Confirm
+DNS first, then re-run AutoSSL.
 
 ---
 
