@@ -1,0 +1,15 @@
+# Fallback .htaccess: the bare minimum the site needs to work.
+# Only use this if the full .htaccess still returns a 500 on the host.
+# Rename it to .htaccess in File Manager, replacing the existing one.
+#
+# This drops HTTPS forcing, compression, cache headers and security headers,
+# and keeps only the clean-URL rewrite, without which every internal link 404s.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # /offer serves offer.html
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
