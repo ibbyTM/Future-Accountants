@@ -48,6 +48,10 @@ In cPanel:
 4. Document root: `public_html/damon`
 5. Create.
 
+Afterwards, check **Files & Access → Document Root** and note what it actually
+says. Bluehost may have created a generated folder name instead of the one you
+typed; step 3 depends on knowing the real value.
+
 While you are in cPanel, note the **Shared IP Address** (right sidebar of the
 main page, or under **General Information**). You need it for the next step.
 It should match the IP `nexusedge.tech` already points at: **162.241.252.128**.
@@ -76,13 +80,31 @@ to reach the hostname to issue the certificate, so it fails otherwise.
 
 ## 3. Upload
 
-1. **Files → File Manager**, open `public_html/damon`.
-2. Delete anything cPanel put there as a placeholder (often `index.html` or a
-   `cgi-bin` folder; leaving a stray `index.html` will hide the real site).
+**First, confirm the real document root.** Bluehost's "Websites" flow does not
+always use the folder you named: it generates one like
+`~/public_html/website_490bda5b`. Uploading to the wrong folder gives a 500 on
+every request, because Apache is pointed at a folder that does not exist.
+
+Find it in Bluehost under **Websites → [your site] → Files & Access →
+Document Root**. Use whatever it says. For this site it is currently:
+
+```
+~/public_html/website_490bda5b
+```
+
+Then:
+
+1. **Files & Access → File Manager**, open that exact folder. If it does not
+   exist yet, create it in `public_html` with precisely that name.
+2. Delete anything sitting there as a placeholder (often `index.html` or a
+   `cgi-bin` folder; a stray `index.html` will hide the real site).
 3. **Upload**, choose `future-accountants-site.zip`, wait for it to finish.
 4. Back in File Manager, right-click the zip → **Extract**, into the same
    folder.
 5. Delete the zip once extracted.
+
+`index.html` must sit *directly* in that folder, not nested inside another
+folder such as `dist/`.
 
 The folder should now hold `index.html`, `about.html`, `offer.html`,
 `book.html`, `favicon.svg`, `assets/`, `images/` and `.htaccess`.
@@ -179,6 +201,14 @@ Finish steps 3 and 4; the warning clears as soon as the certificate is issued.
 Chrome may refuse to let you click through because of HSTS: that is fine, you
 do not need to. To test in the meantime, clear the pin at
 `chrome://net-internals/#hsts` under "Delete domain security policies".
+
+**500 on every URL, and the error log says `AH00112: Warning: DocumentRoot
+[...] does not exist`.** The vhost points at a folder that is not there, so
+nothing can be served and `.htaccess` is irrelevant. Compare **Files & Access →
+Document Root** with where you actually uploaded, and make them match: either
+create/rename the folder to the document root's exact name, or point the
+document root at your folder. This is the likeliest cause of a blanket 500,
+ahead of `.htaccess`, when even static images fail.
 
 **Bluehost's own 404 page appears instead of the site.** If the response
 redirects to `/404.html` and the headers carry `host-header:
