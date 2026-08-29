@@ -142,10 +142,25 @@ extracted. Enable hidden files in File Manager and confirm it sits next to
 The build was made for the GitHub Pages subpath. Rebuild with
 `npm run build:host` (no `VITE_BASE` set) and re-upload.
 
-**500 Internal Server Error.** Almost always `.htaccess`. Rename it to
-`htaccess.txt` to confirm; if the error clears, tell me which line and I will
-trim it. Every block is already wrapped so an unavailable Apache module is
-skipped rather than fatal.
+**500 Internal Server Error on everything, including images.** This is
+`.htaccess`: if even `/favicon.svg` returns 500, Apache is rejecting the
+directory config before it serves anything, so it is not your content.
+
+The known cause on Bluehost was an `Options -MultiViews` line, which shared
+hosts refuse because they do not grant `AllowOverride Options`. It has been
+removed from the shipped file. If you are on an older copy, fix it in place:
+File Manager → **Settings → Show Hidden Files**, right-click `.htaccess` →
+**Edit**, delete the `Options -MultiViews` line, save. No re-upload needed.
+
+If a 500 somehow persists, swap in the fallback: the build includes
+`htaccess-minimal.txt`, which holds only the clean-URL rewrite. Rename the
+current `.htaccess` to `htaccess-full.txt`, then rename `htaccess-minimal.txt`
+to `.htaccess`. If that works, the problem is in one of the optional blocks and
+I can bisect from there.
+
+To rule `.htaccess` out entirely, rename it to `htaccess.txt`: the site will
+load but every link except the home page will 404, which itself confirms the
+file is the only thing at fault.
 
 **Site does not resolve at all.** Almost certainly the 123-reg A record
 (step 2b) is missing, misnamed or still propagating. Creating the subdomain in

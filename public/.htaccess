@@ -6,10 +6,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # MultiViews does its own extension guessing and fights the rules below.
-  <IfModule mod_negotiation.c>
-    Options -MultiViews
-  </IfModule>
+  # Deliberately no "Options -MultiViews" here. Bluehost and most shared hosts
+  # do not grant AllowOverride Options, and an Options directive they refuse is
+  # a hard 500 that an IfModule guard cannot prevent. The rules below work with
+  # MultiViews either on or off, so it is not needed.
 
   # Force HTTPS.
   RewriteCond %{HTTPS} !=on
