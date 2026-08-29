@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:host": "vite build && cd dist && zip -r -q ../future-accountants-site.zip . && cd .."
   },
   "dependencies": {
     "gsap": "^3.15.0",
