@@ -157,6 +157,23 @@ If it looks right, wait, and try mobile data to rule out local DNS caching.
 **AutoSSL fails to issue.** The hostname was not resolving when it ran. Confirm
 DNS first, then re-run AutoSSL.
 
+**"Your connection is not private" / `ERR_CERT_COMMON_NAME_INVALID`.** The
+server is presenting Bluehost's default `*.bluehost.com` certificate because no
+certificate exists for the subdomain yet. Expected before AutoSSL has run.
+Finish steps 3 and 4; the warning clears as soon as the certificate is issued.
+Chrome may refuse to let you click through because of HSTS: that is fine, you
+do not need to. To test in the meantime, clear the pin at
+`chrome://net-internals/#hsts` under "Delete domain security policies".
+
+**Bluehost's own 404 page appears instead of the site.** If the response
+redirects to `/404.html` and the headers carry `host-header:
+c2hhcmVkLmJsdWVob3N0LmNvbQ==` (base64 for `shared.bluehost.com`), the hostname
+is reaching the server but is not mapped to your files. Either the subdomain
+was not created in cPanel (step 2a), its document root does not match where you
+uploaded, or the folder is empty. Check **Domains** in cPanel lists
+`damon.nexusedge.tech` with document root `public_html/damon`, then confirm
+`index.html` is in that exact folder.
+
 ---
 
 ## Still to do before launch
