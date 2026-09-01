@@ -10,9 +10,9 @@ const faqs = [
     q: 'What exactly is the Foundational Practice AI System?',
     a: (
       <>
-        Ten AI employees built for your firm in the right order, starting with the AI Firm
+        Ten AI departments built for your firm in the right order, starting with the AI Firm
         Brain that learns your practice and powers everything else. It covers meetings, email,
-        bookkeeping, client success, marketing, finance, tax and strategy.
+        compliance, advisory, client success, marketing, finance, tax and management.
       </>
     ),
   },

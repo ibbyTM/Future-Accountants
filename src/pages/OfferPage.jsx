@@ -89,9 +89,9 @@ export default function OfferPage() {
             <em className="text-accent">Same destination. Different journey.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            Both routes build your Foundational Practice AI System: the ten AI employees, in the
-            right order, working across your whole practice. The difference is who does the work
-            and how fast.
+            Both routes build your Foundational Practice AI System: the ten AI departments, in
+            the right order, working across your whole practice. The difference is who does the
+            work and how fast.
           </p>
         </section>
 

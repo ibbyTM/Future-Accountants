@@ -3,20 +3,20 @@ import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
 /*
- * The AI Practice Operating System: the ten AI employees from the deck.
- * AI Firm Brain is the foundation cell; the other nine sit in a numbered
- * hairline grid. Roles and result claims come straight from the deck.
+ * The AI Practice Operating System: the ten foundational AI departments,
+ * from Damon's updated programme. AI Firm Brain is the foundation cell; the
+ * other nine sit in a numbered hairline grid, in his build order.
  */
-const employees = [
-  { name: 'AI Meeting Assistant', role: 'Notes, actions, CRM updates, follow ups' },
-  { name: 'AI Email Assistant', role: 'Drafts, replies, triage. A huge time saver' },
-  { name: 'AI Bookkeeper', role: 'Daily bookkeeping, reconciliations, VAT and payroll' },
-  { name: 'Claude Agent Team', role: 'Seven AI specialists working across the practice' },
-  { name: 'AI Client Success Manager', role: 'Client questions, chasing, reminders, updates' },
-  { name: 'AI Marketing Director', role: 'Social, emails, lead magnets, webinars, content' },
-  { name: 'AI Finance Director', role: 'Reporting, margins, pricing, KPIs, capacity' },
-  { name: 'AI Tax Specialist', role: 'HMRC research, legislation, planning, answers' },
-  { name: 'AI CEO', role: 'Your biggest vision. Strategic adviser' },
+const departments = [
+  { name: 'AI Meeting Department', role: 'Prepares, captures and follows up every meeting' },
+  { name: 'AI Email & Communications Department', role: 'Triages, drafts and chases. Nothing gets missed' },
+  { name: 'AI Compliance Department', role: 'Bookkeeping, VAT, payroll, accounts and tax' },
+  { name: 'AI Advisory Department', role: 'Forecasting, planning, R&D, valuations, Virtual FD' },
+  { name: 'AI Client Success Department', role: 'Onboarding, queries, chasing, reminders, updates' },
+  { name: 'AI Marketing, Sales & Growth Department', role: 'Content, leads, nurture, proposals, follow up' },
+  { name: 'AI Finance & Practice Performance Department', role: 'Profitability, pricing, WIP, capacity, KPIs' },
+  { name: 'AI Tax Department', role: 'HMRC research, technical answers, planning opportunities' },
+  { name: 'AI CEO & Management Department', role: 'Connects the other nine. Decisions and priorities' },
 ];
 
 export default function OperatingSystem() {
@@ -30,12 +30,12 @@ export default function OperatingSystem() {
               {site.systemName}
             </p>
             <h2 className="font-display text-4xl font-medium leading-[1.12] text-ink sm:text-5xl">
-              The first ten AI employees{' '}
-              <em className="text-accent">every firm should build.</em>
+              Ten foundational AI departments{' '}
+              <em className="text-accent">every accountancy firm should build.</em>
             </h2>
           </div>
           <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">
-            Built in the right order, for the biggest impact in the shortest time.
+            Built in the right order, for maximum impact in the shortest time.
           </p>
         </Reveal>
 
@@ -46,11 +46,11 @@ export default function OperatingSystem() {
               <h3 className="mt-3 font-display text-2xl font-medium italic">AI Firm Brain</h3>
             </div>
             <p className="text-[16px] leading-relaxed text-ground/70">
-              Your practice intelligence platform. It learns your firm, knows your clients and
-              remembers everything. The foundation that powers every AI employee above it.
+              One intelligent brain that knows your firm, clients, processes and knowledge.
+              The foundation that powers every other AI department above it.
             </p>
           </Reveal>
-          {employees.map((e, i) => (
+          {departments.map((e, i) => (
             <Reveal
               key={e.name}
               delay={60 + i * 60}
@@ -64,7 +64,7 @@ export default function OperatingSystem() {
         </div>
 
         <Reveal as="p" className="mt-10 border-t border-line pt-6 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
-          The result: 20 to 30+ hours saved per partner, per week.{' '}
+          The result: 20 to 30+ hours saved per employee, per week.{' '}
           <span className="text-accent">A practice that runs without you.</span>
         </Reveal>
       </div>
