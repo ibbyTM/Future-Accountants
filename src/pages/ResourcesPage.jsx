@@ -19,7 +19,7 @@ export default function ResourcesPage() {
           <GhostNumeral className="-top-16 right-[-2rem] lg:text-[20rem]">00</GhostNumeral>
           <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-36 sm:pt-44">
             <p className="mb-8 inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
-              Free resources
+              Resources
             </p>
             <h1 className="max-w-3xl font-display text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
               Guides for firms{' '}

@@ -96,7 +96,7 @@ export default function LeadMagnetPage({ magnet }) {
 
         <p className="mx-auto max-w-6xl px-5 py-10 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
           <a href={withBase('resources')} className="transition-colors hover:text-ink">
-            ← All free resources
+            ← All resources
           </a>
         </p>
       </main>

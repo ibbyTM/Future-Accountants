@@ -2,7 +2,8 @@
 
 Conversion funnel for Damon Millar's Firm of the Future AI programmes,
 built by Nexus Edge (Lucrum AI Ltd). Content is sourced from the "AI
-Programmes for Firms" deck. Four pages, one goal: **book a scoping call**.
+Programmes for Firms" deck. Four core pages plus a resources library, one goal: **book a scoping
+call**.
 No pricing appears on the site by design; investment is covered on the call.
 
 | Page | Purpose |
@@ -11,6 +12,8 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/offer` | Offer deep-dive for detail-seekers |
 | `/about` | Author page — books, Business DNA System, speaking, weekly webinar |
 | `/book` | Distraction-free booking page; renders Damon's Calendly scheduler (`calendarEmbedUrl` in `src/site.config.js`) |
+| `/resources` | Index of the free lead magnets |
+| `/resources/<slug>` | One lead magnet: written intro and takeaways, then the Notion document embedded |
 
 **Live host**: Bluehost cPanel at https://damon.nexusedge.tech. Build the
 upload package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).
@@ -47,6 +50,7 @@ npm run preview  # serve the production build
 | What | Where |
 | --- | --- |
 | Booking CTA, calendar embed URL, offer name | `src/site.config.js` |
+| Lead magnets (add one, edit one) | `src/content/leadMagnets.js` |
 | Brand colours (stripe-press editorial: bone/ink/magenta) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |
 | SEO / OG meta | `index.html` |
@@ -57,7 +61,7 @@ unnoticed.
 
 ## Open questions before launch
 
-1. **Calendar embed URL** for `/book` (`calendarEmbedUrl` in `src/site.config.js`, currently unset)
+1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)
 2. **Final domain + OG image** (`og:url` and `og-image.jpg` in the four HTML files)
 3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
 

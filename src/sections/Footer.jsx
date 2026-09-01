@@ -8,7 +8,7 @@ import { site, withBase } from '../site.config.js';
 const explore = [
   { href: withBase('offer'), label: 'The Offer' },
   { href: withBase('about'), label: 'About Damon' },
-  { href: withBase('resources'), label: 'Free Guides' },
+  { href: withBase('resources'), label: 'Resources' },
   { href: site.bookingUrl, label: site.ctaLabel },
 ];
 

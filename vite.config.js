@@ -50,7 +50,7 @@ function generateResourcePages() {
 
   const index = resolve(dir, 'index.html');
   const indexHtml = pageHtml({
-    title: 'Free resources | Guides for firms building with AI',
+    title: 'Resources | Guides for firms building with AI',
     description:
       'Practical AI guides for accounting firms from Damon Millar. Free to read, nothing to fill in.',
     entry: 'resources-main.jsx',
