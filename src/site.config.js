@@ -19,5 +19,7 @@ export const site = {
   calendarEmbedUrl:
     'https://calendly.com/damon-millar-switchaccountants/strategy-meeting-for-accountants-clone',
 
-  email: null, // TODO confirm contact email for footer, if wanted
+  // Set this and the footer shows a Contact line linking to it. Left null
+  // until Damon confirms the address, so nothing is invented on his behalf.
+  email: null,
 };

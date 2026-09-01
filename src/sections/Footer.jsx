@@ -29,6 +29,17 @@ export default function Footer() {
               A practical AI roadmap for accounting firms, from the man who built his own firm
               to 65% AI coverage.
             </p>
+            {site.email && (
+              <p className="mt-6 font-sans text-[15px]">
+                <span className="text-muted">Contact: </span>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="relative inline-block text-ink transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-100 after:bg-line after:transition-transform after:duration-300 hover:after:bg-ink motion-reduce:after:transition-none"
+                >
+                  {site.email}
+                </a>
+              </p>
+            )}
           </div>
 
           <nav className="col-span-6 sm:col-span-4 lg:col-span-3">
