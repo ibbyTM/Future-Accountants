@@ -19,6 +19,16 @@ const departments = [
   { name: 'AI CEO & Management Department', role: 'Connects the other nine. Decisions and priorities' },
 ];
 
+/* The trust row from Damon's V5 overview: the reassurance accountants need
+   before handing work to AI. Sits between the departments and the result,
+   as it does on his graphic. */
+const trust = [
+  { title: 'Secure by design', body: 'Your data. Your rules. Always protected.' },
+  { title: 'Human in control', body: 'AI does the heavy lifting. You keep control.' },
+  { title: 'Quality & review', body: 'Built-in checks, reviews and partner oversight.' },
+  { title: 'Auditable & accountable', body: 'Full audit trail. Complete accountability.' },
+];
+
 export default function OperatingSystem() {
   return (
     <section id="system" className="relative overflow-hidden border-y border-line bg-surface">
@@ -63,7 +73,26 @@ export default function OperatingSystem() {
           ))}
         </div>
 
-        <Reveal as="p" className="mt-10 border-t border-line pt-6 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
+        <div className="mt-14 border-t border-line pt-10">
+          <Reveal
+            as="p"
+            className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink"
+          >
+            Built on a foundation of trust
+          </Reveal>
+          <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {trust.map((t, i) => (
+              <Reveal key={t.title} delay={i * 80} className="border-t-2 border-ink pt-4">
+                <h3 className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-accent">
+                  {t.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted">{t.body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <Reveal as="p" className="mt-14 border-t border-line pt-6 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
           The result: 20 to 30+ hours saved per employee, per week.{' '}
           <span className="text-accent">A practice that runs without you.</span>
         </Reveal>
