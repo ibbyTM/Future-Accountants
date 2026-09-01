@@ -223,9 +223,6 @@ uploaded, or the folder is empty. Check **Domains** in cPanel lists
 
 ## Still to do before launch
 
-- **The booking calendar is a placeholder.** Once Damon confirms the Calendly
-  or GoHighLevel link, set `calendarEmbedUrl` in `src/site.config.js`, rebuild
-  and re-upload. Until then `/book` shows a dashed placeholder box.
 - Confirm the exact magenta with Damon if he has a brand hex.
 - A social share image for link previews (I can generate one from the hero
   photo).

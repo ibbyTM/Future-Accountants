@@ -1,3 +1,4 @@
+import CalendlyEmbed from '../components/CalendlyEmbed.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import { site, withBase } from '../site.config.js';
@@ -73,10 +74,9 @@ export default function BookPage() {
         </div>
         <div className="col-span-12 lg:col-span-7">
           {site.calendarEmbedUrl ? (
-            <iframe
-              src={site.calendarEmbedUrl}
-              title="Book a call with Damon Millar"
-              className="min-h-[680px] w-full border border-line bg-surface"
+            <CalendlyEmbed
+              url={site.calendarEmbedUrl}
+              className="h-[1000px] w-full sm:h-[760px] lg:h-[720px]"
             />
           ) : (
             <div className="flex min-h-[560px] items-center justify-center border border-dashed border-accent/60 bg-surface p-8 lg:min-h-[680px]">

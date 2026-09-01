@@ -10,7 +10,7 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/` | Long-scroll funnel (hero → proof → problem → offer → qualification → system → about → testimonials → FAQ → CTA) |
 | `/offer` | Offer deep-dive for detail-seekers |
 | `/about` | Author page — books, Business DNA System, speaking, weekly webinar |
-| `/book` | Distraction-free booking page; renders the calendar embed once `calendarEmbedUrl` is set in `src/site.config.js` |
+| `/book` | Distraction-free booking page; renders Damon's Calendly scheduler (`calendarEmbedUrl` in `src/site.config.js`) |
 
 **Live host**: Bluehost cPanel at https://damon.nexusedge.tech. Build the
 upload package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).

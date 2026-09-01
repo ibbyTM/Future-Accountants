@@ -14,9 +14,10 @@ export const site = {
   bookingUrl: withBase('book'),
   ctaLabel: 'Book a Call',
 
-  // TODO: real Calendly / GHL embed URL. When set, /book renders the
-  // calendar iframe in place of the flagged placeholder.
-  calendarEmbedUrl: null,
+  // Calendly event URL for the scoping call. Rendered by CalendlyEmbed on
+  // /book; leaving it null falls back to a flagged placeholder.
+  calendarEmbedUrl:
+    'https://calendly.com/damon-millar-switchaccountants/strategy-meeting-for-accountants-clone',
 
   email: null, // TODO confirm contact email for footer, if wanted
 };
