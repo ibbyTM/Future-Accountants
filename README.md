@@ -15,8 +15,11 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/resources` | Index of the free lead magnets |
 | `/resources/<slug>` | One lead magnet: written intro and takeaways, then the Notion document embedded |
 
-**Live host**: Bluehost cPanel at https://damon.nexusedge.tech. Build the
-upload package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).
+**Live host**: Bluehost cPanel at https://damon.nexusedge.tech (staging). Build
+the upload package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).
+
+Clean URLs are configured per host: `public/.htaccess` for Apache, `vercel.json`
+for Vercel. Both files ship in the repo, and each host ignores the other's.
 
 **Preview**: every push to the working branch also deploys to GitHub Pages
 at https://ibbytm.github.io/Future-Accountants/ (via
