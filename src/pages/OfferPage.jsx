@@ -14,6 +14,61 @@ import { site } from '../site.config.js';
  * AI Academy tiers and the Beyond AI system. No pricing on the site:
  * investment is covered on the scoping call.
  */
+/* The ten departments both routes build, with Damon's taglines and outcome
+   lines from the 90 day programme outline. */
+const departments = [
+  {
+    name: 'AI Firm Brain',
+    line: 'Your practice intelligence platform',
+    outcome: 'One brain. One source of truth. Every AI system gets smarter.',
+  },
+  {
+    name: 'AI Meeting Department',
+    line: 'Turn every conversation into action',
+    outcome: 'Better meetings. Zero forgotten actions. Almost no meeting admin.',
+  },
+  {
+    name: 'AI Email & Communications Department',
+    line: 'Take control of the practice inbox',
+    outcome: 'Faster responses. Cleaner inboxes. Hours returned to every senior person.',
+  },
+  {
+    name: 'AI Compliance Department',
+    line: 'The AI-powered compliance engine',
+    outcome: 'Automate the work. Manage the exceptions. Keep the judgement.',
+  },
+  {
+    name: 'AI Advisory Department',
+    line: 'Turn advisory into a scalable practice-wide service',
+    outcome: 'Move AI beyond compliance and make high-value advisory scalable.',
+  },
+  {
+    name: 'AI Client Success Department',
+    line: 'Deliver a better client experience automatically',
+    outcome: 'Happier clients. Faster service. Less chasing. More proactive advice.',
+  },
+  {
+    name: 'AI Marketing, Sales & Growth Department',
+    line: 'Build a predictable AI-powered growth engine',
+    outcome: 'More leads. Better follow up. Higher conversion. Predictable growth.',
+  },
+  {
+    name: 'AI Finance & Practice Performance Department',
+    line: 'Know exactly how your firm is performing',
+    outcome: 'Better information. Better pricing. Better capacity. Better margins.',
+  },
+  {
+    name: 'AI Tax Department',
+    line: 'Give every accountant an AI tax specialist',
+    outcome: 'Faster research. Better answers. More planning opportunities.',
+  },
+  {
+    name: 'AI CEO & Management Department',
+    line: 'The intelligence layer that helps run the firm',
+    outcome: 'A practice that knows what is happening and what should happen next.',
+  },
+];
+
 const withYou = [
   { tag: 'Weekly', name: 'Power Hour with Damon' },
   { tag: 'Tools', name: 'Baseline AI tool suite' },
@@ -32,7 +87,7 @@ const forYouTimeline = [
 ];
 
 const comparison = [
-  ['Foundational AI System', 'Included', 'Included'],
+  ['AI Practice Operating System', 'Included', 'Included'],
   ['Proven AI tools', 'Included', 'Included'],
   ['Damon mentoring', 'Weekly', '6 months, one-to-one'],
   ['Technical support', 'Between sessions', 'Unlimited, 12 months'],
@@ -89,10 +144,51 @@ export default function OfferPage() {
             <em className="text-accent">Same destination. Different journey.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
-            Both routes build your Foundational Practice AI System: the ten AI departments, in
+            Both routes build your AI Practice Operating System™: the ten AI departments, in
             the right order, working across your whole practice. The difference is who does the
             work and how fast.
           </p>
+        </section>
+
+        {/* What both routes build: the ten departments in full */}
+        <section className="mx-auto max-w-6xl px-5 pb-20">
+          <div className="grid grid-cols-12 items-end gap-x-6 gap-y-4">
+            <div className="col-span-12 lg:col-span-7">
+              <h2 className="font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
+                What you build.{' '}
+                <em className="text-accent">Ten departments, in order.</em>
+              </h2>
+            </div>
+            <p className="col-span-12 max-w-md text-[16px] leading-relaxed text-muted lg:col-span-5">
+              One connected system: every department shares one brain and one source of truth.
+            </p>
+          </div>
+          <ol className="mt-12 border-t border-line">
+            {departments.map((d, i) => (
+              <Reveal
+                as="li"
+                key={d.name}
+                delay={i * 40}
+                className="grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-b border-line py-6"
+              >
+                <span
+                  aria-hidden="true"
+                  className="col-span-2 font-display text-2xl font-medium italic text-accent sm:col-span-1"
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="col-span-10 sm:col-span-5">
+                  <h3 className="text-[17px] font-semibold leading-snug text-ink">{d.name}</h3>
+                  <p className="mt-1 font-display text-[17px] italic leading-snug text-muted">
+                    {d.line}
+                  </p>
+                </div>
+                <p className="col-span-12 text-[15px] leading-relaxed text-muted sm:col-span-6">
+                  {d.outcome}
+                </p>
+              </Reveal>
+            ))}
+          </ol>
         </section>
 
         {/* Option 1: mentored */}

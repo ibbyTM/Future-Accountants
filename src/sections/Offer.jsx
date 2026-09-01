@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 
 /*
- * Two routes to the same Foundational Practice AI System, mirroring the
+ * Two routes to the same AI Practice Operating System, mirroring the
  * deck's option slides. No pricing on the site: investment is covered on
  * the scoping call. Below: the five next steps from the deck.
  */
@@ -59,7 +59,7 @@ export default function Offer({ heading }) {
           </h2>
         </div>
         <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">
-          Both routes build your Foundational Practice AI System. The difference is who does the
+          Both routes build your AI Practice Operating System. The difference is who does the
           work and how fast.
         </p>
       </Reveal>

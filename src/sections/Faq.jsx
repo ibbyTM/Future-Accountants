@@ -7,7 +7,7 @@ import { site } from '../site.config.js';
  */
 const faqs = [
   {
-    q: 'What exactly is the Foundational Practice AI System?',
+    q: 'What exactly is the AI Practice Operating System?',
     a: (
       <>
         Ten AI departments built for your firm in the right order, starting with the AI Firm

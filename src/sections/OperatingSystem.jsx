@@ -45,7 +45,8 @@ export default function OperatingSystem() {
             </h2>
           </div>
           <p className="col-span-12 max-w-md text-[17px] leading-relaxed text-muted lg:col-span-5">
-            Built in the right order, for maximum impact in the shortest time.
+            Built in the right order, for maximum impact in the shortest time. One connected
+            system: every department shares one brain and one source of truth.
           </p>
         </Reveal>
 
@@ -93,7 +94,8 @@ export default function OperatingSystem() {
         </div>
 
         <Reveal as="p" className="mt-14 border-t border-line pt-6 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
-          The result: 20 to 30+ hours saved per employee, per week.{' '}
+          The result: 20 to 30+ hours saved per employee, per week. Capacity for more clients,
+          more higher-value advisory work and better fees.{' '}
           <span className="text-accent">A practice that runs without you.</span>
         </Reveal>
       </div>
