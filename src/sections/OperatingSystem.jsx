@@ -98,6 +98,16 @@ export default function OperatingSystem() {
           more higher-value advisory work and better fees.{' '}
           <span className="text-accent">A practice that runs without you.</span>
         </Reveal>
+
+        {/* Damon's closing line, set as a ledger total rather than a second
+            sentence, so it lands as the section's bottom line. */}
+        <Reveal
+          as="p"
+          className="mt-12 pt-6 text-center font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink [border-top:3px_double_var(--color-ink)]"
+        >
+          Ten departments. <span className="text-accent">One connected practice.</span>{' '}
+          Limitless impact.
+        </Reveal>
       </div>
     </section>
   );
