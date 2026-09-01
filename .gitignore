@@ -3,3 +3,5 @@ dist
 *.local
 .DS_Store
 future-accountants-site.zip
+# generated from src/content/leadMagnets.js at build time
+resources/

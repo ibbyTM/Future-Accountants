@@ -4,6 +4,7 @@ import { site, withBase } from '../site.config.js';
 const links = [
   { href: withBase('offer'), label: 'The Offer' },
   { href: withBase('about'), label: 'About Damon' },
+  { href: withBase('resources'), label: 'Free Guides' },
 ];
 
 /*
