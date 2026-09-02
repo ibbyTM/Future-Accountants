@@ -65,7 +65,7 @@ unnoticed.
 ## Open questions before launch
 
 1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)
-2. **Final domain + OG image** (`og:url` and `og-image.jpg` in the four HTML files)
+2. **Final domain** (`og:url` in the four HTML files, currently a placeholder)
 3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
 
 Photos and book covers are live in `public/images/` (source assets from
