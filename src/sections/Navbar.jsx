@@ -21,7 +21,7 @@ export default function Navbar() {
     const onKey = e => {
       if (e.key === 'Escape') setOpen(false);
     };
-    const mq = window.matchMedia('(min-width: 640px)');
+    const mq = window.matchMedia('(min-width: 1024px)');
     const onWide = e => {
       if (e.matches) setOpen(false);
     };
@@ -42,7 +42,7 @@ export default function Navbar() {
         >
           Damon Millar
         </a>
-        <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted sm:flex">
+        <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted lg:flex">
           {links.map(l => (
             <a
               key={l.href}
@@ -66,7 +66,7 @@ export default function Navbar() {
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="-mr-2 flex size-11 items-center justify-center sm:hidden"
+            className="-mr-2 flex size-11 items-center justify-center lg:hidden"
           >
             <span aria-hidden="true" className="relative block h-3 w-5">
               <span
@@ -91,7 +91,7 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="border-t border-line bg-ground sm:hidden"
+        className="border-t border-line bg-ground lg:hidden"
       >
         {links.map(l => (
           <a
