@@ -54,6 +54,10 @@ npm run preview  # serve the production build
 | --- | --- |
 | Booking CTA, calendar embed URL, offer name | `src/site.config.js` |
 | Lead magnets (add one, edit one) | `src/content/leadMagnets.js` |
+| Webinar sign-ups on Resources | `src/content/webinars.js` |
+| The ten AI departments (home and offer) | `src/content/departments.js` |
+| Books, featured and catalogue, with summaries and buy links | `src/content/books.js` |
+| Testimonials, with optional firm and photo | `src/content/testimonials.js` |
 | Brand colours (stripe-press editorial: bone/ink/magenta) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |
 | SEO / OG meta | `index.html` |

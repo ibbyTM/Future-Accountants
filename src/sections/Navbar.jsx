@@ -38,8 +38,15 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
         <a
           href={withBase('')}
-          className="flex h-16 shrink-0 items-center whitespace-nowrap text-[13px] font-extrabold uppercase tracking-[0.18em] text-ink sm:text-sm sm:tracking-[0.3em]"
+          className="flex h-16 shrink-0 items-center gap-3 whitespace-nowrap text-[13px] font-extrabold uppercase tracking-[0.18em] text-ink sm:text-sm sm:tracking-[0.3em]"
         >
+          <img
+            src={withBase('mark.svg')}
+            alt=""
+            width="28"
+            height="28"
+            className="size-6 shrink-0 sm:size-7"
+          />
           Damon Millar
         </a>
         <div className="hidden items-center gap-9 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted lg:flex">

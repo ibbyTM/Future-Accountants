@@ -1,4 +1,4 @@
-import BookCarousel from '../components/BookCarousel.jsx';
+import BookGrid from '../components/BookGrid.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
@@ -8,21 +8,21 @@ import Footer from '../sections/Footer.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { withBase } from '../site.config.js';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
+import { featured as books, catalogue } from '../content/books.js';
 
 /*
  * Author-detail page, built from the deck's about material: the four
- * identity blocks, featured books as objects, the mission, the Switch
- * Accountants proof band and the speaking/webinar panels. Cover images
- * are honest asset slots until real artwork is supplied.
+ * identity blocks, the books (from src/content/books.js), the mission,
+ * the Switch Accountants proof band and the speaking/webinar panels.
  */
 const identities = [
   {
     role: 'Author',
-    detail: '20+ business books on profit, growth, AI and building valuable businesses.',
+    detail: '21 business books on profit, growth, AI and building valuable businesses.',
   },
   {
     role: 'Speaker',
-    detail: 'Keynote speaker at conferences, events and mastermind groups worldwide.',
+    detail: 'Keynote speaker and 15+ years of sold out Business DNA Roadshows & The Accountants Bootcamp events in the US and America.',
   },
   {
     role: 'Business adviser',
@@ -30,55 +30,9 @@ const identities = [
   },
   {
     role: 'Practice builder',
-    detail: 'Founder of Switch Accountants, a multi-office firm using AI at scale.',
+    detail: 'Founder of Switch Accountants Group, an award-winning multi-office 8 site firm that now uses AI at scale to perform 65% of the once human work.',
   },
 ];
-
-const books = [
-  {
-    title: 'The AI Accountant?',
-    edition: 'Forthcoming',
-    line: 'Building the Firm of the Future. The book behind these programmes.',
-    cover: 'images/cover-ai-accountant.jpg',
-    alt: 'The AI Accountant? Building the Firm of the Future, by Damon Millar',
-  },
-  {
-    title: 'Business DNA',
-    edition: '10th Anniversary Edition',
-    line: 'The bestselling blueprint for unlocking the hidden potential in your business.',
-    cover: 'images/cover-business-dna.jpg',
-    alt: 'Business DNA, 10th Anniversary Edition, by Damon Millar and Clare Thompson',
-  },
-  {
-    title: 'Artificially Intelligent!',
-    edition: 'With Clare Thompson',
-    line: '101 ways to unleash the power of AI for your business.',
-    cover: 'images/cover-artificially-intelligent.jpg',
-    alt: 'Artificially Intelligent! by Damon Millar and Clare Thompson',
-  },
-];
-
-/* The wider catalogue, cut from the montage. The three featured books
-   above are excluded so nothing repeats. */
-const catalogue = [
-  '101 Business Growth Strategies',
-  '101 Unbreakable Rules for Business Success',
-  '101 Ways to Save Business Taxes',
-  'The Family Business Bible',
-  'Research and Development Tax Relief',
-  'Damon Makes You Smarter Than a Business Professor',
-  'Business DNA, 10th Anniversary Edition',
-  'Legal Tax Planning',
-  'The Ultimate Guide to Productivity and Time Management',
-  'Covid Bounce Back!',
-  'From the Trenches',
-  'The Accidental Accountant',
-  'Legal Tax Planning for Business Owners',
-  'Did You Miss The Revolution?',
-].map((title, i) => ({
-  src: `images/books/cover-${String(i + 1).padStart(2, '0')}.jpg`,
-  alt: `${title}, book cover`,
-}));
 
 const switchStats = [
   { n: 8, suffix: '', label: 'Offices across the UK' },
@@ -105,6 +59,19 @@ function BookRow({ book, flip }) {
           {book.title}
         </h3>
         <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-muted">{book.line}</p>
+        {book.summary && (
+          <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-muted">{book.summary}</p>
+        )}
+        {book.buyUrl && (
+          <a
+            href={book.buyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-block font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent transition-colors hover:text-ink"
+          >
+            Buy the book
+          </a>
+        )}
       </div>
     </Reveal>
   );
@@ -161,7 +128,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-12 gap-x-6 gap-y-12">
               <div className="col-span-12 lg:col-span-5">
                 <p className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-accent-soft brightness-150">
-                  Switch Accountants
+                  Switch Accountants Group
                 </p>
                 <h2 className="mt-3 font-display text-4xl font-medium italic leading-[1.1] sm:text-5xl">
                   We build. We run. It’s real.
@@ -195,7 +162,7 @@ export default function AboutPage() {
               The books.
             </h2>
             <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-muted">
-              20+ business books on profit, growth, AI and building valuable businesses. Three
+              21 business books on profit, growth, AI and building valuable businesses. Three
               of the best known:
             </p>
             <div className="mt-12">
@@ -203,12 +170,11 @@ export default function AboutPage() {
                 <BookRow key={b.title} book={b} flip={i % 2 === 1} />
               ))}
             </div>
-            <div className="border-t border-line pt-10">
-              <BookCarousel covers={catalogue} />
-              <p className="mt-5 font-sans text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-                20+ business books and counting. Covid BOUNCE BACK!, Legal Tax Planning, The
-                Accountant’s Handbook and more.
+            <div className="border-t border-line pt-12">
+              <p className="mb-10 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-muted">
+                And the rest of the shelf
               </p>
+              <BookGrid books={catalogue} />
             </div>
           </div>
         </section>

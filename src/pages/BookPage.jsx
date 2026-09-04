@@ -20,7 +20,8 @@ export default function BookPage() {
       <PageGrain />
       <header className="border-b border-line">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 font-sans">
-          <a href={withBase('')} className="flex h-16 items-center text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
+          <a href={withBase('')} className="flex h-16 items-center gap-3 text-sm font-extrabold uppercase tracking-[0.3em] text-ink">
+            <img src={withBase('mark.svg')} alt="" width="28" height="28" className="size-7 shrink-0" />
             Damon Millar
           </a>
           <a href={withBase('')} className="flex h-16 items-center text-[13px] font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-ink">

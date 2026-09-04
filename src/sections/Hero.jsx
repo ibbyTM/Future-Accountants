@@ -76,7 +76,7 @@ export default function Hero() {
           </h1>
           <p className="hero-enter mt-8 max-w-xl text-lg leading-[1.65] sm:text-xl" style={{ animationDelay: '320ms' }}>
             A practical AI roadmap for accounting firms, from the man who built his own firm to
-            65% AI coverage. We build it in our firm. Now we help other firms build theirs.
+            65% AI coverage. We built it in our firm. Now we help other firms build theirs.
           </p>
           <div className="hero-enter mt-10 flex flex-wrap items-center gap-7" style={{ animationDelay: '440ms' }}>
             <CtaButton />
@@ -88,7 +88,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="hero-enter mt-14 border-t border-line pt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted" style={{ animationDelay: '560ms' }}>
-            Author of 20+ business books · Founder, Switch Accountants · UK keynote speaker
+            Author of 21 business books · Founder, Switch Accountants Group · International Speaker & Adviser
           </p>
         </div>
         <div className="hero-enter col-span-12 mx-auto w-full max-w-xs pb-14 pt-6 sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pb-20 lg:pt-24" style={{ animationDelay: '300ms' }}>

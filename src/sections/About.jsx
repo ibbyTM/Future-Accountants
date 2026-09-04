@@ -4,8 +4,8 @@ import { withBase } from '../site.config.js';
 const facts = [
   'Pioneer in AI implementation for accounting firms',
   'Founder of the AI Accountant™ and Firm of the Future™ frameworks',
-  'Built his own firm, Switch Accountants, to 8 UK offices and 117+ people',
-  'Author of 20+ business books, including Business DNA and Artificially Intelligent!',
+  'Built his own firm, Switch Accountants Group, to 8 UK offices and 117+ people',
+  'Author of 21 business books, including The AI Accountant? and Artificially Intelligent!',
   'Helping firms across the UK, Australia, North America and beyond',
 ];
 

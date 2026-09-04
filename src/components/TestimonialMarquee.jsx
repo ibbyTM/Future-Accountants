@@ -1,3 +1,5 @@
+import { withBase } from '../site.config.js';
+
 /*
  * Testimonial marquee, adapted from the shadcn-style TestimonialMarquee
  * (flush variant) to this project's plain-JSX editorial system: sharp
@@ -30,18 +32,30 @@ function TestimonialCard({ item }) {
         “{item.text}”
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
-        <span
-          aria-hidden="true"
-          className="flex h-9 w-9 shrink-0 items-center justify-center bg-ink font-display text-sm italic text-ground"
-        >
-          {item.initial}
-        </span>
+        {item.photo ? (
+          <img
+            src={withBase(item.photo)}
+            alt=""
+            loading="lazy"
+            className="h-9 w-9 shrink-0 object-cover ring-1 ring-line/70"
+          />
+        ) : (
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 shrink-0 items-center justify-center bg-ink font-display text-sm italic text-ground"
+          >
+            {item.initial}
+          </span>
+        )}
         <span className="flex flex-col">
           <span className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-ink">
             {item.name}
           </span>
           {item.role && (
             <span className="font-sans text-xs text-muted">{item.role}</span>
+          )}
+          {item.firm && (
+            <span className="font-sans text-xs font-semibold text-ink">{item.firm}</span>
           )}
         </span>
       </figcaption>

@@ -3,7 +3,7 @@ export default function System() {
     <section className="mx-auto max-w-4xl px-5 py-24 sm:py-32">
       <blockquote className="border-l-2 border-accent pl-8 sm:pl-12">
         <p className="hang-quote font-display text-3xl font-medium italic leading-[1.25] text-ink sm:text-[2.6rem]">
-          “We build it in our firm. <span className="text-accent">Now we help other firms build theirs.”</span>
+          “We built it in our firm. <span className="text-accent">Now we help other firms build theirs.”</span>
         </p>
       </blockquote>
       <p className="mt-10 max-w-2xl border-l-2 border-transparent pl-8 text-[17px] leading-relaxed text-muted sm:pl-12">
