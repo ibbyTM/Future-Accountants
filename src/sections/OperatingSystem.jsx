@@ -42,12 +42,17 @@ export default function OperatingSystem() {
         </Reveal>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Reveal className="relative z-10 flex min-h-[220px] flex-col justify-between border border-ink bg-ink p-7 text-ground lg:-mt-6 lg:row-span-2">
-            <div>
-              <p className="font-display text-3xl font-medium italic text-accent-soft brightness-150">01</p>
-              <h3 className="mt-3 font-display text-2xl font-medium italic">{brain.name}</h3>
+          {/* The foundation gets its own row at lg, so the other nine fill a
+              clean 3 by 3 beneath it. At sm it is a normal cell: ten cards,
+              five rows of two, no orphan. */}
+          <Reveal className="border border-ink bg-ink p-6 text-ground lg:col-span-3 lg:grid lg:grid-cols-12 lg:items-baseline lg:gap-x-6 lg:p-8">
+            <div className="lg:col-span-4">
+              <p className="font-display text-xl font-medium italic text-accent-soft brightness-150 lg:text-3xl">01</p>
+              <h3 className="mt-2 font-display text-2xl font-medium italic lg:mt-3 lg:text-3xl">{brain.name}</h3>
             </div>
-            <p className="text-[16px] leading-relaxed text-ground/70">{brain.summary}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-ground/70 lg:col-span-8 lg:mt-0 lg:text-[17px]">
+              {brain.summary}
+            </p>
           </Reveal>
           {others.map((e, i) => (
             <Reveal
