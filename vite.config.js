@@ -132,6 +132,7 @@ export default defineConfig({
         main: resolve(root, 'index.html'),
         about: resolve(root, 'about.html'),
         offer: resolve(root, 'offer.html'),
+        firm: resolve(root, 'firm-of-the-future.html'),
         book: resolve(root, 'book.html'),
         ...resourceInputs,
       },

@@ -1,4 +1,4 @@
-import BookGrid from '../components/BookGrid.jsx';
+import BookLibrary from '../components/BookLibrary.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Navbar from '../sections/Navbar.jsx';
@@ -8,7 +8,7 @@ import Footer from '../sections/Footer.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { withBase } from '../site.config.js';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
-import { featured as books, catalogue } from '../content/books.js';
+import { featured as books, library, themes } from '../content/books.js';
 
 /*
  * Author-detail page, built from the deck's about material: the four
@@ -61,6 +61,15 @@ function BookRow({ book, flip }) {
         <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-muted">{book.line}</p>
         {book.summary && (
           <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-muted">{book.summary}</p>
+        )}
+        {book.bonus && (
+          <p className="mt-4 max-w-lg border-t border-line pt-3 text-[15px] leading-relaxed text-muted">
+            <span className="font-sans text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+              Buy today bonus
+            </span>
+            <br />
+            {book.bonus}
+          </p>
         )}
         {book.buyUrl && (
           <a
@@ -171,10 +180,10 @@ export default function AboutPage() {
               ))}
             </div>
             <div className="border-t border-line pt-12">
-              <p className="mb-10 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-muted">
-                And the rest of the shelf
+              <p className="mb-8 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-muted">
+                The library
               </p>
-              <BookGrid books={catalogue} />
+              <BookLibrary books={library} themes={themes} />
             </div>
           </div>
         </section>

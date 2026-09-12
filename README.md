@@ -10,6 +10,7 @@ No pricing appears on the site by design; investment is covered on the call.
 | --- | --- |
 | `/` | Long-scroll funnel (hero → proof → problem → offer → qualification → system → about → testimonials → FAQ → CTA) |
 | `/offer` | Offer deep-dive for detail-seekers |
+| `/firm-of-the-future` | Damon's full programme, seven areas, and where the AI system sits inside it |
 | `/about` | Author page — books, Business DNA System, speaking, weekly webinar |
 | `/book` | Distraction-free booking page; renders Damon's Calendly scheduler (`calendarEmbedUrl` in `src/site.config.js`) |
 | `/resources` | Index of the free lead magnets |
@@ -56,7 +57,8 @@ npm run preview  # serve the production build
 | Lead magnets (add one, edit one) | `src/content/leadMagnets.js` |
 | Webinar sign-ups on Resources | `src/content/webinars.js` |
 | The ten AI departments (home and offer) | `src/content/departments.js` |
-| Books, featured and catalogue, with summaries and buy links | `src/content/books.js` |
+| Books, featured and library in five themes, with summaries, bonuses and buy links | `src/content/books.js` |
+| The Firm of the Future System page | `src/content/firmSystem.js` |
 | Testimonials, with optional firm and photo | `src/content/testimonials.js` |
 | Brand colours (stripe-press editorial: bone/ink/magenta) | `@theme` tokens in `src/index.css` |
 | Section copy | `src/sections/*.jsx` |

@@ -1,6 +1,6 @@
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import Reveal from '../components/Reveal.jsx';
-import { site } from '../site.config.js';
+import { site, withBase } from '../site.config.js';
 import { departments, departmentsResult } from '../content/departments.js';
 
 /*
@@ -100,6 +100,14 @@ export default function OperatingSystem() {
           Ten departments. <span className="text-accent">One connected practice.</span>{' '}
           Limitless impact.
         </Reveal>
+        <p className="mt-8 text-center">
+          <a
+            href={withBase('firm-of-the-future')}
+            className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent transition-colors hover:text-ink"
+          >
+            See where the AI system fits in the Firm of the Future
+          </a>
+        </p>
       </div>
     </section>
   );

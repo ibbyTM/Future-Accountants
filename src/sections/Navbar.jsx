@@ -3,6 +3,7 @@ import { site, withBase } from '../site.config.js';
 
 const links = [
   { href: withBase('offer'), label: 'The Offer' },
+  { href: withBase('firm-of-the-future'), label: 'The System' },
   { href: withBase('about'), label: 'About Damon' },
   { href: withBase('resources'), label: 'Resources' },
 ];
