@@ -82,7 +82,7 @@ export default function Hero() {
             <CtaButton />
             <a
               href="#offer"
-              className="font-sans text-sm font-semibold text-ink underline decoration-line decoration-2 underline-offset-8 transition-colors hover:decoration-accent"
+              className="inline-flex min-h-11 items-center font-sans text-sm font-semibold text-ink underline decoration-line decoration-2 underline-offset-8 transition-colors hover:decoration-accent"
             >
               See how it works
             </a>

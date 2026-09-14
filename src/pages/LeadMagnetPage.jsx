@@ -69,7 +69,7 @@ export default function LeadMagnetPage({ magnet }) {
                 href={magnet.notionUrl.replace('/ebd/', '/')}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-accent underline underline-offset-4"
+                className="inline-flex min-h-11 items-center font-semibold text-accent underline underline-offset-4"
               >
                 Open it in a new tab
               </a>
@@ -95,7 +95,10 @@ export default function LeadMagnetPage({ magnet }) {
         </section>
 
         <p className="mx-auto max-w-6xl px-5 py-10 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-          <a href={withBase('resources')} className="transition-colors hover:text-ink">
+          <a
+            href={withBase('resources')}
+            className="inline-flex min-h-11 items-center transition-colors hover:text-ink"
+          >
             ← All resources
           </a>
         </p>

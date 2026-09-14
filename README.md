@@ -71,7 +71,7 @@ unnoticed.
 ## Open questions before launch
 
 1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)
-2. **Final domain** (`og:url` in the four HTML files, currently a placeholder)
+2. **Final domain**: the site is set to `https://damon.nexusedge.tech`. When it moves to Damon's own domain, change it in the five root HTML files (`og:url`, `og:image`), `SITE_URL` in `vite.config.js`, `public/robots.txt` and `public/sitemap.xml`. A new guide also needs a line in the sitemap.
 3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
 
 Photos and book covers are live in `public/images/` (source assets from

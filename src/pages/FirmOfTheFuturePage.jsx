@@ -86,7 +86,7 @@ export default function FirmOfTheFuturePage() {
                 <CtaButton />
                 <a
                   href="#areas"
-                  className="relative font-sans text-sm font-semibold text-ink after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-line after:transition-colors hover:after:bg-ink"
+                  className="relative inline-flex min-h-11 items-center font-sans text-sm font-semibold text-ink after:absolute after:bottom-2 after:left-0 after:h-px after:w-full after:bg-line after:transition-colors hover:after:bg-ink"
                 >
                   See the seven areas
                 </a>
@@ -138,7 +138,7 @@ export default function FirmOfTheFuturePage() {
               </p>
               <a
                 href={withBase('offer')}
-                className="mt-5 inline-block font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent transition-colors hover:text-ink"
+                className="mt-2 inline-flex min-h-11 items-center font-sans text-xs font-bold uppercase tracking-[0.16em] text-accent transition-colors hover:text-ink"
               >
                 See the ten departments
               </a>

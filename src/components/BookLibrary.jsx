@@ -55,7 +55,7 @@ export default function BookLibrary({ books, themes }) {
       type="button"
       onClick={() => setActive(key)}
       aria-pressed={active === key}
-      className={`border-b-2 pb-2 font-sans text-[12px] font-bold uppercase tracking-[0.16em] transition-colors ${
+      className={`-mb-px inline-flex min-h-11 items-end border-b-2 pb-2 font-sans text-[12px] font-bold uppercase tracking-[0.16em] transition-colors ${
         active === key
           ? 'border-ink text-ink'
           : 'border-transparent text-muted hover:text-ink'
@@ -70,7 +70,7 @@ export default function BookLibrary({ books, themes }) {
       <div
         role="group"
         aria-label="Filter the library by theme"
-        className="flex flex-wrap gap-x-7 gap-y-3 border-b border-line"
+        className="flex flex-wrap gap-x-7 gap-y-0 border-b border-line"
       >
         {tab('all', 'All')}
         {themes.map(t => tab(t.key, t.label))}

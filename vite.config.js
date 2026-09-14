@@ -16,7 +16,11 @@ const root = __dirname;
 const escape = s =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-const pageHtml = ({ title, description, entry }) => `<!doctype html>
+/* The live origin, used for canonical and Open Graph URLs on generated pages.
+   The five root HTML files carry the same value by hand. */
+const SITE_URL = 'https://damon.nexusedge.tech';
+
+const pageHtml = ({ title, description, entry, path }) => `<!doctype html>
 <html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
@@ -26,6 +30,8 @@ const pageHtml = ({ title, description, entry }) => `<!doctype html>
     <meta property="og:type" content="article" />
     <meta property="og:title" content="${escape(title)}" />
     <meta property="og:description" content="${escape(description)}" />
+    <meta property="og:url" content="${SITE_URL}${path}" />
+    <meta property="og:image" content="${SITE_URL}/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -59,6 +65,7 @@ function generateResourcePages() {
     description:
       'Practical AI guides for accounting firms from Damon Millar. Free to read, nothing to fill in.',
     entry: 'resources-main.jsx',
+    path: '/resources',
   });
   if (!existsSync(index) || readFileSync(index, 'utf8') !== indexHtml) {
     writeFileSync(index, indexHtml);
@@ -71,6 +78,7 @@ function generateResourcePages() {
       title: `${m.title} | Damon Millar`,
       description: m.summary,
       entry: 'lead-magnet-main.jsx',
+      path: `/resources/${m.slug}`,
     });
     if (!existsSync(file) || readFileSync(file, 'utf8') !== html) writeFileSync(file, html);
     inputs[`resource-${m.slug}`] = file;

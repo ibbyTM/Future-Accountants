@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://damon.nexusedge.tech/sitemap.xml
