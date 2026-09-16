@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://damon.nexusedge.tech/sitemap.xml
+Sitemap: https://damonmillarai.com/sitemap.xml
