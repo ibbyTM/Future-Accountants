@@ -16,8 +16,13 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/resources` | Index of the free lead magnets |
 | `/resources/<slug>` | One lead magnet: written intro and takeaways, then the Notion document embedded |
 
-**Live host**: Bluehost cPanel at https://damon.nexusedge.tech (staging). Build
-the upload package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).
+**Live host**: Vercel, on Damon's team, at https://damonmillarai.com. Production
+builds from `main`; push to `main` and it deploys. The working branch is
+`claude/reactbits-mcp-http-0wty1s`; fast-forward `main` to it when a version is
+ready to go live.
+
+**Staging**: Bluehost cPanel at https://damon.nexusedge.tech. Build the upload
+package with `npm run build:host` and follow [DEPLOY.md](DEPLOY.md).
 
 Clean URLs are configured per host: `public/.htaccess` for Apache, `vercel.json`
 for Vercel. Both files ship in the repo, and each host ignores the other's.
@@ -71,7 +76,7 @@ unnoticed.
 ## Open questions before launch
 
 1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)
-2. **Final domain**: the site is set to `https://damon.nexusedge.tech`. When it moves to Damon's own domain, change it in the five root HTML files (`og:url`, `og:image`), `SITE_URL` in `vite.config.js`, `public/robots.txt` and `public/sitemap.xml`. A new guide also needs a line in the sitemap.
+2. **Final domain**: the site is set to `https://damonmillarai.com`. When it moves to Damon's own domain, change it in the five root HTML files (`og:url`, `og:image`), `SITE_URL` in `vite.config.js`, `public/robots.txt` and `public/sitemap.xml`. A new guide also needs a line in the sitemap.
 3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
 
 Photos and book covers are live in `public/images/` (source assets from

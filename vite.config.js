@@ -18,7 +18,7 @@ const escape = s =>
 
 /* The live origin, used for canonical and Open Graph URLs on generated pages.
    The five root HTML files carry the same value by hand. */
-const SITE_URL = 'https://damon.nexusedge.tech';
+const SITE_URL = 'https://damonmillarai.com';
 
 const pageHtml = ({ title, description, entry, path }) => `<!doctype html>
 <html lang="en-GB">
