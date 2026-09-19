@@ -111,12 +111,12 @@ export default function LeadMagnetPage({ magnet }) {
                     Get the guide
                   </p>
                   <h2 className="mt-6 font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
-                    Where should we <em className="text-accent">send it?</em>
+                    Who is it <em className="text-accent">for?</em>
                   </h2>
                   <p className="mt-5 max-w-sm text-[17px] leading-relaxed text-muted">
                     {variant === 'steps'
-                      ? 'Two quick steps. The guide lands in your inbox and opens right here the moment you are done.'
-                      : 'A few details. The guide lands in your inbox and opens right here the moment you are done.'}
+                      ? 'Two quick steps, and the guide opens right here.'
+                      : 'A few details, and the guide opens right here.'}
                   </p>
                 </div>
                 <div className="col-span-12 lg:col-span-7 lg:col-start-6">
@@ -133,20 +133,19 @@ export default function LeadMagnetPage({ magnet }) {
                 <div className="grid grid-cols-12 gap-x-6 gap-y-8">
                   <div className="col-span-12 lg:col-span-7">
                     <p className="inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
-                      On its way
+                      Ready
                     </p>
                     <h2
                       ref={confirmRef}
                       tabIndex={-1}
                       className="mt-6 font-display text-3xl font-medium leading-[1.15] text-ink outline-none sm:text-4xl"
                     >
-                      Check your inbox. <em className="text-accent">Or read it right here.</em>
+                      Thank you. <em className="text-accent">Here is your guide.</em>
                     </h2>
                     <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-                      Your copy of {magnet.title} is heading to {doneEmail}. Give it a minute, and
-                      check the promotions folder if it is not there.{' '}
+                      Read {magnet.title} below, or open it in a new tab to keep it.{' '}
                       <button type="button" onClick={reset} className="font-semibold text-accent underline underline-offset-4 hover:text-ink">
-                        Not your email?
+                        Not you? Start again.
                       </button>
                     </p>
                   </div>

@@ -28,7 +28,7 @@ export default function ResourcesPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-[1.65] sm:text-xl">
               Practical material from a firm that runs on this, not theory from the sidelines.
-              Free, and sent straight to your inbox.
+              Free to read, two quick questions first.
             </p>
           </div>
         </section>

@@ -313,7 +313,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
   const sending = status === 'sending';
   const submitBtn = (
     <button type="submit" disabled={sending} className={primaryBtn}>
-      {sending ? 'Sending' : 'Send me the guide'}
+      {sending ? 'One moment' : 'Open the guide'}
     </button>
   );
 
@@ -389,7 +389,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
         {status === 'error' && 'Something went wrong sending that. Please try again in a moment.'}
       </p>
       <p className="mt-2 font-sans text-xs text-muted">
-        We send the guide, and you can unsubscribe at any time.
+        Your details stay with Damon's team.
       </p>
     </form>
   );

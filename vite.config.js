@@ -64,7 +64,7 @@ function generateResourcePages() {
   const indexHtml = pageHtml({
     title: 'Resources | Guides for firms building with AI',
     description:
-      'Practical AI guides for accounting firms from Damon Millar. Free, and sent straight to your inbox.',
+      'Practical AI guides for accounting firms from Damon Millar. Free to read, two quick questions first.',
     entry: 'resources-main.jsx',
     path: '/resources',
   });
