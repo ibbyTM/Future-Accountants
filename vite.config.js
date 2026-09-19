@@ -1,9 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { leadMagnets } from './src/content/leadMagnets.js';
+import { forward, prepare } from './api/lead.js';
 
 const root = __dirname;
 
@@ -63,7 +64,7 @@ function generateResourcePages() {
   const indexHtml = pageHtml({
     title: 'Resources | Guides for firms building with AI',
     description:
-      'Practical AI guides for accounting firms from Damon Millar. Free to read, nothing to fill in.',
+      'Practical AI guides for accounting firms from Damon Millar. Free, and sent straight to your inbox.',
     entry: 'resources-main.jsx',
     path: '/resources',
   });
@@ -125,7 +126,57 @@ const cleanUrls = () => {
   };
 };
 
-export default defineConfig({
+/*
+ * Local stand-in for the Vercel function at api/lead.js, so the resource
+ * form works in dev and preview. Same validation, same forwarding: with
+ * GHL_WEBHOOK_URL in .env the lead really goes to GoHighLevel; without it
+ * the payload is printed to the terminal and the form still succeeds.
+ */
+const leadEndpoint = env => {
+  const handler = (req, res, next) => {
+    if (req.method !== 'POST') return next();
+    let raw = '';
+    req.on('data', c => (raw += c));
+    req.on('end', async () => {
+      const send = (code, body) => {
+        res.statusCode = code;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(body));
+      };
+      let body = {};
+      try {
+        body = JSON.parse(raw || '{}');
+      } catch {
+        return send(400, { ok: false, error: 'Bad JSON' });
+      }
+      const { ok, errors, payload, spam } = prepare(body);
+      if (spam) return send(200, { ok: true });
+      if (!ok) return send(422, { ok: false, errors });
+      if (!env.GHL_WEBHOOK_URL) {
+        console.log('[lead] no GHL_WEBHOOK_URL set, would send:', payload);
+        return send(200, { ok: true, dryRun: true });
+      }
+      try {
+        await forward(env.GHL_WEBHOOK_URL, payload);
+        send(200, { ok: true });
+      } catch (e) {
+        console.error('[lead]', e.message);
+        send(502, { ok: false, error: 'Could not reach the CRM.' });
+      }
+    });
+  };
+  return {
+    name: 'lead-endpoint',
+    configureServer(server) {
+      server.middlewares.use('/api/lead', handler);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use('/api/lead', handler);
+    },
+  };
+};
+
+export default defineConfig(({ mode }) => ({
   // VITE_BASE lets the GitHub Pages workflow build for the repo subpath;
   // local dev/preview and the eventual real domain use the default '/'.
   base: process.env.VITE_BASE || '/',
@@ -133,7 +184,7 @@ export default defineConfig({
   // and preview exactly as it does on the host, rather than quietly serving
   // the home page.
   appType: 'mpa',
-  plugins: [react(), tailwindcss(), cleanUrls()],
+  plugins: [react(), tailwindcss(), cleanUrls(), leadEndpoint(loadEnv(mode, root, ''))],
   build: {
     rollupOptions: {
       input: {
@@ -146,4 +197,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

@@ -22,4 +22,20 @@ export const site = {
   // Set this and the footer shows a Contact line linking to it. Left null
   // until Damon confirms the address, so nothing is invented on his behalf.
   email: null,
+
+  /*
+   * Lead capture on the resource pages (src/components/LeadForm.jsx).
+   *   endpoint  where the form posts. '/api/lead' is the Vercel function in
+   *             api/lead.js, which forwards to GoHighLevel using the
+   *             GHL_WEBHOOK_URL environment variable. On a host without
+   *             functions (Bluehost staging) set this to the GoHighLevel
+   *             inbound webhook URL itself and the form posts straight to it.
+   *   variant   the form people get when the URL has no ?form= parameter:
+   *             'steps' (two steps) or 'single' (one screen). For the A/B
+   *             test share links with ?form=steps and ?form=single.
+   */
+  leadForm: {
+    endpoint: '/api/lead',
+    variant: 'steps',
+  },
 };

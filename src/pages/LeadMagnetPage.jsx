@@ -1,18 +1,61 @@
+import { useEffect, useRef, useState } from 'react';
 import CtaButton from '../components/CtaButton.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
+import LeadForm, { pickVariant } from '../components/LeadForm.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Reveal from '../components/Reveal.jsx';
 import Footer from '../sections/Footer.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
+import { resourceLinkFor } from '../content/leadMagnets.js';
 import { withBase } from '../site.config.js';
 
 /*
  * One lead magnet. The intro, takeaways and CTA are real HTML so search
- * engines have something to read; the Notion document is embedded below for
- * the resource itself. Everything comes from src/content/leadMagnets.js.
+ * engines have something to read. The resource itself sits behind the
+ * lead form: submit, and the page confirms, offers the direct link and
+ * shows the Notion document in place. A successful submit is remembered
+ * per resource in localStorage, so a return visit skips the form.
+ * Everything comes from src/content/leadMagnets.js.
  */
+const storageKey = slug => `lead:${slug}`;
+
+const readDone = slug => {
+  try {
+    return localStorage.getItem(storageKey(slug));
+  } catch {
+    return null;
+  }
+};
+
 export default function LeadMagnetPage({ magnet }) {
+  const resourceLink = resourceLinkFor(magnet);
+  const [variant] = useState(pickVariant);
+  const [doneEmail, setDoneEmail] = useState(() => readDone(magnet.slug));
+  const confirmRef = useRef(null);
+
+  const onSuccess = ({ email }) => {
+    try {
+      localStorage.setItem(storageKey(magnet.slug), email);
+    } catch {
+      /* private mode: the page still confirms */
+    }
+    setDoneEmail(email);
+  };
+
+  const reset = () => {
+    try {
+      localStorage.removeItem(storageKey(magnet.slug));
+    } catch {
+      /* nothing to clear */
+    }
+    setDoneEmail(null);
+  };
+
+  useEffect(() => {
+    if (doneEmail) confirmRef.current?.focus();
+  }, [doneEmail]);
+
   return (
     <>
       <PageGrain />
@@ -33,6 +76,12 @@ export default function LeadMagnetPage({ magnet }) {
                   {p}
                 </p>
               ))}
+              <a
+                href="#get"
+                className="mt-10 inline-flex min-h-12 items-center bg-ink px-9 py-4 font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#f1ecde] transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                {doneEmail ? 'Read the guide' : 'Get the guide'}
+              </a>
             </div>
 
             {magnet.takeaways?.length > 0 && (
@@ -53,28 +102,88 @@ export default function LeadMagnetPage({ magnet }) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 pb-20">
+        <section id="get" className="mx-auto max-w-6xl scroll-mt-24 px-5 pb-20">
           <Reveal className="border-t border-line pt-10">
-            <div className="overflow-hidden border border-line bg-ground">
-              <iframe
-                src={magnet.notionUrl}
-                title={magnet.title}
-                loading="lazy"
-                className="block h-[720px] w-full sm:h-[820px]"
-              />
-            </div>
-            <p className="mt-4 font-sans text-xs text-muted">
-              Not loading?{' '}
-              <a
-                href={magnet.notionUrl.replace('/ebd/', '/')}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center font-semibold text-accent underline underline-offset-4"
-              >
-                Open it in a new tab
-              </a>
-              .
-            </p>
+            {!doneEmail ? (
+              <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+                <div className="col-span-12 lg:col-span-4">
+                  <p className="inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+                    Get the guide
+                  </p>
+                  <h2 className="mt-6 font-display text-3xl font-medium leading-[1.15] text-ink sm:text-4xl">
+                    Where should we <em className="text-accent">send it?</em>
+                  </h2>
+                  <p className="mt-5 max-w-sm text-[17px] leading-relaxed text-muted">
+                    {variant === 'steps'
+                      ? 'Two quick steps. The guide lands in your inbox and opens right here the moment you are done.'
+                      : 'A few details. The guide lands in your inbox and opens right here the moment you are done.'}
+                  </p>
+                </div>
+                <div className="col-span-12 lg:col-span-7 lg:col-start-6">
+                  <LeadForm
+                    leadMagnet={magnet.title}
+                    resourceLink={resourceLink}
+                    variant={variant}
+                    onSuccess={onSuccess}
+                  />
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+                  <div className="col-span-12 lg:col-span-7">
+                    <p className="inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+                      On its way
+                    </p>
+                    <h2
+                      ref={confirmRef}
+                      tabIndex={-1}
+                      className="mt-6 font-display text-3xl font-medium leading-[1.15] text-ink outline-none sm:text-4xl"
+                    >
+                      Check your inbox. <em className="text-accent">Or read it right here.</em>
+                    </h2>
+                    <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                      Your copy of {magnet.title} is heading to {doneEmail}. Give it a minute, and
+                      check the promotions folder if it is not there.{' '}
+                      <button type="button" onClick={reset} className="font-semibold text-accent underline underline-offset-4 hover:text-ink">
+                        Not your email?
+                      </button>
+                    </p>
+                  </div>
+                  <div className="col-span-12 flex items-start lg:col-span-4 lg:col-start-9 lg:justify-end lg:pt-8">
+                    <a
+                      href={resourceLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-12 items-center bg-ink px-9 py-4 font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#f1ecde] transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                    >
+                      Open the guide
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-12 overflow-hidden border border-line bg-ground">
+                  <iframe
+                    src={magnet.notionUrl}
+                    title={magnet.title}
+                    loading="lazy"
+                    className="block h-[720px] w-full sm:h-[820px]"
+                  />
+                </div>
+                <p className="mt-4 font-sans text-xs text-muted">
+                  Not loading?{' '}
+                  <a
+                    href={resourceLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center font-semibold text-accent underline underline-offset-4"
+                  >
+                    Open it in a new tab
+                  </a>
+                  .
+                </p>
+              </div>
+            )}
           </Reveal>
         </section>
 

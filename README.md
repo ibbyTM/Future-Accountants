@@ -73,6 +73,40 @@ Anything still awaiting real content renders inside a dashed gold
 `Placeholder` marker (`src/components/Placeholder.jsx`) so it can't ship
 unnoticed.
 
+## Lead capture on resource pages
+
+Each `/resources/<slug>` page gates its guide behind a form
+(`src/components/LeadForm.jsx`). On submit the browser posts to
+`/api/lead` (`api/lead.js`, a Vercel function), which validates the lead and
+forwards it to the GoHighLevel inbound webhook named by the `GHL_WEBHOOK_URL`
+environment variable. Set that in Vercel under Project, Settings, Environment
+Variables, and locally in `.env` (see `.env.example`). Without it, dev and
+preview print the payload to the terminal and the form still succeeds.
+
+Fields sent, as JSON keys: `full_name`, `first_name`, `last_name`, `email`,
+`phone`, `country`, `qualifying_answer`, `lead_magnet`, `resource_link`,
+`form_variant`, `page_url`, `source`, `submitted_at`. Map them once in the
+GoHighLevel workflow. `lead_magnet` and `resource_link` are the two hidden
+values: they come from the magnet's entry in `src/content/leadMagnets.js`
+(`title`, and `resourceLink` or the public Notion page), so a new magnet
+needs nothing else.
+
+**A/B test.** Two variants share everything but layout: `steps` (details,
+then country and role) and `single` (one screen). `?form=steps` or
+`?form=single` on the URL picks one; without a parameter the page uses
+`site.leadForm.variant` in `src/site.config.js`. Share each link in a
+different place to split traffic.
+
+**Funnel events.** Vercel Web Analytics (enable it once in the project's
+Analytics tab) records a `lead_form` event with `step` = `start`, `step1`,
+`submit` or `error`, plus `variant` and `magnet`, so drop-off is visible per
+step per variant. The same event is pushed to `window.dataLayer` if a tag
+manager is ever added.
+
+**Staging on Bluehost** has no functions. Set `site.leadForm.endpoint` to the
+GoHighLevel webhook URL itself for that build, or leave staging to show the
+dry run.
+
 ## Open questions before launch
 
 1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)

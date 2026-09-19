@@ -5,3 +5,8 @@ dist
 future-accountants-site.zip
 # generated from src/content/leadMagnets.js at build time
 resources/
+
+# secrets
+.env
+.env.*
+!.env.example

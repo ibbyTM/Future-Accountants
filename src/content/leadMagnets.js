@@ -16,6 +16,13 @@
  *             so it matters: an embed alone is invisible to search engines.
  *   takeaways what the reader gets. Three to five short lines.
  *   notionUrl the Notion embed link (Share > Publish, then the /ebd/ URL).
+ *   resourceLink (optional) the direct link sent to the CRM as "Resource
+ *             Link" and used by the "Open the guide" button. Leave it out
+ *             and the public Notion page (notionUrl without /ebd/) is used.
+ *
+ * The form on each page sends the CRM two hidden values, "Lead Magnet"
+ * (the title) and "Resource Link" (resourceLink or the Notion page). They
+ * come from this entry, so a new magnet needs nothing else.
  */
 export const leadMagnets = [
   {
@@ -39,3 +46,6 @@ export const leadMagnets = [
 ];
 
 export const findLeadMagnet = slug => leadMagnets.find(m => m.slug === slug);
+
+/* The direct link for a magnet: its own resourceLink, else the public Notion page. */
+export const resourceLinkFor = m => m.resourceLink || m.notionUrl.replace('/ebd/', '/');

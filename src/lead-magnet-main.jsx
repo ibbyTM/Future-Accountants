@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
+import './analytics.js';
 import LeadMagnetPage from './pages/LeadMagnetPage.jsx';
 import { findLeadMagnet, leadMagnets } from './content/leadMagnets.js';
 

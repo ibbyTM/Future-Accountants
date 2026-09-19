@@ -10,6 +10,7 @@
     "build:host": "vite build && cd dist && zip -r -q ../future-accountants-site.zip . && cd .."
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "gsap": "^3.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
