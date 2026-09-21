@@ -176,6 +176,34 @@ const leadEndpoint = env => {
   };
 };
 
+/*
+ * sitemap.xml, written into the build from the page list so a new lead
+ * magnet is included without anyone editing a file by hand.
+ */
+const sitemap = () => ({
+  name: 'sitemap',
+  apply: 'build',
+  closeBundle() {
+    const paths = [
+      '/',
+      '/offer',
+      '/firm-of-the-future',
+      '/about',
+      '/book',
+      '/resources',
+      ...leadMagnets.map(m => `/resources/${m.slug}`),
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${paths.map(p => `  <url><loc>${SITE_URL}${p}</loc></url>`).join('\n')}
+</urlset>
+`;
+    const out = resolve(root, 'dist');
+    if (!existsSync(out)) mkdirSync(out, { recursive: true });
+    writeFileSync(resolve(out, 'sitemap.xml'), xml);
+  },
+});
+
 export default defineConfig(({ mode }) => ({
   // VITE_BASE lets the GitHub Pages workflow build for the repo subpath;
   // local dev/preview and the eventual real domain use the default '/'.
@@ -184,7 +212,7 @@ export default defineConfig(({ mode }) => ({
   // and preview exactly as it does on the host, rather than quietly serving
   // the home page.
   appType: 'mpa',
-  plugins: [react(), tailwindcss(), cleanUrls(), leadEndpoint(loadEnv(mode, root, ''))],
+  plugins: [react(), tailwindcss(), cleanUrls(), leadEndpoint(loadEnv(mode, root, '')), sitemap()],
   build: {
     rollupOptions: {
       input: {

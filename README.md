@@ -11,7 +11,7 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/` | Long-scroll funnel (hero → proof → problem → offer → qualification → system → about → testimonials → FAQ → CTA) |
 | `/offer` | Offer deep-dive for detail-seekers |
 | `/firm-of-the-future` | Damon's full programme, seven areas, and where the AI system sits inside it |
-| `/about` | Author page — books, Business DNA System, speaking, weekly webinar |
+| `/about` | Author page: books, Business DNA System, speaking, weekly webinar |
 | `/book` | Distraction-free booking page; renders Damon's Calendly scheduler (`calendarEmbedUrl` in `src/site.config.js`) |
 | `/resources` | Index of the free lead magnets |
 | `/resources/<slug>` | One lead magnet: written intro and takeaways, then the Notion document embedded |
@@ -39,11 +39,11 @@ plugin in `vite.config.js`.
 
 ## Stack
 
-- **Vite + React 19 + Tailwind CSS 4** (no router needed — anchor nav)
+- **Vite + React 19 + Tailwind CSS 4** (no router needed, anchor nav)
 - **ReactBits** components (vendored in `src/components/reactbits/`, exactly 3 per brief):
-  - `Noise` — subtle animated paper grain over the hero
-  - `FadeContent` — scroll-reveal on the proof strip and testimonials
-  - `GlareHover` — light sweep on the two primary CTA buttons
+  - `Noise`: subtle animated paper grain over the hero
+  - `FadeContent`: scroll-reveal on the proof strip and testimonials
+  - `GlareHover`: light sweep on the two primary CTA buttons
 
 ## Run it
 
@@ -110,7 +110,7 @@ dry run.
 ## Open questions before launch
 
 1. **Lead magnet copy** from Damon for each entry in `src/content/leadMagnets.js` (the first entry currently ships sample text)
-2. **Final domain**: the site is set to `https://damonmillarai.com`. When it moves to Damon's own domain, change it in the five root HTML files (`og:url`, `og:image`), `SITE_URL` in `vite.config.js`, `public/robots.txt` and `public/sitemap.xml`. A new guide also needs a line in the sitemap.
+2. **Final domain**: the site is set to `https://damonmillarai.com`. When it moves to Damon's own domain, change it in the five root HTML files (`og:url`, `og:image`), `SITE_URL` in `vite.config.js` and `public/robots.txt`. The sitemap is generated at build from the page list, so a new guide needs nothing there.
 3. **Exact magenta hex** sign-off (tokens in `src/index.css`)
 
 Photos and book covers are live in `public/images/` (source assets from
