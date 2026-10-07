@@ -141,6 +141,82 @@ export const leadMagnets = [
     resourceLink:
       'https://impartial-money-fa9.notion.site/The-Claude-Agent-Team-for-Accountants-The-7-Agent-Stack-That-Runs-My-Back-Office-3629112c6a1f80539fe7caca8a325210',
   },
+  {
+    slug: 'xero-workflows-for-claude-opus-5-5',
+    title: '10 Xero Workflows for Claude Opus 5.5',
+    summary:
+      'Job sheet to month-end journal, with every one left in Xero as a draft for you to approve.',
+    kicker: 'Free workflows',
+    intro: [
+      'Every guide to Claude and Xero I’ve read, including my own, ends in the same place: a report, a list of queries, or a table of suggested journals. Then somebody on the team keys all of it into Xero by hand, line by line, which is the part that took the time in the first place.',
+      'So I built it. Ten workflows, written for a UK practice on Xero, each one ending with a draft and a person clicking approve. Every action in it is one the connector actually has, checked against Xero’s own developer documentation, and none of them can approve, pay or reconcile anything.',
+    ],
+    takeaways: [
+      'Job sheet to draft invoices',
+      'Variable monthly invoices',
+      'Rechargeable costs',
+      'Supplier PDF to draft bill',
+      'Receipts to bank lines',
+      'Accruals and prepayments',
+      'Depreciation',
+      'Credit notes',
+      'Contact tidy-up',
+      'Your own out-of-scope work',
+      'Plus the standing rules, the never list, and a review routine that takes minutes',
+    ],
+    notionUrl: notion('3e99112c6a1f80069366fdb0d43d7ff7'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/10-Xero-Workflows-for-Claude-Opus-5-5-Job-Sheet-to-Month-End-Journal-All-as-Drafts-3e99112c6a1f80069366fdb0d43d7ff7',
+  },
+  {
+    slug: 'opus-5-5-for-uk-accountants',
+    title: 'Opus 5.5 for UK Accountants',
+    summary:
+      '15 practice jobs to move to Claude’s new model first, and the test to run before you trust it with any of them.',
+    kicker: 'Free guide',
+    intro: [
+      'Anthropic released Claude Opus 5.5 on 22 September, and almost everything written about it since has been for software developers. Coding scores, security safeguards, the price per million tokens, and not a word on what changes for a firm that writes client emails, explains variances and reads scanned bank statements all week.',
+      'So I wrote the practice version. One guide, written for a UK firm on Xero, with the test first and the jobs second. Every claim about the model comes from Anthropic’s own launch notes, linked in the guide, and every result that counts is one you measure on your own files.',
+    ],
+    takeaways: [
+      'What actually changed: the three changes that matter for client work, and the launch noise you can skip',
+      'The right plan and settings: which plans include it, and how hard to let it think for drafting versus checking figures',
+      'The side-by-side test: three of your own finished jobs, scored on figures, house style and editing time',
+      'Your firm’s writing rules: the block that makes every draft sound like your practice instead of like software',
+      'The 15 jobs to move first: five writing, five figures, five reading, each with the prompt and the check',
+      'When to stay on a lighter setting, so the team doesn’t run out of allowance by Wednesday',
+      'What it still gets wrong, and why the review step stays',
+    ],
+    notionUrl: notion('3e99112c6a1f8051ae29cb3edbb9cb46'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/Opus-5-5-for-UK-Accountants-15-Practice-Jobs-to-Move-First-From-Client-Emails-to-Management-Accoun-3e99112c6a1f8051ae29cb3edbb9cb46',
+  },
+  {
+    slug: 'ai-practice-manager',
+    title: 'The AI Practice Manager',
+    summary:
+      'One Claude project that runs the admin side of your firm every week, from Monday’s deadline board to Friday’s partner brief.',
+    kicker: 'Free guide',
+    intro: [
+      'Most small practices don’t have a practice manager. The owner is the practice manager, which means the deadline list gets checked on a Sunday night, the firm’s own unpaid fees get chased when someone remembers, and nobody knows who’s overloaded until a job slips.',
+      'A lot of UK firms run on Xero, a shared inbox and a spreadsheet of deadlines. So I put it together. The job description, the setup and six weekly jobs, written for a UK firm that runs on exactly that. It reads, it drafts and it reports, and nothing it writes reaches a client, HMRC or Companies House until a person has approved it.',
+    ],
+    takeaways: [
+      'The Job Description',
+      'The Setup: one Claude project, its standing instructions in full, and the deadline register it reads from',
+      'The Permission Table: what it does on its own, what it drafts for you to approve, and what it never touches',
+      'The Monday Deadline Board',
+      'The Companies House ID Check',
+      'Your Own Lock-Up',
+      'The Capacity View',
+      'The New Client Pack',
+      'The Friday Partner Brief',
+      'The 30-Day Probation',
+    ],
+    notionUrl: notion('3e99112c6a1f803d9495e7b8da4fab53'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/The-AI-Practice-Manager-One-Claude-Project-Six-Weekly-Jobs-From-Monday-Deadlines-to-the-Friday-Pa-3e99112c6a1f803d9495e7b8da4fab53',
+  },
 ];
 
 export const findLeadMagnet = slug => leadMagnets.find(m => m.slug === slug);
