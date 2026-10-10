@@ -217,6 +217,96 @@ export const leadMagnets = [
     resourceLink:
       'https://impartial-money-fa9.notion.site/The-AI-Practice-Manager-One-Claude-Project-Six-Weekly-Jobs-From-Monday-Deadlines-to-the-Friday-Pa-3e99112c6a1f803d9495e7b8da4fab53',
   },
+  {
+    slug: 'records-chaser',
+    title: 'The Records Chaser',
+    summary:
+      '9 routines that chase every missing bank statement, receipt, P60 and rent schedule before your team opens their inbox.',
+    kicker: 'Free routines',
+    intro: [
+      'Claude Scheduled Tasks can make the January records chase a 7am Monday job. In most firms I talk to, chasing takes a senior’s Friday every week from October to January, and none of it ever shows up on an invoice.',
+      'I built 9 routines that chase every missing bank statement, receipt, P60 and rent schedule before your team opens their inbox. Every chaser lands in your inbox as a draft, and someone on your team reads it before pressing send.',
+    ],
+    takeaways: [
+      'A Monday sweep of your deadline list for every client still missing records',
+      'The first request written from each client’s own file, so you ask for everything once',
+      'A firmer nudge on day 7, and a call list on day 14 so someone rings the ones who’ve gone quiet',
+      'A check of everything that arrives, so the bank statement that’s two months short gets caught in October',
+      'Quarterly reminders for the sole traders and landlords now inside Making Tax Digital',
+      'A Friday list of every Self Assessment client at risk of missing 31 January',
+      'A one-page brief for the partner on who’s stuck and who needs a phone call',
+    ],
+    notionUrl: notion('3f59112c6a1f80338546daee461f194c'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/The-Records-Chaser-Nine-Scheduled-Routines-That-Chase-Every-Missing-Record-Before-Your-Team-Opens-T-3f59112c6a1f80338546daee461f194c',
+  },
+  {
+    slug: 'firm-of-the-future-blueprint',
+    title: 'The Firm of the Future Blueprint',
+    summary:
+      'A plan for firm owners who can see AI taking half their team’s compliance work, and haven’t decided what those people do next.',
+    kicker: 'Free blueprint',
+    intro: [
+      'A plan for firm owners who can see AI taking half their team’s compliance work, and haven’t decided what those people do next. Because by 2028 I think that’ll be true in most practices, and the firm up the road will have caught up too. The firms I’d bet on are the ones already deciding what to fill those hours with.',
+      'AI can already draft most of the work a practice is built around: year-end accounts, tax returns, VAT returns, bookkeeping, the client emails that arrive all day. Cutting staff is the obvious answer, and I think the wrong one, because your clients would pay for work you’ve never had the hours to sell.',
+    ],
+    takeaways: [
+      'Where your team’s hours go today, worked out from your own timesheet export',
+      'How many of those hours AI can realistically take, job by job',
+      'Ten services a 5 to 30 person firm can sell with the time',
+      'Pricing them so they don’t end up thrown in for free',
+      'Picking a niche, and running more than one under the same firm',
+      'Who moves to what, and the training each person needs',
+      'The 2028 test: what your firm looks like once every competitor has caught up',
+    ],
+    notionUrl: notion('3f59112c6a1f80668ba6cad2dac95678'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/The-Firm-of-the-Future-Blueprint-Seven-Steps-From-the-Hours-AI-Gives-Back-to-the-Services-You-Sell--3f59112c6a1f80668ba6cad2dac95678',
+  },
+  {
+    slug: 'partner-review-queue',
+    title: 'The Partner Review Queue',
+    summary: 'Seven checks run on each file before it reaches the partner’s desk.',
+    kicker: 'Free guide',
+    intro: [
+      'I turned Claude into a first reviewer for every set of accounts your team prepares, built on the checks a partner makes before signing. Seven checks run on each file before it reaches the partner’s desk.',
+      'In a lot of 5 to 30 person firms, one partner still reviews nearly everything, so ten sets land on one desk and the pile never gets any smaller. A second reviewer is the usual fix, and most firms that size can’t justify the salary. The partner still signs every set, and stops spending the evening finding the same missing note for the fifth time.',
+    ],
+    takeaways: [
+      'Tie-out: every figure in the accounts traced back to the trial balance',
+      'Comparatives: last year’s column checked against the accounts you actually filed',
+      'Movements: every line that moved more than it should have, with the reason or a question for the client',
+      'Director’s loan: what each director owed at the year end, flagged for the partner if tax could follow',
+      'Dividends: checked against the profits that were there to pay them',
+      'Disclosures: every note a small company’s accounts need, including the ones the FRS 102 changes add',
+      'Repeat mistakes: anything the partner flagged on earlier files, caught again and written back to whoever prepared it',
+    ],
+    notionUrl: notion('3f59112c6a1f8053aa35daf85a1779ff'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/The-Partner-Review-Queue-Seven-Checks-Claude-Runs-on-Every-Set-of-Accounts-Before-the-Partner-Sees--3f59112c6a1f8053aa35daf85a1779ff',
+  },
+  {
+    slug: 'practice-acquisition-team',
+    title: 'The Practice Acquisition Team',
+    summary: 'Seven Claude prompts and a master prompt for buying the firm up the road.',
+    kicker: 'Free prompts',
+    intro: [
+      'I built a Claude-powered acquisitions team for accounting firm owners. Because the easiest way to double your turnover is to buy the firm up the road with the bank’s money. Most owners only use AI to draft client emails and tidy up a spreadsheet. The bigger play: use it to work out whether the practice you’ve had your eye on is worth buying, and what to pay for it.',
+      'Seven specialised Claude prompts and one master prompt that ties them together. Each prompt owns one job. Will it replace your solicitor, a broker or proper due diligence? No, it can’t meet the seller, and it can’t tell you why the owner really wants out. But it’ll tell you whether the practice is worth a second meeting, and what to ask when you get there.',
+    ],
+    takeaways: [
+      'The fee list: which fees come back every year, and which were one-offs',
+      'Client risk: who’s likely to leave when the owner does',
+      'A price range, worked out the way practices actually get priced',
+      'The bank’s view: what a lender will ask for, and what the repayments do to your cash',
+      'Deal terms: how much to pay on completion, and how much to hold back until the clients stay',
+      'The first year: what to change, and what to leave well alone',
+      'The letter that tells clients they’ve got a new accountant',
+    ],
+    notionUrl: notion('3f59112c6a1f802bbf1ac6bce80b3f46'),
+    resourceLink:
+      'https://impartial-money-fa9.notion.site/The-Practice-Acquisition-Team-Seven-Claude-Prompts-and-a-Master-Prompt-for-Buying-the-Firm-Up-the-R-3f59112c6a1f802bbf1ac6bce80b3f46',
+  },
 ];
 
 export const findLeadMagnet = slug => leadMagnets.find(m => m.slug === slug);
