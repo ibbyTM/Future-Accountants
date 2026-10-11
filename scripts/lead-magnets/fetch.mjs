@@ -64,11 +64,12 @@ export const KNOWN = {
 
 const log = (...a) => console.log('[lead-magnets]', ...a);
 
+/* Published pages answer on the public site; unpublished ones come back empty. */
 async function embeds(entry) {
   if (!entry.notionUrl) return false;
   try {
-    const r = await fetch(entry.notionUrl, { method: 'HEAD' });
-    return r.ok;
+    const id = entry.notionUrl.split('/ebd/')[1];
+    return Boolean(await publicSource(SITE).resolveTitle(id));
   } catch {
     return false;
   }
