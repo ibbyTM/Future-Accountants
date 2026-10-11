@@ -73,6 +73,37 @@ Anything still awaiting real content renders inside a dashed gold
 `Placeholder` marker (`src/components/Placeholder.jsx`) so it can't ship
 unnoticed.
 
+## Lead magnets come from Notion
+
+Damon's posts database in Notion is the source of every `/resources/<slug>`
+page. `scripts/lead-magnets/fetch.mjs` runs before each build (`prebuild`):
+with `NOTION_TOKEN` and `NOTION_DATABASE_ID` set it queries the rows ticked
+"Publish to website", reads each post page, derives the entry (title from the
+resource page title, summary from the post's hook line, intro from the
+paragraphs, takeaways from the longest list, embed from the child page) and
+writes `src/content/leadMagnets.generated.js`. That file is committed, so a
+build without the token, or during a Notion outage, keeps the last good set.
+Without the variables the script says so and leaves the file alone.
+
+Per-page overrides are columns on the Notion row: Web title, Web summary, Web
+kicker, Web slug, Web takeaways (one per line). `scripts/lead-magnets/published.mjs`
+holds the hand-chosen values for the first twelve pages and applies them unless
+the row has its own.
+
+Useful commands:
+
+```
+node scripts/lead-magnets/fetch.mjs            # refresh from Notion (needs the two variables)
+node scripts/lead-magnets/fetch.mjs --setup    # add the website columns to the database, once
+node scripts/lead-magnets/fetch.mjs --parity   # compare a fresh parse with the current entries
+node scripts/lead-magnets/fetch.mjs --public   # regenerate from the known posts via the public site
+```
+
+Rebuilds: a Notion automation on the database (when "Publish to website" is
+checked, send webhook) hits the Vercel deploy hook, and `api/rebuild.js` is
+called hourly by the Vercel cron in `vercel.json` as a safety net. It needs
+`DEPLOY_HOOK_URL` and `CRON_SECRET` in Vercel.
+
 ## Lead capture on resource pages
 
 Each `/resources/<slug>` page gates its guide behind a form
