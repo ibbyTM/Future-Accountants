@@ -40,7 +40,8 @@ const validateStep1 = v => {
   const e = {};
   if (!v.name.trim()) e.name = 'Please add your name.';
   if (!EMAIL.test(v.email.trim())) e.email = 'Please check the email address.';
-  if (v.phone.trim() && !PHONE.test(v.phone.trim())) e.phone = 'Please check the number.';
+  if (!v.phone.trim()) e.phone = 'Please add a phone number.';
+  else if (!PHONE.test(v.phone.trim())) e.phone = 'Please check the number.';
   return e;
 };
 const validateStep2 = v => {
@@ -264,7 +265,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
           className={fieldCls}
         />
       </Field>
-      <Field id={id('phone')} label="Phone" optional error={errors.phone}>
+      <Field id={id('phone')} label="Phone" error={errors.phone}>
         <input
           id={id('phone')}
           type="tel"
@@ -274,6 +275,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
           value={values.phone}
           onChange={set('phone')}
           placeholder="+44"
+          required
           aria-invalid={errors.phone ? 'true' : undefined}
           aria-describedby={errors.phone ? `${id('phone')}-error` : undefined}
           className={fieldCls}

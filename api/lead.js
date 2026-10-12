@@ -10,6 +10,7 @@
  */
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE = /^\+?[\d\s().-]{6,}$/;
 const COUNTRIES = ['United Kingdom', 'United States', 'Canada', 'Australia', 'New Zealand', 'Other'];
 const ROLES = ['Accountant', 'Business Owner', 'Other'];
 
@@ -32,6 +33,8 @@ export function prepare(body = {}) {
 
   if (!full_name) errors.full_name = 'Please add your name.';
   if (!EMAIL.test(email)) errors.email = 'Please check the email address.';
+  if (!phone) errors.phone = 'Please add a phone number.';
+  else if (!PHONE.test(phone)) errors.phone = 'Please check the number.';
   if (!COUNTRIES.includes(country)) errors.country = 'Please choose a country.';
   if (!ROLES.includes(qualifying_answer)) errors.qualifying_answer = 'Please choose one.';
   if (!lead_magnet) errors.lead_magnet = 'Missing lead magnet.';
