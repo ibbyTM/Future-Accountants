@@ -30,6 +30,7 @@ export function prepare(body = {}) {
   const qualifying_answer = str(body.qualifying_answer);
   const lead_magnet = str(body.lead_magnet);
   const resource_link = str(body.resource_link);
+  const author = str(body.author) || 'Damon Millar';
 
   if (!full_name) errors.full_name = 'Please add your name.';
   if (!EMAIL.test(email)) errors.email = 'Please check the email address.';
@@ -50,6 +51,7 @@ export function prepare(body = {}) {
     qualifying_answer,
     lead_magnet,
     resource_link,
+    author,
     form_variant: str(body.form_variant) || 'steps',
     page_url: str(body.page_url),
     source: 'website',

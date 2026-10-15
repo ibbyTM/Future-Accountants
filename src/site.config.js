@@ -38,4 +38,21 @@ export const site = {
     endpoint: '/api/lead',
     variant: 'steps',
   },
+
+  /*
+   * Who writes the guides. Each resource page carries a byline and sends the
+   * author to the CRM so leads can be tagged. Role lines are their own words.
+   */
+  defaultAuthor: 'Damon Millar',
+  authors: {
+    'Damon Millar': { role: 'Founder, Switch Accountants Group' },
+    'Clare Thompson': {
+      role: 'Chartered management accountant and fractional FD, Switch Accountants Group',
+    },
+  },
+};
+
+export const authorOf = name => {
+  const key = name && site.authors[name] ? name : site.defaultAuthor;
+  return { name: key, ...site.authors[key] };
 };

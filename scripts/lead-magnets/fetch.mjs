@@ -42,25 +42,59 @@ const SITE = process.env.NOTION_SITE || 'impartial-money-fa9.notion.site';
 const TOKEN = process.env.NOTION_TOKEN;
 const DB = process.env.NOTION_DATABASE_ID;
 
+const DEFAULT_AUTHOR = 'Damon Millar';
+
 /*
- * The posts already live, by Notion post page ID, with the slug each one was
- * published under. Used by --parity and --public, and as slug overrides so
- * links that are already out there keep working.
+ * The posts already live, by Notion post page ID: the slug each one was
+ * published under (so links already out there keep working), plus, for
+ * posts that live outside Damon's database, the public site they are on and
+ * the author. Used by --parity and --public, and as overrides on every build.
  */
 export const KNOWN = {
-  '3d19112c6a1f808180a8de27b907e079': 'ai-native-accounting-firm-playbook',
-  '3d19112c6a1f8041831bd42468083c81': 'claude-practice-team',
-  '3d19112c6a1f8045aca7e7ac0c158fa5': 'xero-to-claude-set-up-guide',
-  '3de9112c6a1f80429341eea9114f76f0': 'ai-workflow-for-modern-accounting-firms',
-  '3de9112c6a1f80f097b1c308b090a1e1': 'claude-agent-team-for-accountants',
-  '3e99112c6a1f802a92c4d5054603a0dd': 'xero-workflows-for-claude-opus-5-5',
-  '3e99112c6a1f800aab51ce3ef6a40353': 'opus-5-5-for-uk-accountants',
-  '3e99112c6a1f80d1a9e0d3e966fdee4b': 'ai-practice-manager',
-  '3f59112c6a1f8092937bf5b9a2799bf6': 'records-chaser',
-  '3f59112c6a1f80239ed3f7b46755ec01': 'firm-of-the-future-blueprint',
-  '3f59112c6a1f806d910cfde64fcc5575': 'partner-review-queue',
-  '3f59112c6a1f80be88faeb21ca187da8': 'practice-acquisition-team',
+  '3d19112c6a1f808180a8de27b907e079': { slug: 'ai-native-accounting-firm-playbook' },
+  '3d19112c6a1f8041831bd42468083c81': { slug: 'claude-practice-team' },
+  '3d19112c6a1f8045aca7e7ac0c158fa5': { slug: 'xero-to-claude-set-up-guide' },
+  '3de9112c6a1f80429341eea9114f76f0': { slug: 'ai-workflow-for-modern-accounting-firms' },
+  '3de9112c6a1f80f097b1c308b090a1e1': { slug: 'claude-agent-team-for-accountants' },
+  '3e99112c6a1f802a92c4d5054603a0dd': { slug: 'xero-workflows-for-claude-opus-5-5' },
+  '3e99112c6a1f800aab51ce3ef6a40353': { slug: 'opus-5-5-for-uk-accountants' },
+  '3e99112c6a1f80d1a9e0d3e966fdee4b': { slug: 'ai-practice-manager' },
+  '3f59112c6a1f8092937bf5b9a2799bf6': { slug: 'records-chaser' },
+  '3f59112c6a1f80239ed3f7b46755ec01': { slug: 'firm-of-the-future-blueprint' },
+  '3f59112c6a1f806d910cfde64fcc5575': { slug: 'partner-review-queue' },
+  '3f59112c6a1f80be88faeb21ca187da8': { slug: 'practice-acquisition-team' },
+
+  /* Clare's, on her own public site until her posts move into Damon's table. */
+  '3f192e2e92e9809591b7feaa7c062808': {
+    slug: 'ten-practice-methods-as-claude-skills',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+    kicker: 'Free skills',
+  },
+  '3f192e2e92e980b89b0beb9c143d0b98': {
+    slug: 'fd-board',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+    kicker: 'Free skill',
+  },
+  'bba7a3c8a8ff407e849d8ed7853d0493': {
+    slug: '57-jobs-in-an-accounting-firm-sorted-for-claude',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+    kicker: 'Free guide',
+  },
+  '35e28d24796a48a4b190a12781a6d98a': {
+    slug: 'practice-stack',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+    kicker: 'Free guide',
+  },
 };
+
+/* Posts fetched through the public site on every build, because they are not rows in the database. */
+export const EXTRA = Object.entries(KNOWN)
+  .filter(([, k]) => k.site && k.site !== SITE)
+  .map(([id, k]) => ({ id, site: k.site }));
 
 const log = (...a) => console.log('[lead-magnets]', ...a);
 
@@ -68,8 +102,9 @@ const log = (...a) => console.log('[lead-magnets]', ...a);
 async function embeds(entry) {
   if (!entry.notionUrl) return false;
   try {
-    const id = entry.notionUrl.split('/ebd/')[1];
-    return Boolean(await publicSource(SITE).resolveTitle(id));
+    const { host, pathname } = new URL(entry.notionUrl);
+    const id = pathname.split('/ebd/')[1];
+    return Boolean(await publicSource(host).resolveTitle(id));
   } catch {
     return false;
   }
@@ -88,19 +123,25 @@ async function build(source, posts) {
   const entries = [];
   for (const post of posts) {
     try {
-      const page = await source.page(post.id);
+      /* A post on another public site is read from there, whatever the main source is. */
+      const src = post.site ? publicSource(post.site) : source;
+      const known = KNOWN[post.id] ?? {};
+      const page = await src.page(post.id);
       const { entry, warnings } = await parsePost({
         ...page,
         overrides: {
-          slug: KNOWN[post.id],
+          slug: known.slug,
+          kicker: known.kicker,
+          author: known.author,
           ...(PUBLISHED[post.id] ?? {}),
           ...Object.fromEntries(
             Object.entries(post.overrides ?? {}).filter(([, v]) => (Array.isArray(v) ? v.length : String(v ?? '').trim()))
           ),
         },
-        site: SITE,
-        resolveTitle: id => source.resolveTitle(id),
+        site: post.site || SITE,
+        resolveTitle: id => src.resolveTitle(id),
       });
+      entry.author = entry.author || DEFAULT_AUTHOR;
       entry.notionPostId = post.id;
       if (!entry.notionUrl) {
         log(`SKIP ${post.id} (${entry.title}): ${warnings.join('; ')}`);
@@ -124,8 +165,7 @@ async function build(source, posts) {
 async function parity() {
   const current = (await import(pathToFileURL(resolve(root, 'src/content/leadMagnets.js')).href)).leadMagnets;
   const source = publicSource(SITE);
-  const posts = Object.keys(KNOWN).map(id => ({ id }));
-  const fresh = await build(source, posts);
+  const fresh = await build(source, knownPosts());
   let diffs = 0;
   for (const e of fresh) {
     const m = current.find(c => c.slug === e.slug);
@@ -140,6 +180,7 @@ async function parity() {
     if (m.kicker !== e.kicker) rows.push(['kicker', m.kicker, e.kicker]);
     if (m.takeaways.length !== e.takeaways.length) rows.push(['takeaways', m.takeaways.length, e.takeaways.length]);
     if (m.notionUrl !== e.notionUrl) rows.push(['notionUrl', m.notionUrl, e.notionUrl]);
+    if ((m.author || DEFAULT_AUTHOR) !== e.author) rows.push(['author', m.author, e.author]);
     if (m.intro.join(' ') !== e.intro.join(' ')) rows.push(['intro', m.intro.join(' ').slice(0, 120) + '...', e.intro.join(' ').slice(0, 120) + '...']);
     if (rows.length) {
       diffs++;
@@ -150,10 +191,12 @@ async function parity() {
   console.log(`\n${fresh.length} parsed, ${diffs} with differences`);
 }
 
+const knownPosts = () => Object.entries(KNOWN).map(([id, k]) => ({ id, site: k.site }));
+
 async function main() {
   const flag = process.argv[2];
   if (flag === '--parity') return parity();
-  if (flag === '--public') return write(await build(publicSource(SITE), Object.keys(KNOWN).map(id => ({ id }))));
+  if (flag === '--public') return write(await build(publicSource(SITE), knownPosts()));
 
   if (!TOKEN || !DB) {
     log('NOTION_TOKEN or NOTION_DATABASE_ID not set, keeping the committed leadMagnets.generated.js');
@@ -167,8 +210,9 @@ async function main() {
     return;
   }
   const rows = await source.rows(DB);
-  log(`${rows.length} rows ticked "Publish to website"`);
-  const entries = await build(source, rows);
+  log(`${rows.length} rows ticked "Publish to website"${EXTRA.length ? `, plus ${EXTRA.length} from other sites` : ''}`);
+  /* Database rows first, so a post that moves into the table wins over its public-site copy. */
+  const entries = await build(source, [...rows, ...EXTRA]);
   if (!entries.length) {
     log('nothing parsed, keeping the committed file');
     return;

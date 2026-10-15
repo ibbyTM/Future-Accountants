@@ -18,6 +18,7 @@ export default [
       "The Review Standard: the two-minute check a junior runs on any AI output before it leaves the building",
       "The 30-Day Rollout Plan, week by week"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80688c27d4b536dd2c8f",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80688c27d4b536dd2c8f",
     "notionPostId": "3d19112c6a1f808180a8de27b907e079"
@@ -38,6 +39,7 @@ export default [
       "Tax Timer: dividend vs salary, payments on account, capital spend before or after year end, flagged when the numbers say so",
       "Advisory Flagger: which five clients in your book need a call this month, and what the call is about"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80ea9c7bc94d998cabcf",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80ea9c7bc94d998cabcf",
     "notionPostId": "3d19112c6a1f8041831bd42468083c81"
@@ -59,6 +61,7 @@ export default [
       "The questions worth putting to a live ledger, and the ones that waste ten minutes",
       "A one-minute check that tells you which route you’re on"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80bea3fbe6da41627dd0",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80bea3fbe6da41627dd0",
     "notionPostId": "3d19112c6a1f8045aca7e7ac0c158fa5"
@@ -84,6 +87,7 @@ export default [
       "The Review Checklist",
       "The Capacity Tracker"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3de9112c6a1f8094a123c0e72f4fb382",
     "resourceLink": "https://impartial-money-fa9.notion.site/3de9112c6a1f8094a123c0e72f4fb382",
     "notionPostId": "3de9112c6a1f80429341eea9114f76f0"
@@ -105,6 +109,7 @@ export default [
       "Practice Memory: remembers every client decision, fee change, and conversation across sessions",
       "The 4-step build process for every agent, 32 Claude tricks, and a copy-paste Practice Brain File template"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3629112c6a1f80539fe7caca8a325210",
     "resourceLink": "https://impartial-money-fa9.notion.site/3629112c6a1f80539fe7caca8a325210",
     "notionPostId": "3de9112c6a1f80f097b1c308b090a1e1"
@@ -131,6 +136,7 @@ export default [
       "Your own out-of-scope work",
       "Plus the standing rules, the never list, and a review routine that takes minutes"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f80069366fdb0d43d7ff7",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f80069366fdb0d43d7ff7",
     "notionPostId": "3e99112c6a1f802a92c4d5054603a0dd"
@@ -153,6 +159,7 @@ export default [
       "When to stay on a lighter setting, so the team doesn’t run out of allowance by Wednesday",
       "What it still gets wrong, and why the review step stays"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f8051ae29cb3edbb9cb46",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f8051ae29cb3edbb9cb46",
     "notionPostId": "3e99112c6a1f800aab51ce3ef6a40353"
@@ -178,6 +185,7 @@ export default [
       "The Friday Partner Brief",
       "The 30-Day Probation"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f803d9495e7b8da4fab53",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f803d9495e7b8da4fab53",
     "notionPostId": "3e99112c6a1f80d1a9e0d3e966fdee4b"
@@ -200,6 +208,7 @@ export default [
       "A Friday list of every Self Assessment client at risk of missing 31 January",
       "A one-page brief for the partner on who’s stuck and who needs a phone call"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80338546daee461f194c",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80338546daee461f194c",
     "notionPostId": "3f59112c6a1f8092937bf5b9a2799bf6"
@@ -222,6 +231,7 @@ export default [
       "Who moves to what, and the training each person needs",
       "The 2028 test: what your firm looks like once every competitor has caught up"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80668ba6cad2dac95678",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80668ba6cad2dac95678",
     "notionPostId": "3f59112c6a1f80239ed3f7b46755ec01"
@@ -244,6 +254,7 @@ export default [
       "Disclosures: every note a small company’s accounts need, including the ones the FRS 102 changes add",
       "Repeat mistakes: anything the partner flagged on earlier files, caught again and written back to whoever prepared it"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f8053aa35daf85a1779ff",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f8053aa35daf85a1779ff",
     "notionPostId": "3f59112c6a1f806d910cfde64fcc5575"
@@ -266,8 +277,100 @@ export default [
       "The first year: what to change, and what to leave well alone",
       "The letter that tells clients they’ve got a new accountant"
     ],
+    "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f802bbf1ac6bce80b3f46",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f802bbf1ac6bce80b3f46",
     "notionPostId": "3f59112c6a1f80be88faeb21ca187da8"
+  },
+  {
+    "slug": "ten-practice-methods-as-claude-skills",
+    "title": "Ten Practice Methods as Claude Skills",
+    "summary": "Every Big Four graduate gets a method before they meet their first client.",
+    "kicker": "Free skills",
+    "intro": [
+      "Every Big Four graduate gets a method before they meet their first client. Not because they’re cleverer than your team, but because somebody wrote the method down first. Most practices never wrote one down for running the practice itself, so I built ten into Claude Skills that read the firm’s own Xero, and here’s one in full.",
+      "Plus three on lockup, capacity and the partner review queue."
+    ],
+    "takeaways": [
+      "Splits the firm’s profit by service line, from the tracking already in Xero",
+      "Ranks every client by fee per hour once your timesheets are added, not by fee",
+      "Tracks days from invoice to cash for every client and names the slow payers",
+      "Finds every client billed below your minimum fee",
+      "Shows how much of the fee base sits with your five largest clients",
+      "Models what a buyer would pay and which number pulls the price down"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/f2afc55ab54f47ba885ab290856bb010",
+    "resourceLink": "https://freebie-for-you.notion.site/f2afc55ab54f47ba885ab290856bb010",
+    "notionPostId": "3f192e2e92e9809591b7feaa7c062808"
+  },
+  {
+    "slug": "fd-board",
+    "title": "The FD Board",
+    "summary": "I turned the operating review I run as a fractional FD into one Claude skill.",
+    "kicker": "Free skill",
+    "intro": [
+      "I turned the operating review I run as a fractional FD into one Claude skill. I’d normally do it across a table over a morning, so putting it in a skill felt odd, but here it is. Seven seats.",
+      "Install the skill in Claude. Answer nine questions about your fees, your client list, your team and the week you’d most like back. The skill then picks the three or four seats your answers point to, and writes a 90-day plan from them."
+    ],
+    "takeaways": [
+      "The Recovery Reviewer: Finds where fees leak between the time recorded and the amount billed",
+      "The Client Base Auditor: Ranks the client list by fee per hour and names the bottom fifteen percent",
+      "The Capacity Planner: Turns “we’re slammed” into hours available against hours needed, month by month",
+      "The Delegation Lead: Sorts everything that reaches a partner into training problems and systems problems",
+      "The Pricing Adviser: Moves each client from pricing the job to pricing the year",
+      "The Advisory Sequencer: Puts capacity, delegation and the offer in the order that gets advisory work done",
+      "The Value Assessor: Shows what the firm is worth without you in it, and which number pulls the price down"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/f7e742be2f5b4076a56bb45751ca9a5d",
+    "resourceLink": "https://freebie-for-you.notion.site/f7e742be2f5b4076a56bb45751ca9a5d",
+    "notionPostId": "3f192e2e92e980b89b0beb9c143d0b98"
+  },
+  {
+    "slug": "57-jobs-in-an-accounting-firm-sorted-for-claude",
+    "title": "The 57 Jobs in an Accounting Firm, Sorted for Claude",
+    "summary": "I mapped the 57 jobs an accounting firm does, and sorted every one by what Claude can take.",
+    "kicker": "Free guide",
+    "intro": [
+      "I mapped the 57 jobs an accounting firm does, and sorted every one by what Claude can take. (51 come with a prompt ready to run, and the other 6 stay with a person for reasons the map spells out.) Most firms I speak to started with AI the same way. Someone signed up, tried it on whatever landed on their desk that morning, and three months later it drafts the odd email and nothing else in the practice has changed. Nobody sat down with the full list of what the firm does, from the first enquiry to the partner meeting, and decided where it should go.",
+      "Picking from the full list takes twenty minutes, and it saves the three months most firms spend trying it on whatever turns up."
+    ],
+    "takeaways": [
+      "All 57 jobs, from the enquiry reply to the partner meeting pack, with how often each one comes round and who usually does it",
+      "A verdict on every one: Claude does it, Claude drafts and you sign, or it stays with a person",
+      "51 prompts, one for every job Claude can take, written for UK practices on Xero",
+      "The six that stay with a person, including the ID checks and the tax computations, and the reason for each",
+      "The five I’d start with in a firm that’s never used it, picked from where owners tell me the hours go",
+      "A one-page worksheet to pick your own three to five this week",
+      "The order to build them in, so the first one works before anyone starts on the second"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/cefb4a02c90c4d2cb765e91c82d0124b",
+    "resourceLink": "https://freebie-for-you.notion.site/cefb4a02c90c4d2cb765e91c82d0124b",
+    "notionPostId": "bba7a3c8a8ff407e849d8ed7853d0493"
+  },
+  {
+    "slug": "practice-stack",
+    "title": "The Practice Stack",
+    "summary": "Every firm owner wants the one system that runs the whole practice.",
+    "kicker": "Free guide",
+    "intro": [
+      "Every firm owner wants the one system that runs the whole practice. (It doesn’t exist, so here’s the stack I’d put in a 15-person firm on Xero instead.) Google does your maps, your search, your calendar, your meetings and now its own AI, and you’ve still got Spotify, Netflix and Uber on the same phone. Nobody expects one app to do all of that at home, yet I still get asked which single accountancy system will run the workflow, the bookkeeping, the tax, the reporting and the AI.",
+      "Most of it is deciding what you already have, before you buy anything."
+    ],
+    "takeaways": [
+      "The full stack, job by job: ledger, practice management, receipts, ID checks, proposals, tax, payroll, reporting, payments, email, marketing, and Claude on top",
+      "What each tool is for, and the job it takes off a person",
+      "How the tools pass data to each other, so nothing gets typed twice",
+      "Where Claude sits: the connectors that read Xero, your inbox and your files, and what it runs across them",
+      "The keep-or-switch scorecard, so you don’t retrain a whole team over one point out of ten",
+      "A different mix for firms on QuickBooks",
+      "The order to change things in, one tool a quarter"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/02fb24ca54794bbe967c79fb6d562016",
+    "resourceLink": "https://freebie-for-you.notion.site/02fb24ca54794bbe967c79fb6d562016",
+    "notionPostId": "35e28d24796a48a4b190a12781a6d98a"
   }
 ];

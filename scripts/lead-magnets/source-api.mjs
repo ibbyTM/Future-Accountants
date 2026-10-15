@@ -14,7 +14,10 @@ export const PROPS = {
   kicker: 'Web kicker',
   slug: 'Web slug',
   takeaways: 'Web takeaways',
+  author: 'Author',
 };
+
+export const AUTHORS = ['Damon Millar', 'Clare Thompson'];
 
 const plain = rich => (rich || []).map(r => r.plain_text ?? '').join('');
 
@@ -78,6 +81,7 @@ export function apiSource(token) {
                 .split(/\r?\n/)
                 .map(s => s.trim())
                 .filter(Boolean),
+              author: props[PROPS.author]?.select?.name ?? '',
             },
           });
         }
@@ -122,6 +126,9 @@ export function apiSource(token) {
       if (!have[PROPS.publish]) add[PROPS.publish] = { checkbox: {} };
       for (const name of [PROPS.title, PROPS.summary, PROPS.kicker, PROPS.slug, PROPS.takeaways]) {
         if (!have[name]) add[name] = { rich_text: {} };
+      }
+      if (!have[PROPS.author]) {
+        add[PROPS.author] = { select: { options: AUTHORS.map(name => ({ name })) } };
       }
       if (Object.keys(add).length) {
         await call(`/databases/${databaseId}`, { method: 'PATCH', body: JSON.stringify({ properties: add }) });

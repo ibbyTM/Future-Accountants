@@ -86,7 +86,14 @@ build without the token, or during a Notion outage, keeps the last good set.
 Without the variables the script says so and leaves the file alone.
 
 Per-page overrides are columns on the Notion row: Web title, Web summary, Web
-kicker, Web slug, Web takeaways (one per line). `scripts/lead-magnets/published.mjs`
+kicker, Web slug, Web takeaways (one per line), and Author (Damon Millar or
+Clare Thompson). The author appears as a byline on the page and travels to
+GoHighLevel as `author`, so leads can be tagged per person. Authors and their
+role lines live in `src/site.config.js`.
+
+Posts that are not rows in the database, such as Clare's on her own public
+Notion site, are listed in `KNOWN` in `scripts/lead-magnets/fetch.mjs` with
+their site and author, and are read through the public site on every build. `scripts/lead-magnets/published.mjs`
 holds the hand-chosen values for the first twelve pages and applies them unless
 the row has its own.
 

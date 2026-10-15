@@ -21,6 +21,7 @@ export const clean = s =>
     .replace(/\s+[–—]\s*/g, ', ')
     .replace(/[–—]/g, '-')
     .replace(/(\w)'(\w)/g, '$1’$2')
+    .replace(/"([^"]+)"/g, '“$1”')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -40,7 +41,7 @@ const idFromUrl = s => {
   return m ? m[1].toLowerCase() : null;
 };
 
-const DROP = [/giving (it )?away/i, /repost/i, /^p\.?s\.?\b/i, /link in (the )?comments/i];
+const DROP = [/giving (it )?away/i, /^free access/i, /repost/i, /^p\.?s\.?\b/i, /link in (the )?comments/i];
 
 const KICKERS = [
   [/playbook/i, 'Free playbook'],
@@ -144,13 +145,42 @@ export async function parsePost({ pageTitle, blocks, overrides = {}, site, resol
   });
   let best = null;
   for (const g of groups.values()) if (!best || g.items.length >= best.items.length) best = g;
+
+  /*
+   * No list at all: a post may describe its parts as "Name:" lines each
+   * followed by a one-line description (Clare's FD Board). Three or more
+   * such pairs become the list, and those lines leave the intro.
+   */
+  const consumed = new Set();
+  if (!best) {
+    const pairs = [];
+    let first = -1;
+    for (let i = 0; i < lines.length - 1; i++) {
+      const a = lines[i];
+      const b = lines[i + 1];
+      if (
+        a.kind === 'text' &&
+        b.kind === 'text' &&
+        /:$/.test(a.text.trim()) &&
+        a.text.trim().length < 60 &&
+        !/:$/.test(b.text.trim())
+      ) {
+        if (first < 0) first = i;
+        pairs.push(`${clean(a.text).replace(/:$/, '')}: ${clean(b.text)}`);
+        consumed.add(i).add(i + 1);
+        i++;
+      }
+    }
+    if (pairs.length >= 3) best = { items: pairs.map(trimItem), first };
+    else consumed.clear();
+  }
   const takeaways = ov.takeaways ? ov.takeaways.map(trimItem) : best?.items ?? [];
   if (!takeaways.length) warnings.push('no list found for the takeaways');
 
   /* Text lines, cleaned and filtered. */
   const texts = lines
     .map((l, i) => ({ ...l, i }))
-    .filter(l => l.kind === 'text')
+    .filter(l => l.kind === 'text' && !consumed.has(l.i))
     .map(l => ({ ...l, text: clean(l.text) }))
     .filter(l => l.text.length > 2 && !titleKeys.has(norm(l.text)))
     .filter(l => !(norm(l.text).includes(norm(title)) && l.text.length < title.length + 30));
@@ -198,6 +228,7 @@ export async function parsePost({ pageTitle, blocks, overrides = {}, site, resol
       kicker,
       intro,
       takeaways,
+      author: clean(ov.author || '') || null,
       notionUrl: resourceId ? `https://${site}/ebd/${resourceId}` : null,
       resourceLink: resourceId ? `https://${site}/${resourceId}` : null,
     },

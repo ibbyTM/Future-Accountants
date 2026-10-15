@@ -7,7 +7,7 @@ import FinalCta from '../sections/FinalCta.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import { leadMagnets } from '../content/leadMagnets.js';
 import { webinars } from '../content/webinars.js';
-import { withBase } from '../site.config.js';
+import { authorOf, withBase } from '../site.config.js';
 
 /* Index of every lead magnet, generated from src/content/leadMagnets.js. */
 export default function ResourcesPage() {
@@ -57,6 +57,7 @@ export default function ResourcesPage() {
                     <h2 className="mt-2 font-display text-2xl font-medium italic leading-snug text-ink transition-colors group-hover:text-accent sm:text-3xl">
                       {m.title}
                     </h2>
+                    <p className="mt-2 font-sans text-xs font-semibold text-muted">{authorOf(m.author).name}</p>
                   </div>
                   <p className="col-span-12 text-[16px] leading-relaxed text-muted sm:col-span-5">
                     {m.summary}

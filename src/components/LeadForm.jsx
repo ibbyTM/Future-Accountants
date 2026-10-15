@@ -138,7 +138,7 @@ function Progress({ step }) {
   );
 }
 
-export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess }) {
+export default function LeadForm({ leadMagnet, resourceLink, author, variant, onSuccess }) {
   const uid = useId();
   const id = k => `${uid}-${k}`;
   const twoStep = variant === 'steps';
@@ -213,6 +213,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
       qualifying_answer: values.role,
       lead_magnet: leadMagnet,
       resource_link: resourceLink,
+      author,
       form_variant: variant,
       page_url: window.location.href,
       website: values.website,
@@ -327,6 +328,7 @@ export default function LeadForm({ leadMagnet, resourceLink, variant, onSuccess 
       noValidate
       data-lead-magnet={leadMagnet}
       data-resource-link={resourceLink}
+      data-author={author}
       data-form-variant={variant}
       aria-labelledby={id('title')}
     >

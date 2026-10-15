@@ -9,6 +9,7 @@ export const PUBLISHED = {
     "title": "The AI-Native Accounting Firm Playbook",
     "summary": "6 documents to take your practice from one person quietly using Claude to the whole team on one system.",
     "kicker": "Free playbook",
+    "author": "Damon Millar",
     "takeaways": [
       "The One-Page AI Policy, built against ICAEW’s generative AI guidance, not a US template",
       "The Plan Chooser: Claude Team vs Enterprise for a 3 to 30 person practice",
@@ -23,6 +24,7 @@ export const PUBLISHED = {
     "title": "The Claude Practice Team",
     "summary": "5 Claude roles that watch every client’s Xero file the other 11 months you’re not doing their year end.",
     "kicker": "Free guide",
+    "author": "Damon Millar",
     "takeaways": [
       "Ledger Auditor: miscoded lines, unreconciled items and duplicate contacts caught before they reach a report",
       "Margin Mapper: gross margin by tracking category, and which client is quietly losing money on their best-selling line",
@@ -36,6 +38,7 @@ export const PUBLISHED = {
     "title": "The Xero to Claude Set Up Guide",
     "summary": "Most of the set up is one question: do you need Claude to change anything in Xero? Answer that and the rest takes about four minutes.",
     "kicker": "Free set up guide",
+    "author": "Damon Millar",
     "takeaways": [
       "The four-minute version, connecting the official connector without going near a developer account",
       "Why read-only and one organisation at a time changes how a practice actually uses it",
@@ -50,6 +53,7 @@ export const PUBLISHED = {
     "title": "The AI Workflow for Modern Accounting Firms",
     "summary": "10 workflows to roll out across your firm in Claude Cowork or ChatGPT Work, from bank feed to management pack.",
     "kicker": "Free workflows",
+    "author": "Damon Millar",
     "takeaways": [
       "The Receipt and Invoice Reader",
       "The Nominal Coder",
@@ -68,6 +72,7 @@ export const PUBLISHED = {
     "title": "The Claude Agent Team for Accountants",
     "summary": "The 7-agent system that runs the back office of my accountancy practice. One orchestrator. Six specialists. Each does one thing well.",
     "kicker": "Free playbook",
+    "author": "Damon Millar",
     "takeaways": [
       "Practice Brain File: the orchestrator that holds your firm’s voice, fees, services, and client context",
       "Client Analyst: reads any client’s accounts and surfaces advisory work in 60 seconds",
@@ -82,6 +87,7 @@ export const PUBLISHED = {
     "title": "10 Xero Workflows for Claude Opus 5.5",
     "summary": "Job sheet to month-end journal, with every one left in Xero as a draft for you to approve.",
     "kicker": "Free workflows",
+    "author": "Damon Millar",
     "takeaways": [
       "Job sheet to draft invoices",
       "Variable monthly invoices",
@@ -101,6 +107,7 @@ export const PUBLISHED = {
     "title": "Opus 5.5 for UK Accountants",
     "summary": "15 practice jobs to move to Claude’s new model first, and the test to run before you trust it with any of them.",
     "kicker": "Free guide",
+    "author": "Damon Millar",
     "takeaways": [
       "What actually changed: the three changes that matter for client work, and the launch noise you can skip",
       "The right plan and settings: which plans include it, and how hard to let it think for drafting versus checking figures",
@@ -116,6 +123,7 @@ export const PUBLISHED = {
     "title": "The AI Practice Manager",
     "summary": "One Claude project that runs the admin side of your firm every week, from Monday’s deadline board to Friday’s partner brief.",
     "kicker": "Free guide",
+    "author": "Damon Millar",
     "takeaways": [
       "The Job Description",
       "The Setup: one Claude project, its standing instructions in full, and the deadline register it reads from",
@@ -134,6 +142,7 @@ export const PUBLISHED = {
     "title": "The Records Chaser",
     "summary": "9 routines that chase every missing bank statement, receipt, P60 and rent schedule before your team opens their inbox.",
     "kicker": "Free routines",
+    "author": "Damon Millar",
     "takeaways": [
       "A Monday sweep of your deadline list for every client still missing records",
       "The first request written from each client’s own file, so you ask for everything once",
@@ -149,6 +158,7 @@ export const PUBLISHED = {
     "title": "The Firm of the Future Blueprint",
     "summary": "A plan for firm owners who can see AI taking half their team’s compliance work, and haven’t decided what those people do next.",
     "kicker": "Free blueprint",
+    "author": "Damon Millar",
     "takeaways": [
       "Where your team’s hours go today, worked out from your own timesheet export",
       "How many of those hours AI can realistically take, job by job",
@@ -164,6 +174,7 @@ export const PUBLISHED = {
     "title": "The Partner Review Queue",
     "summary": "Seven checks run on each file before it reaches the partner’s desk.",
     "kicker": "Free guide",
+    "author": "Damon Millar",
     "takeaways": [
       "Tie-out: every figure in the accounts traced back to the trial balance",
       "Comparatives: last year’s column checked against the accounts you actually filed",
@@ -179,6 +190,7 @@ export const PUBLISHED = {
     "title": "The Practice Acquisition Team",
     "summary": "Seven Claude prompts and a master prompt for buying the firm up the road.",
     "kicker": "Free prompts",
+    "author": "Damon Millar",
     "takeaways": [
       "The fee list: which fees come back every year, and which were one-offs",
       "Client risk: who’s likely to leave when the owner does",

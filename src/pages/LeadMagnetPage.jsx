@@ -8,7 +8,7 @@ import Footer from '../sections/Footer.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import { resourceLinkFor } from '../content/leadMagnets.js';
-import { withBase } from '../site.config.js';
+import { authorOf, withBase } from '../site.config.js';
 
 /*
  * One lead magnet. The intro, takeaways and CTA are real HTML so search
@@ -30,6 +30,7 @@ const readDone = slug => {
 
 export default function LeadMagnetPage({ magnet }) {
   const resourceLink = resourceLinkFor(magnet);
+  const author = authorOf(magnet.author);
   const [variant] = useState(pickVariant);
   const [doneEmail, setDoneEmail] = useState(() => readDone(magnet.slug));
   const confirmRef = useRef(null);
@@ -71,6 +72,10 @@ export default function LeadMagnetPage({ magnet }) {
               <h1 className="font-display text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
                 {magnet.title}
               </h1>
+              <p className="mt-5 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                By {author.name}
+                {author.role && <span className="font-medium normal-case tracking-normal"> · {author.role}</span>}
+              </p>
               {magnet.intro.map(p => (
                 <p key={p} className="mt-6 max-w-xl text-lg leading-[1.65]">
                   {p}
@@ -123,6 +128,7 @@ export default function LeadMagnetPage({ magnet }) {
                   <LeadForm
                     leadMagnet={magnet.title}
                     resourceLink={resourceLink}
+                    author={author.name}
                     variant={variant}
                     onSuccess={onSuccess}
                   />
