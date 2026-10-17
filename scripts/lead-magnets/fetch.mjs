@@ -117,6 +117,32 @@ export const KNOWN = {
     author: 'Clare Thompson',
     kicker: 'Free guide',
   },
+  '3f192e2e92e98019a991c89d2c915275': {
+    slug: 'morning-brief-on-your-own-practice',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+    summary: 'I built a morning brief that reads the practice\u2019s own Xero before anyone\u2019s in.',
+  },
+  '187eb43fabf6420d820379fe6a60617a': {
+    slug: 'vat-review-on-xero',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+  },
+  '5ce7b78b822147d9b84e294e4a0cba85': {
+    slug: 'xero-cleanup-score',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+  },
+  'f5c4c79c1b9143dba5c9efedfdfab3aa': {
+    slug: 'client-fd-team',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+  },
+  '4e44ead2f9ca4e8fa558f8fb046df905': {
+    slug: 'self-assessment-agent-team',
+    site: 'freebie-for-you.notion.site',
+    author: 'Clare Thompson',
+  },
 };
 
 /* Posts fetched through the public site on every build, because they are not rows in the database. */

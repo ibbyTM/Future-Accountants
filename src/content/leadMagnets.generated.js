@@ -466,5 +466,118 @@ export default [
     "notionUrl": "https://freebie-for-you.notion.site/ebd/02fb24ca54794bbe967c79fb6d562016",
     "resourceLink": "https://freebie-for-you.notion.site/02fb24ca54794bbe967c79fb6d562016",
     "notionPostId": "35e28d24796a48a4b190a12781a6d98a"
+  },
+  {
+    "slug": "morning-brief-on-your-own-practice",
+    "title": "The Morning Brief on Your Own Practice",
+    "summary": "I built a morning brief that reads the practice’s own Xero before anyone’s in.",
+    "kicker": "Free guide",
+    "intro": [
+      "I built a morning brief that reads the practice’s own Xero before anyone’s in. Here’s one of the checks it runs, and you can do this one by hand today... Take the total on your firm’s Aged Receivables report, divide it by the last twelve months of invoices and multiply by 365.",
+      "All of it comes straight from your own Xero, read-only, so nothing in the ledger changes and nothing needs migrating. Two things it won’t do. It only sees what’s in Xero, so WIP sitting in your practice software stays invisible until it’s billed. And it learns from your team marking the false alarms, so for the first fortnight it flags too much."
+    ],
+    "takeaways": [
+      "Works out debtor days every morning and names the five clients pushing it up",
+      "Checks every monthly fee actually went out, and lists the clients with no invoice this month",
+      "Lists yesterday’s credit notes and write-offs, with the client and the amount",
+      "Compares fee income with the same month last year, service by service",
+      "Holds the firm’s own cash against payroll, the next VAT payment and the PAYE date",
+      "Flags any client who has paid later three months running",
+      "One brief each morning: what it read, what it flagged, and the rule changes it suggests from your team’s review"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/e4dd3627c8a44617b80435f9e48b6615",
+    "resourceLink": "https://freebie-for-you.notion.site/e4dd3627c8a44617b80435f9e48b6615",
+    "notionPostId": "3f192e2e92e98019a991c89d2c915275"
+  },
+  {
+    "slug": "vat-review-on-xero",
+    "title": "The VAT Review on Xero",
+    "summary": "I built a VAT review that reads straight from a client’s Xero.",
+    "kicker": "Free guide",
+    "intro": [
+      "I built a VAT review that reads straight from a client’s Xero. A practice spends an hour or more checking each VAT return before it goes in, and most of that hour is scrolling. Bills coded at the wrong rate, input VAT on things that can’t be claimed, a reverse charge nobody applied, and no idea which return HMRC will pick up.",
+      "It reads Xero and never files anything, and it can’t see the sale that was never invoiced, so the review note opens with what it couldn’t check."
+    ],
+    "takeaways": [
+      "Reads every sales invoice and bill on the return and flags the VAT rate that doesn’t fit the supplier, the account or last quarter",
+      "Finds the input VAT that can’t be claimed: client entertaining, cars, and bills from suppliers with no VAT number",
+      "Checks the construction clients for the domestic reverse charge, and the importers for the postponed VAT statement",
+      "Works out the fuel scale charge when the business pays for private fuel",
+      "Compares every box with the last four quarters and explains any move over 20% before the client asks",
+      "Splits the errors you can fix on this return from the ones HMRC has to be told about separately",
+      "Writes the client query list in plain English, and a review note the person who files can sign"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/56b8d722bcd244f68c7ed0f149a137ea",
+    "resourceLink": "https://freebie-for-you.notion.site/56b8d722bcd244f68c7ed0f149a137ea",
+    "notionPostId": "187eb43fabf6420d820379fe6a60617a"
+  },
+  {
+    "slug": "xero-cleanup-score",
+    "title": "The Xero Cleanup Score",
+    "summary": "I built a check that scores a new client’s Xero file before you quote.",
+    "kicker": "Free guide",
+    "intro": [
+      "I built a check that scores a new client’s Xero file before you quote. (So the cleanup you price at 25 hours doesn’t turn into 60 you can’t bill.) Most clients switch accountant in January, and most of them start asking in November. The quote goes out after a ten-minute look at the file, because nobody can justify a day on a client who hasn’t signed. Then the team opens it properly and finds two years of unreconciled bank lines, a suspense account nobody cleared and a director’s loan account that doesn’t add up.",
+      "The client has to give you read-only access to Xero before they sign, which most will if you tell them it’s so the quote is right, and because it can’t see what was never entered, every score comes with the three questions to ask before you trust it."
+    ],
+    "takeaways": [
+      "Scores the file out of 100 from what’s actually in the ledger, before you’ve quoted a penny",
+      "Counts the unreconciled bank lines on every account, and how old the oldest one is",
+      "Finds the suspense balances, the uncategorised lines, and the suppliers coded to three different accounts",
+      "Checks the opening balances against the last accounts filed at Companies House, so you know whether the file even starts in the right place",
+      "Turns the score into hours by block, and prices the cleanup separately from the monthly fee",
+      "Writes the questions for the outgoing accountant and the list of what to ask the client for",
+      "Hands the team a workplan in the order the file needs fixing, with hours against each block"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/11514b99db40431a9165434d2c54eb7d",
+    "resourceLink": "https://freebie-for-you.notion.site/11514b99db40431a9165434d2c54eb7d",
+    "notionPostId": "5ce7b78b822147d9b84e294e4a0cba85"
+  },
+  {
+    "slug": "client-fd-team",
+    "title": "The Client FD Team",
+    "summary": "I built a 7-agent Claude team that reads a client’s Xero.",
+    "kicker": "Free guide",
+    "intro": [
+      "I built a 7-agent Claude team that reads a client’s Xero. (Each agent writes the part a fractional FD would tell the owner, and the partner reviews it instead of writing it.) Most clients on a monthly package get a P&L, a balance sheet and a call if there’s time. The questions they actually ring with between meetings, can I afford the hire, why is there less cash than profit, what do I pay myself this year, go to whoever picks up the phone and get answered from memory.",
+      "Each agent says what’s fine, what’s worth fixing, and what to bring to the partner. It can’t sign anything or sit in the meeting, so every pack goes past a person before the client sees it, and what it takes away is the three hours of reading before anyone writes a word."
+    ],
+    "takeaways": [
+      "The Cash Agent: the week the client runs short in the next 13, and by how much",
+      "The Debtor Agent: which customers are paying later than they used to, and how much cash that ties up",
+      "The Margin Agent: gross margin by month and by customer, and where it slipped",
+      "The Tax Agent: salary, dividends and pension at the client’s real profit, and the corporation tax bill on its way",
+      "The Compliance Agent: VAT, PAYE and Companies House, every date and every amount",
+      "The Board Pack Writer: one page the owner will actually read, with the three things to decide this month"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/98367a64b3564ec29e8103f7c78c176d",
+    "resourceLink": "https://freebie-for-you.notion.site/98367a64b3564ec29e8103f7c78c176d",
+    "notionPostId": "f5c4c79c1b9143dba5c9efedfdfab3aa"
+  },
+  {
+    "slug": "self-assessment-agent-team",
+    "title": "The Self Assessment Agent Team",
+    "summary": "I built a Claude agent team that runs Self Assessment season.",
+    "kicker": "Free guide",
+    "intro": [
+      "I built a Claude agent team that runs Self Assessment season. (Records in at one end, and a reviewed draft return and the January payment letter out the other.) Most practices run January the same way. Records arrive late and in pieces, someone types up the bank interest and the dividend vouchers, the return gets drafted in the last fortnight, and the client hears what they owe a few days before they have to pay it.",
+      "A person signs off twice, once when the records are complete and again before anything goes to the client, and the team never files a return or puts in a figure it hasn’t seen a document for."
+    ],
+    "takeaways": [
+      "The Records Agent: works out what each client sent last year, asks for all of it once, and chases what’s missing every Monday",
+      "The Income Agent: reads the P60s, bank interest, dividend vouchers and trading figures, and puts every number in the right box",
+      "The Property Agent: rents, mortgage interest at the 20% credit, repairs against improvements, and the split for jointly owned lets",
+      "The Checks Agent: the child benefit charge, the personal allowance taper over £100,000, pension relief, and anything that moved from last year",
+      "The Draft Agent: the full computation, with every figure traced back to the document it came from",
+      "The Letter Agent: what they owe on 31 January and 31 July and why, in plain English, sent while there’s still time to save for it"
+    ],
+    "author": "Clare Thompson",
+    "notionUrl": "https://freebie-for-you.notion.site/ebd/3d14c476d37a45579bb66b87c0227401",
+    "resourceLink": "https://freebie-for-you.notion.site/3d14c476d37a45579bb66b87c0227401",
+    "notionPostId": "4e44ead2f9ca4e8fa558f8fb046df905"
   }
 ];

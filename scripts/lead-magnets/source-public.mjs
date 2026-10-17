@@ -14,6 +14,7 @@ const TYPE = {
   sub_sub_header: 'text',
   quote: 'text',
   callout: 'text',
+  code: 'text',
   numbered_list: 'numbered',
   bulleted_list: 'bulleted',
   page: 'child_page',

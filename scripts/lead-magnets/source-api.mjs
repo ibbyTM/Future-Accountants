@@ -28,6 +28,7 @@ const TYPE = {
   heading_3: 'text',
   quote: 'text',
   callout: 'text',
+  code: 'text',
   numbered_list_item: 'numbered',
   bulleted_list_item: 'bulleted',
   child_page: 'child_page',

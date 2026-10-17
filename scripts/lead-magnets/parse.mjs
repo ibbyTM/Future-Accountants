@@ -41,7 +41,17 @@ const idFromUrl = s => {
   return m ? m[1].toLowerCase() : null;
 };
 
-const DROP = [/giving (it )?away/i, /^free access/i, /repost/i, /^p\.?s\.?\b/i, /link in (the )?comments/i];
+const DROP = [
+  /giving (it )?away/i,
+  /^free access/i,
+  /repost/i,
+  /^p\.?s\.?\b/i,
+  /link in (the )?comments/i,
+  /^the linkedin post$/i,
+  /^infographic$/i,
+  /^campaign details$/i,
+  /nested sub-?page/i,
+];
 
 const KICKERS = [
   [/playbook/i, 'Free playbook'],
