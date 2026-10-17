@@ -64,6 +64,34 @@ export const KNOWN = {
   '3f59112c6a1f806d910cfde64fcc5575': { slug: 'partner-review-queue' },
   '3f59112c6a1f80be88faeb21ca187da8': { slug: 'practice-acquisition-team' },
 
+  '3f19112c6a1f80adb787c3b6b36bb256': {
+    slug: 'claude-playbook-for-accounting-firms',
+    takeaways: [
+      'Build full financial models directly in Excel',
+      'Build a draft model using only your voice',
+      'Generate interactive scenario dashboards',
+      'The three checks every model gets: review the formulas, stress-test the assumptions, check the chart ranges',
+    ],
+  },
+  '3f19112c6a1f80da8e26d1a71a644748': { slug: 'claude-cfo-team-for-accounting-firms' },
+  '3f19112c6a1f804baa9fc8f3d246c4ef': { slug: 'uk-accounting-firm-guide-to-claude', kicker: 'Free guide' },
+  '3ef9112c6a1f803b9809c98a6d5c5da1': {
+    slug: 'client-dashboard-kit',
+    kicker: 'Free kit',
+    takeaways: [
+      'Cash Runway',
+      'Margin by Month',
+      'Who Owes You',
+      'The Tax Bill Coming',
+      'Break-Even',
+      'The Price Rise Test',
+      'Customer Concentration',
+      'Overhead Creep',
+      'Budget Against Actual',
+      'The Hiring Decision',
+    ],
+  },
+
   /* Clare's, on her own public site until her posts move into Damon's table. */
   '3f192e2e92e9809591b7feaa7c062808': {
     slug: 'ten-practice-methods-as-claude-skills',
@@ -133,6 +161,8 @@ async function build(source, posts) {
           slug: known.slug,
           kicker: known.kicker,
           author: known.author,
+          summary: known.summary,
+          takeaways: known.takeaways,
           ...(PUBLISHED[post.id] ?? {}),
           ...Object.fromEntries(
             Object.entries(post.overrides ?? {}).filter(([, v]) => (Array.isArray(v) ? v.length : String(v ?? '').trim()))

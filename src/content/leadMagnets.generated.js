@@ -283,6 +283,100 @@ export default [
     "notionPostId": "3f59112c6a1f80be88faeb21ca187da8"
   },
   {
+    "slug": "claude-playbook-for-accounting-firms",
+    "title": "The Claude Playbook for Accounting Firms",
+    "summary": "Your firm is using maybe 5% of what Claude can actually do.",
+    "kicker": "Free playbook",
+    "intro": [
+      "Your firm is using maybe 5% of what Claude can actually do. The difference between firms that get value from AI and firms that don’t isn’t the tool. It’s knowing the prompts and the use cases, and getting the whole team using them the same way.",
+      "Speed is not the same as correctness. Claude gets your team to 80-90% in minutes, and an accountant’s judgement gets it to 100%. That last 10% is where your firm earns its fee, and it’s why this makes accountants more valuable, not less."
+    ],
+    "takeaways": [
+      "Build full financial models directly in Excel",
+      "Build a draft model using only your voice",
+      "Generate interactive scenario dashboards",
+      "The three checks every model gets: review the formulas, stress-test the assumptions, check the chart ranges"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f8006a3dfdd7f67478d71",
+    "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f8006a3dfdd7f67478d71",
+    "notionPostId": "3f19112c6a1f80adb787c3b6b36bb256"
+  },
+  {
+    "slug": "claude-cfo-team-for-accounting-firms",
+    "title": "The Claude CFO Team for Accounting Firms",
+    "summary": "I built a Claude-powered CFO team for accounting firms.",
+    "kicker": "Free prompts",
+    "intro": [
+      "I built a Claude-powered CFO team for accounting firms. Most firms use AI to rewrite client emails and tidy up file notes. The smarter play: use it to do the CFO work your clients would pay for, if your team had the hours to do it.",
+      "Each prompt owns one job. Give it the client’s numbers, ask the question, and get a first draft of the advice most owners would pay £300 an hour for. Will it replace a partner?"
+    ],
+    "takeaways": [
+      "Tax planning scenarios (dividend vs salary, R&D, allowance timing)",
+      "Margin and pricing pressure tests",
+      "Cash flow forecasting with downside stress tests",
+      "Profit leak detection across the P&L",
+      "Year-end planning, run before year-end",
+      "Investment and acquisition evaluation",
+      "Business value and exit modelling"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f801c919cfc6f77ad4ec8",
+    "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f801c919cfc6f77ad4ec8",
+    "notionPostId": "3f19112c6a1f80da8e26d1a71a644748"
+  },
+  {
+    "slug": "uk-accounting-firm-guide-to-claude",
+    "title": "The UK Accounting Firm Guide to Claude",
+    "summary": "A guide for firm owners who want to use Claude to structure, speed up and run their practice with AI.",
+    "kicker": "Free guide",
+    "intro": [
+      "A guide for firm owners who want to use Claude to structure, speed up and run their practice with AI. Because in 2026, the way an accountancy firm makes its money is changing fast. The best firms won’t be the ones whose staff use AI occasionally.",
+      "I documented everything in one practical guide, written for the person who runs the firm."
+    ],
+    "takeaways": [
+      "How the firm owner’s job is changing with AI",
+      "Where Claude delivers the most value in a practice",
+      "How to use Claude to move clients from compliance to advisory",
+      "How to get client reports and letters out in your firm’s voice",
+      "How to automate practice workflows",
+      "How to speed up tax research and planning without adding risk",
+      "How to deliver advisory at scale, and measure what it’s worth",
+      "The mistakes firm owners are making in 2026",
+      "Prompts and resources to help you take action"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f80b19a20c0736bb17ea9",
+    "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f80b19a20c0736bb17ea9",
+    "notionPostId": "3f19112c6a1f804baa9fc8f3d246c4ef"
+  },
+  {
+    "slug": "client-dashboard-kit",
+    "title": "The Client Dashboard Kit",
+    "summary": "10 interactive dashboards Claude builds from a Xero export, so your next client meeting starts with their own numbers moving on screen.",
+    "kicker": "Free kit",
+    "intro": [
+      "Most management accounts get read once, if that. The client flicks through the PDF, asks about one figure on page three, and the meeting turns into you explaining the layout instead of talking about what they should do next. Then they ask what a 5% price rise would do, you say you’ll work it out and come back to them, and by the time you do they’ve already made the decision without you.",
+      "Every figure traces back to a named Xero report, and anything assumed is labelled on screen before a client sees it."
+    ],
+    "takeaways": [
+      "Cash Runway",
+      "Margin by Month",
+      "Who Owes You",
+      "The Tax Bill Coming",
+      "Break-Even",
+      "The Price Rise Test",
+      "Customer Concentration",
+      "Overhead Creep",
+      "Budget Against Actual",
+      "The Hiring Decision"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3ef9112c6a1f8077aa01e16032717ea0",
+    "resourceLink": "https://impartial-money-fa9.notion.site/3ef9112c6a1f8077aa01e16032717ea0",
+    "notionPostId": "3ef9112c6a1f803b9809c98a6d5c5da1"
+  },
+  {
     "slug": "ten-practice-methods-as-claude-skills",
     "title": "Ten Practice Methods as Claude Skills",
     "summary": "Every Big Four graduate gets a method before they meet their first client.",
