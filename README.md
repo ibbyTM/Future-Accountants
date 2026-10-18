@@ -2,7 +2,7 @@
 
 Conversion funnel for Damon Millar's Firm of the Future AI programmes,
 built by Nexus Edge (Lucrum AI Ltd). Content is sourced from the "AI
-Programmes for Firms" deck. Four core pages plus a resources library, one goal: **book a scoping
+Programmes for Firms" deck. Five core pages plus a resources library, one goal: **book a scoping
 call**.
 No pricing appears on the site by design; investment is covered on the call.
 
@@ -12,6 +12,7 @@ No pricing appears on the site by design; investment is covered on the call.
 | `/offer` | Offer deep-dive for detail-seekers |
 | `/firm-of-the-future` | Damon's full programme, seven areas, and where the AI system sits inside it |
 | `/about` | Author page: books, Business DNA System, speaking, weekly webinar |
+| `/team` | Meet the Team: Damon's intro, the six groups with portraits and bios, his closing statement (`src/content/team.js`) |
 | `/book` | Distraction-free booking page; renders Damon's Calendly scheduler (`calendarEmbedUrl` in `src/site.config.js`) |
 | `/resources` | Index of the free lead magnets |
 | `/resources/<slug>` | One lead magnet: written intro and takeaways, then the Notion document embedded |

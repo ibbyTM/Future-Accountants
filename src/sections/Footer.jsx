@@ -9,6 +9,7 @@ const explore = [
   { href: withBase('offer'), label: 'The Offer' },
   { href: withBase('firm-of-the-future'), label: 'The System' },
   { href: withBase('about'), label: 'About Damon' },
+  { href: withBase('team'), label: 'The Team' },
   { href: withBase('resources'), label: 'Resources' },
   { href: site.bookingUrl, label: site.ctaLabel },
 ];
