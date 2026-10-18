@@ -11,6 +11,13 @@
  *                                                  endpoint and compare with the current entries
  *   node scripts/lead-magnets/fetch.mjs --public   write the generated file from the known
  *                                                  posts through the public endpoint
+ *   node scripts/lead-magnets/fetch.mjs --check    read-only: test the token, the database,
+ *                                                  the columns and every ticked row, and say
+ *                                                  what a real run would do. Writes nothing.
+ *   node scripts/lead-magnets/fetch.mjs --publish-known
+ *                                                  tick "Publish to website" (and set Author)
+ *                                                  on every database row listed in KNOWN,
+ *                                                  so the switch to Notion keeps every page
  *
  * Runs as "prebuild", so every Vercel build pulls the latest ticked rows.
  * A row that cannot be parsed is reported and skipped; the build never
@@ -21,7 +28,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parsePost } from './parse.mjs';
 import { publicSource } from './source-public.mjs';
-import { apiSource } from './source-api.mjs';
+import { apiSource, PROPS } from './source-api.mjs';
 import { PUBLISHED } from './published.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -168,13 +175,26 @@ function write(entries) {
   const body = JSON.stringify(entries, null, 2);
   writeFileSync(
     OUT,
-    `/* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick\n   "Publish to website" on a post in Notion and rebuild. */\nexport default ${body};\n`
+    `/* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick\n   "Publish to website" on a post in Notion and rebuild. */\nexport const generatedAt = ${JSON.stringify(new Date().toISOString())};\nexport default ${body};\n`
   );
   log(`wrote ${entries.length} entries to src/content/leadMagnets.generated.js`);
 }
 
+/* The entries in the committed file, the fallback for anything that fails. */
+let committedCache;
+async function committed() {
+  if (!committedCache) {
+    committedCache = existsSync(OUT) ? (await import(pathToFileURL(OUT).href)).default : [];
+  }
+  return committedCache;
+}
+
+/* Slugs that parsed with a warning in the last build(), for --check. */
+const WARNED = new Set();
+
 async function build(source, posts) {
   const entries = [];
+  WARNED.clear();
   for (const post of posts) {
     try {
       /* A post on another public site is read from there, whatever the main source is. */
@@ -206,13 +226,21 @@ async function build(source, posts) {
       const ok = await embeds(entry);
       if (!ok) warnings.push('resource page does not embed, is it published?');
       log(`${entry.slug}  "${entry.title}"  ${entry.takeaways.length} takeaways${warnings.length ? '  WARN ' + warnings.join('; ') : ''}`);
+      if (warnings.length) WARNED.add(entry.slug);
       if (entries.some(e => e.slug === entry.slug)) {
         log(`SKIP ${post.id}: slug ${entry.slug} already used`);
         continue;
       }
       entries.push(entry);
     } catch (e) {
-      log(`SKIP ${post.id}: ${e.message}`);
+      /* Notion did not answer properly: keep the last good copy of that page rather than drop it. */
+      const last = (await committed()).find(c => c.notionPostId === post.id);
+      if (last && !entries.some(e => e.slug === last.slug)) {
+        log(`${last.slug}  kept the committed copy, Notion said: ${e.message}`);
+        entries.push(last);
+      } else {
+        log(`SKIP ${post.id}: ${e.message}`);
+      }
     }
   }
   return entries;
@@ -249,6 +277,87 @@ async function parity() {
 
 const knownPosts = () => Object.entries(KNOWN).map(([id, k]) => ({ id, site: k.site }));
 
+/*
+ * The normal run: ticked rows plus EXTRA, parsed and written. With `dry`
+ * it does everything but the write and returns what it would have done.
+ */
+async function refresh(source, { dry = false } = {}) {
+  const rows = await source.rows(DB);
+  log(`${rows.length} rows ticked "Publish to website"${EXTRA.length ? `, plus ${EXTRA.length} from other sites` : ''}`);
+  /* Database rows first, so a post that moves into the table wins over its public-site copy. */
+  const entries = await build(source, [...rows, ...EXTRA]);
+  if (!entries.length) {
+    log('nothing parsed, keeping the committed file');
+    return { ok: false, reason: 'nothing parsed', entries };
+  }
+  /* Guard against an accidental mass untick: never halve the site in one build. */
+  const have = (await committed()).length;
+  if (have >= 4 && entries.length < have / 2 && !process.env.LEAD_MAGNETS_ALLOW_SHRINK) {
+    log(`only ${entries.length} rows ticked but ${have} pages are committed; keeping the committed file. Set LEAD_MAGNETS_ALLOW_SHRINK=1 to allow it.`);
+    return { ok: false, reason: `shrink guard: ${entries.length} pages would replace ${have}`, entries };
+  }
+  if (!dry) write(entries);
+  return { ok: true, entries };
+}
+
+/* Read-only health check. Exit code 1 when a real run would not publish. */
+async function check(source) {
+  const fail = reason => {
+    console.log(`\nNOT READY: ${reason}`);
+    process.exitCode = 1;
+  };
+  let me;
+  try {
+    me = await source.me();
+  } catch (e) {
+    return fail(`the token does not work (${e.message})`);
+  }
+  log(`token ok: integration "${me.name}" in workspace "${me.workspace}"`);
+
+  let db;
+  try {
+    db = await source.database(DB);
+  } catch (e) {
+    return fail(`cannot open the database (${e.message}). Is it shared with the integration? Database page, three dots, Connections.`);
+  }
+  log(`database ok: "${db.title}" ${db.url}`);
+  const missing = Object.values(PROPS).filter(name => !db.columns.includes(name));
+  if (missing.length) return fail(`missing columns ${missing.join(', ')}. Run: node scripts/lead-magnets/fetch.mjs --setup`);
+  log(`columns ok: ${Object.values(PROPS).join(', ')}`);
+  log(`public site for embeds: ${SITE}`);
+
+  const r = await refresh(source, { dry: true });
+  const warned = [...WARNED];
+  console.log('');
+  log(`a real run would ${r.ok ? `write ${r.entries.length} pages` : `change nothing (${r.reason})`}`);
+  if (!r.ok) return fail(r.reason);
+  if (warned.length) log(`${warned.length} page(s) carry warnings above, check them on the site: ${warned.join(', ')}`);
+  console.log('\nREADY');
+}
+
+/* Tick every row in the database that is already a page on the site. */
+async function publishKnown(source) {
+  const rows = await source.ids(DB);
+  const inDb = new Set(rows.map(r => r.id));
+  const ticked = [];
+  const already = [];
+  for (const row of rows) {
+    const known = KNOWN[row.id];
+    if (!known) continue;
+    const author = known.author && known.author !== row.author ? known.author : undefined;
+    if (row.published && !author) {
+      already.push(known.slug);
+      continue;
+    }
+    await source.update(row.id, { published: true, author });
+    ticked.push(known.slug);
+    log(`ticked ${known.slug}${author ? ` (Author: ${author})` : ''}  "${row.pageTitle}"`);
+  }
+  const absent = Object.entries(KNOWN).filter(([id]) => !inDb.has(id)).map(([, k]) => k.slug);
+  log(`${ticked.length} ticked, ${already.length} already ticked, ${absent.length} not in this database`);
+  if (absent.length) log(`not in this database: ${absent.join(', ')}`);
+}
+
 async function main() {
   const flag = process.argv[2];
   if (flag === '--parity') return parity();
@@ -256,6 +365,7 @@ async function main() {
 
   if (!TOKEN || !DB) {
     log('NOTION_TOKEN or NOTION_DATABASE_ID not set, keeping the committed leadMagnets.generated.js');
+    if (flag === '--check' || flag === '--setup' || flag === '--publish-known') process.exitCode = 1;
     return;
   }
   const source = apiSource(TOKEN);
@@ -265,24 +375,13 @@ async function main() {
     log(r.added.length ? `added columns: ${r.added.join(', ')}` : 'all columns already present');
     return;
   }
-  const rows = await source.rows(DB);
-  log(`${rows.length} rows ticked "Publish to website"${EXTRA.length ? `, plus ${EXTRA.length} from other sites` : ''}`);
-  /* Database rows first, so a post that moves into the table wins over its public-site copy. */
-  const entries = await build(source, [...rows, ...EXTRA]);
-  if (!entries.length) {
-    log('nothing parsed, keeping the committed file');
-    return;
-  }
-  /* Guard against an accidental mass untick: never halve the site in one build. */
-  const committed = existsSync(OUT) ? (await import(pathToFileURL(OUT).href)).default.length : 0;
-  if (committed >= 4 && entries.length < committed / 2 && !process.env.LEAD_MAGNETS_ALLOW_SHRINK) {
-    log(`only ${entries.length} rows ticked but ${committed} pages are committed; keeping the committed file. Set LEAD_MAGNETS_ALLOW_SHRINK=1 to allow it.`);
-    return;
-  }
-  write(entries);
+  if (flag === '--check') return check(source);
+  if (flag === '--publish-known') return publishKnown(source);
+  await refresh(source);
 }
 
 main().catch(e => {
   /* Never fail the build: the committed file stays in place. */
   log(`ERROR ${e.message}; keeping the committed leadMagnets.generated.js`);
+  if (process.argv[2]) process.exitCode = 1;
 });

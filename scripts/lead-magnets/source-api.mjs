@@ -119,6 +119,52 @@ export function apiSource(token) {
       return plain(titleProp?.title);
     },
 
+    /* Who the token is: the integration's name and its workspace. */
+    async me() {
+      const u = await call('/users/me');
+      return { name: u.name ?? '', workspace: u.bot?.workspace_name ?? '' };
+    },
+
+    /* The database's title, link and column names. */
+    async database(databaseId) {
+      const db = await call(`/databases/${databaseId}`);
+      return { title: plain(db.title), url: db.url, columns: Object.keys(db.properties ?? {}) };
+    },
+
+    /* Every row, ticked or not: id, title, publish state, last edit. */
+    async ids(databaseId) {
+      const out = [];
+      let cursor;
+      do {
+        const d = await call(`/databases/${databaseId}/query`, {
+          method: 'POST',
+          body: JSON.stringify({ page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) }),
+        });
+        for (const p of d.results ?? []) {
+          const props = p.properties ?? {};
+          const titleProp = Object.values(props).find(v => v.type === 'title');
+          out.push({
+            id: p.id.replace(/-/g, ''),
+            pageTitle: plain(titleProp?.title),
+            published: Boolean(props[PROPS.publish]?.checkbox),
+            author: props[PROPS.author]?.select?.name ?? '',
+            lastEdited: p.last_edited_time,
+          });
+        }
+        cursor = d.has_more ? d.next_cursor : null;
+      } while (cursor);
+      return out;
+    },
+
+    /* Sets the publish box and, when given, the Author on one row. */
+    async update(pageId, { published, author } = {}) {
+      const properties = {};
+      if (typeof published === 'boolean') properties[PROPS.publish] = { checkbox: published };
+      if (author) properties[PROPS.author] = { select: { name: author } };
+      if (!Object.keys(properties).length) return;
+      await call(`/pages/${pageId}`, { method: 'PATCH', body: JSON.stringify({ properties }) });
+    },
+
     /* One-off: add the website columns to the database if they are missing. */
     async setup(databaseId) {
       const db = await call(`/databases/${databaseId}`);

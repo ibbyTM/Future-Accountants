@@ -83,7 +83,10 @@ resource page title, summary from the post's hook line, intro from the
 paragraphs, takeaways from the longest list, embed from the child page) and
 writes `src/content/leadMagnets.generated.js`. That file is committed, so a
 build without the token, or during a Notion outage, keeps the last good set.
-Without the variables the script says so and leaves the file alone.
+Without the variables the script says so and leaves the file alone. If Notion
+fails to answer for one post, that post's committed entry is kept rather than
+dropped, so a flaky hour never removes a live page. The file also records
+`generatedAt`, the moment it was built, which the rebuild check uses.
 
 Per-page overrides are columns on the Notion row: Web title, Web summary, Web
 kicker, Web slug, Web takeaways (one per line), and Author (Damon Millar or
@@ -100,16 +103,30 @@ the row has its own.
 Useful commands:
 
 ```
+node scripts/lead-magnets/fetch.mjs --check    # read-only: token, database, columns, every ticked row, READY or NOT READY
 node scripts/lead-magnets/fetch.mjs            # refresh from Notion (needs the two variables)
 node scripts/lead-magnets/fetch.mjs --setup    # add the website columns to the database, once
+node scripts/lead-magnets/fetch.mjs --publish-known   # tick every row that is already a page on the site, once, at switchover
 node scripts/lead-magnets/fetch.mjs --parity   # compare a fresh parse with the current entries
 node scripts/lead-magnets/fetch.mjs --public   # regenerate from the known posts via the public site
 ```
 
-Rebuilds: a Notion automation on the database (when "Publish to website" is
-checked, send webhook) hits the Vercel deploy hook, and `api/rebuild.js` is
-called hourly by the Vercel cron in `vercel.json` as a safety net. It needs
-`DEPLOY_HOOK_URL` and `CRON_SECRET` in Vercel.
+Switching Damon's database on, in order: put `NOTION_TOKEN`,
+`NOTION_DATABASE_ID` and `NOTION_SITE` in `.env`, run `--setup`, run
+`--publish-known` so the sixteen pages already live are ticked, run `--check`
+and expect `READY` with the full count, then set the same variables in Vercel
+and redeploy. `--check` exits 1 when a real run would publish nothing, so it
+can sit in a pipeline.
+
+Rebuilds: `api/rebuild.js` is called hourly by the Vercel cron in
+`vercel.json`. It needs `DEPLOY_HOOK_URL` and `CRON_SECRET` in Vercel, plus
+the two Notion variables. It compares the database with the pages the current
+deployment was built from and posts to the deploy hook only when a row was
+ticked or unticked, or a ticked post was edited after the build; otherwise it
+answers `{ deployed: false, reason: "no change" }`. `?key=<CRON_SECRET>&force=1`
+rebuilds regardless. A Notion automation on the database (when "Publish to
+website" is checked, send webhook to the deploy hook URL) makes a tick go live
+in minutes instead of within the hour; it needs a paid Notion plan.
 
 ## Lead capture on resource pages
 

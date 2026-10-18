@@ -1,5 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
+export const generatedAt = "2026-10-18T13:34:21.058Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
