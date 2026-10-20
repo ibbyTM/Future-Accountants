@@ -95,9 +95,14 @@ Clare Thompson). The author appears as a byline on the page and travels to
 GoHighLevel as `author`, so leads can be tagged per person. Authors and their
 role lines live in `src/site.config.js`.
 
-Posts that are not rows in the database, such as Clare's on her own public
-Notion site, are listed in `KNOWN` in `scripts/lead-magnets/fetch.mjs` with
-their site and author, and are read through the public site on every build. `scripts/lead-magnets/published.mjs`
+Every page already live is listed in `KNOWN` in `scripts/lead-magnets/fetch.mjs`
+by its original Notion post ID, with its slug and any overrides. A row in the
+database is matched to a `KNOWN` entry by ID, or by title when the post has
+been moved to a new workspace and carries a new ID, so slugs and overrides
+follow the post. Known posts the database does not hold yet (Clare's on her
+own public site, and any of Damon's not moved over) are read from the public
+site they live on. A moved post whose new resource page is not yet published
+keeps its last working embed until it is, so a page never goes blank. `scripts/lead-magnets/published.mjs`
 holds the hand-chosen values for the first twelve pages and applies them unless
 the row has its own.
 

@@ -1,6 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
-export const generatedAt = "2026-10-18T13:34:21.058Z";
+export const generatedAt = "2026-10-20T22:04:00.964Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
@@ -140,7 +140,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f80069366fdb0d43d7ff7",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f80069366fdb0d43d7ff7",
-    "notionPostId": "3e99112c6a1f802a92c4d5054603a0dd"
+    "notionPostId": "3e993aa14ae48137b268f4876b3c6938"
   },
   {
     "slug": "opus-5-5-for-uk-accountants",
@@ -163,7 +163,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f8051ae29cb3edbb9cb46",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f8051ae29cb3edbb9cb46",
-    "notionPostId": "3e99112c6a1f800aab51ce3ef6a40353"
+    "notionPostId": "3e993aa14ae481a69a95ec8e3eb0c14b"
   },
   {
     "slug": "ai-practice-manager",
@@ -189,7 +189,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f803d9495e7b8da4fab53",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f803d9495e7b8da4fab53",
-    "notionPostId": "3e99112c6a1f80d1a9e0d3e966fdee4b"
+    "notionPostId": "3e993aa14ae481e1945edf4a786ccef4"
   },
   {
     "slug": "records-chaser",
@@ -212,7 +212,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80338546daee461f194c",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80338546daee461f194c",
-    "notionPostId": "3f59112c6a1f8092937bf5b9a2799bf6"
+    "notionPostId": "3f493aa14ae481228dbef3177eab4531"
   },
   {
     "slug": "firm-of-the-future-blueprint",
@@ -235,7 +235,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80668ba6cad2dac95678",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80668ba6cad2dac95678",
-    "notionPostId": "3f59112c6a1f80239ed3f7b46755ec01"
+    "notionPostId": "3f493aa14ae48144b387ebce07f2680b"
   },
   {
     "slug": "partner-review-queue",
@@ -256,9 +256,9 @@ export default [
       "Repeat mistakes: anything the partner flagged on earlier files, caught again and written back to whoever prepared it"
     ],
     "author": "Damon Millar",
-    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f8053aa35daf85a1779ff",
-    "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f8053aa35daf85a1779ff",
-    "notionPostId": "3f59112c6a1f806d910cfde64fcc5575"
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f493aa14ae48199bcf9d113962f47d9",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f493aa14ae48199bcf9d113962f47d9",
+    "notionPostId": "3f493aa14ae48174a843ed163fbf77ef"
   },
   {
     "slug": "practice-acquisition-team",
@@ -281,7 +281,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f802bbf1ac6bce80b3f46",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f802bbf1ac6bce80b3f46",
-    "notionPostId": "3f59112c6a1f80be88faeb21ca187da8"
+    "notionPostId": "3f493aa14ae481ae8b12f3e81e733e02"
   },
   {
     "slug": "claude-playbook-for-accounting-firms",
@@ -301,7 +301,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f8006a3dfdd7f67478d71",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f8006a3dfdd7f67478d71",
-    "notionPostId": "3f19112c6a1f80adb787c3b6b36bb256"
+    "notionPostId": "3f193aa14ae481e89d47cfa143b16ad1"
   },
   {
     "slug": "claude-cfo-team-for-accounting-firms",
@@ -324,7 +324,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f801c919cfc6f77ad4ec8",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f801c919cfc6f77ad4ec8",
-    "notionPostId": "3f19112c6a1f80da8e26d1a71a644748"
+    "notionPostId": "3f193aa14ae48178a1efc78f1dddca74"
   },
   {
     "slug": "uk-accounting-firm-guide-to-claude",
@@ -349,7 +349,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f80b19a20c0736bb17ea9",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f80b19a20c0736bb17ea9",
-    "notionPostId": "3f19112c6a1f804baa9fc8f3d246c4ef"
+    "notionPostId": "3f193aa14ae4810ba015fd0a797ac130"
   },
   {
     "slug": "client-dashboard-kit",
@@ -375,7 +375,7 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3ef9112c6a1f8077aa01e16032717ea0",
     "resourceLink": "https://impartial-money-fa9.notion.site/3ef9112c6a1f8077aa01e16032717ea0",
-    "notionPostId": "3ef9112c6a1f803b9809c98a6d5c5da1"
+    "notionPostId": "3ee93aa14ae4819bbda7f4d013ac9b1a"
   },
   {
     "slug": "ten-practice-methods-as-claude-skills",

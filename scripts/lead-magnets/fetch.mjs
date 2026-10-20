@@ -26,7 +26,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { parsePost } from './parse.mjs';
+import { parsePost, slugify } from './parse.mjs';
 import { publicSource } from './source-public.mjs';
 import { apiSource, PROPS } from './source-api.mjs';
 import { PUBLISHED } from './published.mjs';
@@ -45,7 +45,9 @@ for (const f of ['.env', '.env.local']) {
   }
 }
 
-const SITE = process.env.NOTION_SITE || 'impartial-money-fa9.notion.site';
+/* Where Damon's posts were published before they moved into the new workspace. */
+const LEGACY_SITE = 'impartial-money-fa9.notion.site';
+const SITE = process.env.NOTION_SITE || LEGACY_SITE;
 const TOKEN = process.env.NOTION_TOKEN;
 const DB = process.env.NOTION_DATABASE_ID;
 
@@ -152,10 +154,29 @@ export const KNOWN = {
   },
 };
 
-/* Posts fetched through the public site on every build, because they are not rows in the database. */
-export const EXTRA = Object.entries(KNOWN)
-  .filter(([, k]) => k.site && k.site !== SITE)
-  .map(([id, k]) => ({ id, site: k.site }));
+/*
+ * Posts moved into a new workspace get new IDs but keep their titles. This
+ * maps a database row to the KNOWN entry it stands for, by ID first, then by
+ * the title through the committed entries, so slugs and overrides follow the
+ * post wherever it lives.
+ */
+const postKey = title => slugify(String(title ?? '').replace(/^lead\s*mag[ne]+t\s*[-:\u2013\u2014]\s*/i, ''));
+const knownIdForSlug = slug => Object.entries(KNOWN).find(([, k]) => k.slug === slug)?.[0] ?? null;
+async function aliasOf(row) {
+  if (KNOWN[row.id]) return row.id;
+  const key = postKey(row.pageTitle);
+  if (!key) return null;
+  const c = (await committed()).find(e => e.slug === key || slugify(e.title) === key);
+  return c ? knownIdForSlug(c.slug) : knownIdForSlug(key);
+}
+
+/* Known posts the database does not cover, read from the public site they live on. */
+const extraPosts = rows => {
+  const covered = new Set(rows.flatMap(r => [r.id, r.alias].filter(Boolean)));
+  return Object.entries(KNOWN)
+    .filter(([id]) => !covered.has(id))
+    .map(([id, k]) => ({ id, site: k.site || LEGACY_SITE }));
+};
 
 const log = (...a) => console.log('[lead-magnets]', ...a);
 
@@ -199,7 +220,8 @@ async function build(source, posts) {
     try {
       /* A post on another public site is read from there, whatever the main source is. */
       const src = post.site ? publicSource(post.site) : source;
-      const known = KNOWN[post.id] ?? {};
+      const kid = post.alias ?? post.id;
+      const known = KNOWN[kid] ?? {};
       const page = await src.page(post.id);
       const { entry, warnings } = await parsePost({
         ...page,
@@ -209,7 +231,7 @@ async function build(source, posts) {
           author: known.author,
           summary: known.summary,
           takeaways: known.takeaways,
-          ...(PUBLISHED[post.id] ?? {}),
+          ...(PUBLISHED[kid] ?? {}),
           ...Object.fromEntries(
             Object.entries(post.overrides ?? {}).filter(([, v]) => (Array.isArray(v) ? v.length : String(v ?? '').trim()))
           ),
@@ -224,7 +246,17 @@ async function build(source, posts) {
         continue;
       }
       const ok = await embeds(entry);
-      if (!ok) warnings.push('resource page does not embed, is it published?');
+      if (!ok) {
+        /* Never swap a working embed for a broken one: a moved post whose new resource page
+           is not published yet keeps the committed copy until it is. */
+        const last = (await committed()).find(c => c.slug === entry.slug && c.notionUrl !== entry.notionUrl);
+        if (last && (await embeds(last))) {
+          log(`${entry.slug}  resource page not published on ${new URL(entry.notionUrl).host}, kept the committed copy`);
+          if (!entries.some(e => e.slug === last.slug)) entries.push({ ...last, notionPostId: post.id });
+          continue;
+        }
+        warnings.push('resource page does not embed, is it published?');
+      }
       log(`${entry.slug}  "${entry.title}"  ${entry.takeaways.length} takeaways${warnings.length ? '  WARN ' + warnings.join('; ') : ''}`);
       if (warnings.length) WARNED.add(entry.slug);
       if (entries.some(e => e.slug === entry.slug)) {
@@ -275,7 +307,7 @@ async function parity() {
   console.log(`\n${fresh.length} parsed, ${diffs} with differences`);
 }
 
-const knownPosts = () => Object.entries(KNOWN).map(([id, k]) => ({ id, site: k.site }));
+const knownPosts = () => Object.entries(KNOWN).map(([id, k]) => ({ id, site: k.site || LEGACY_SITE }));
 
 /*
  * The normal run: ticked rows plus EXTRA, parsed and written. With `dry`
@@ -283,9 +315,15 @@ const knownPosts = () => Object.entries(KNOWN).map(([id, k]) => ({ id, site: k.s
  */
 async function refresh(source, { dry = false } = {}) {
   const rows = await source.rows(DB);
-  log(`${rows.length} rows ticked "Publish to website"${EXTRA.length ? `, plus ${EXTRA.length} from other sites` : ''}`);
+  for (const r of rows) r.alias = await aliasOf(r);
+  const extra = extraPosts(rows);
+  log(`${rows.length} rows ticked "Publish to website"${extra.length ? `, plus ${extra.length} known posts not in this database, read from their public sites` : ''}`);
   /* Database rows first, so a post that moves into the table wins over its public-site copy. */
-  const entries = await build(source, [...rows, ...EXTRA]);
+  const entries = await build(source, [...rows, ...extra]);
+  /* Keep the order the site has always had: known posts in KNOWN order, new ones after, oldest first. */
+  const order = Object.keys(KNOWN);
+  const rank = e => { const i = order.indexOf(knownIdForSlug(e.slug)); return i < 0 ? order.length : i; };
+  entries.sort((a, b) => rank(a) - rank(b) || entries.indexOf(a) - entries.indexOf(b));
   if (!entries.length) {
     log('nothing parsed, keeping the committed file');
     return { ok: false, reason: 'nothing parsed', entries };
@@ -338,12 +376,14 @@ async function check(source) {
 /* Tick every row in the database that is already a page on the site. */
 async function publishKnown(source) {
   const rows = await source.ids(DB);
-  const inDb = new Set(rows.map(r => r.id));
   const ticked = [];
   const already = [];
+  const covered = new Set();
   for (const row of rows) {
-    const known = KNOWN[row.id];
+    const kid = await aliasOf(row);
+    const known = kid && KNOWN[kid];
     if (!known) continue;
+    covered.add(kid);
     const author = known.author && known.author !== row.author ? known.author : undefined;
     if (row.published && !author) {
       already.push(known.slug);
@@ -353,7 +393,7 @@ async function publishKnown(source) {
     ticked.push(known.slug);
     log(`ticked ${known.slug}${author ? ` (Author: ${author})` : ''}  "${row.pageTitle}"`);
   }
-  const absent = Object.entries(KNOWN).filter(([id]) => !inDb.has(id)).map(([, k]) => k.slug);
+  const absent = Object.entries(KNOWN).filter(([id]) => !covered.has(id)).map(([, k]) => k.slug);
   log(`${ticked.length} ticked, ${already.length} already ticked, ${absent.length} not in this database`);
   if (absent.length) log(`not in this database: ${absent.join(', ')}`);
 }
