@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { leadMagnets } from './src/content/leadMagnets.js';
+import { leadMagnets, listedLeadMagnets } from './src/content/leadMagnets.js';
 import { forward, prepare } from './api/lead.js';
 
 const root = __dirname;
@@ -192,7 +192,7 @@ const sitemap = () => ({
       '/team',
       '/book',
       '/resources',
-      ...leadMagnets.map(m => `/resources/${m.slug}`),
+      ...listedLeadMagnets.map(m => `/resources/${m.slug}`),
     ];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

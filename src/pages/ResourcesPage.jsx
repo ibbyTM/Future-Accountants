@@ -5,7 +5,7 @@ import Footer from '../sections/Footer.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
-import { leadMagnets } from '../content/leadMagnets.js';
+import { listedLeadMagnets as leadMagnets } from '../content/leadMagnets.js';
 import { webinars } from '../content/webinars.js';
 import { authorOf, withBase } from '../site.config.js';
 

@@ -31,6 +31,8 @@ const readDone = slug => {
 export default function LeadMagnetPage({ magnet }) {
   const resourceLink = resourceLinkFor(magnet);
   const author = authorOf(magnet.author);
+  /* False when the Notion page was not public at build time: the embed would 404. */
+  const available = magnet.embedOk !== false;
   const [variant] = useState(pickVariant);
   const [doneEmail, setDoneEmail] = useState(() => readDone(magnet.slug));
   const confirmRef = useRef(null);
@@ -132,6 +134,28 @@ export default function LeadMagnetPage({ magnet }) {
                     variant={variant}
                     onSuccess={onSuccess}
                   />
+                </div>
+              </div>
+            ) : !available ? (
+              <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+                <div className="col-span-12 lg:col-span-7">
+                  <p className="inline-block border-t-2 border-ink pt-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-ink">
+                    One moment
+                  </p>
+                  <h2
+                    ref={confirmRef}
+                    tabIndex={-1}
+                    className="mt-6 font-display text-3xl font-medium leading-[1.15] text-ink outline-none sm:text-4xl"
+                  >
+                    Thank you. <em className="text-accent">This guide is being moved.</em>
+                  </h2>
+                  <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                    {magnet.title} is moving to a new home and cannot be opened just now. Please
+                    check back shortly.{' '}
+                    <button type="button" onClick={reset} className="font-semibold text-accent underline underline-offset-4 hover:text-ink">
+                      Not you? Start again.
+                    </button>
+                  </p>
                 </div>
               </div>
             ) : (

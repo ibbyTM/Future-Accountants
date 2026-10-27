@@ -246,16 +246,19 @@ async function build(source, posts) {
         continue;
       }
       const ok = await embeds(entry);
+      entry.embedOk = ok;
       if (!ok) {
         /* Never swap a working embed for a broken one: a moved post whose new resource page
            is not published yet keeps the committed copy until it is. */
         const last = (await committed()).find(c => c.slug === entry.slug && c.notionUrl !== entry.notionUrl);
         if (last && (await embeds(last))) {
           log(`${entry.slug}  resource page not published on ${new URL(entry.notionUrl).host}, kept the committed copy`);
-          if (!entries.some(e => e.slug === last.slug)) entries.push({ ...last, notionPostId: post.id });
+          if (!entries.some(e => e.slug === last.slug)) entries.push({ ...last, notionPostId: post.id, embedOk: true });
           continue;
         }
-        warnings.push('resource page does not embed, is it published?');
+        /* Nothing public anywhere: the page stays up for its links, shows the holding notice
+           instead of the embed, and leaves the index until the resource page is published. */
+        warnings.push('resource page is not public, the page will show the holding notice');
       }
       log(`${entry.slug}  "${entry.title}"  ${entry.takeaways.length} takeaways${warnings.length ? '  WARN ' + warnings.join('; ') : ''}`);
       if (warnings.length) WARNED.add(entry.slug);
@@ -268,8 +271,9 @@ async function build(source, posts) {
       /* Notion did not answer properly: keep the last good copy of that page rather than drop it. */
       const last = (await committed()).find(c => c.notionPostId === post.id);
       if (last && !entries.some(e => e.slug === last.slug)) {
-        log(`${last.slug}  kept the committed copy, Notion said: ${e.message}`);
-        entries.push(last);
+        const embedOk = await embeds(last);
+        log(`${last.slug}  kept the committed copy${embedOk ? '' : ', its resource page is no longer public so it shows the holding notice'}, Notion said: ${e.message}`);
+        entries.push({ ...last, embedOk });
       } else {
         log(`SKIP ${post.id}: ${e.message}`);
       }
@@ -366,9 +370,11 @@ async function check(source) {
 
   const r = await refresh(source, { dry: true });
   const warned = [...WARNED];
+  const unavailable = r.entries.filter(e => e.embedOk === false).map(e => e.slug);
   console.log('');
   log(`a real run would ${r.ok ? `write ${r.entries.length} pages` : `change nothing (${r.reason})`}`);
   if (!r.ok) return fail(r.reason);
+  if (unavailable.length) log(`${unavailable.length} page(s) have no public resource page and will show the holding notice: ${unavailable.join(', ')}`);
   if (warned.length) log(`${warned.length} page(s) carry warnings above, check them on the site: ${warned.join(', ')}`);
   console.log('\nREADY');
 }

@@ -11,11 +11,19 @@
  * Notion row (Web title, Web summary, Web kicker, Web slug, Web takeaways).
  *
  * Each entry: slug, title, summary, kicker, intro[], takeaways[], notionUrl
- * (the /ebd/ embed link), resourceLink (the public page).
+ * (the /ebd/ embed link), resourceLink (the public page), embedOk (false
+ * when the resource page was not public at build time).
  */
 import generated from './leadMagnets.generated.js';
 
 export const leadMagnets = generated;
+
+/*
+ * The guides offered on the index and in the sitemap: those whose resource
+ * page is public. A page whose Notion copy has gone private keeps its URL
+ * (links are out there) and shows a holding notice instead of the embed.
+ */
+export const listedLeadMagnets = leadMagnets.filter(m => m.embedOk !== false);
 
 export const findLeadMagnet = slug => leadMagnets.find(m => m.slug === slug);
 

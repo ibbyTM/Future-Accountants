@@ -1,6 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
-export const generatedAt = "2026-10-20T22:04:00.964Z";
+export const generatedAt = "2026-10-27T21:33:35.128Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
@@ -22,7 +22,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80688c27d4b536dd2c8f",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80688c27d4b536dd2c8f",
-    "notionPostId": "3d19112c6a1f808180a8de27b907e079"
+    "notionPostId": "3d19112c6a1f808180a8de27b907e079",
+    "embedOk": true
   },
   {
     "slug": "claude-practice-team",
@@ -43,7 +44,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80ea9c7bc94d998cabcf",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80ea9c7bc94d998cabcf",
-    "notionPostId": "3d19112c6a1f8041831bd42468083c81"
+    "notionPostId": "3d19112c6a1f8041831bd42468083c81",
+    "embedOk": true
   },
   {
     "slug": "xero-to-claude-set-up-guide",
@@ -65,7 +67,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3d19112c6a1f80bea3fbe6da41627dd0",
     "resourceLink": "https://impartial-money-fa9.notion.site/3d19112c6a1f80bea3fbe6da41627dd0",
-    "notionPostId": "3d19112c6a1f8045aca7e7ac0c158fa5"
+    "notionPostId": "3d19112c6a1f8045aca7e7ac0c158fa5",
+    "embedOk": true
   },
   {
     "slug": "ai-workflow-for-modern-accounting-firms",
@@ -91,7 +94,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3de9112c6a1f8094a123c0e72f4fb382",
     "resourceLink": "https://impartial-money-fa9.notion.site/3de9112c6a1f8094a123c0e72f4fb382",
-    "notionPostId": "3de9112c6a1f80429341eea9114f76f0"
+    "notionPostId": "3de9112c6a1f80429341eea9114f76f0",
+    "embedOk": true
   },
   {
     "slug": "claude-agent-team-for-accountants",
@@ -113,7 +117,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3629112c6a1f80539fe7caca8a325210",
     "resourceLink": "https://impartial-money-fa9.notion.site/3629112c6a1f80539fe7caca8a325210",
-    "notionPostId": "3de9112c6a1f80f097b1c308b090a1e1"
+    "notionPostId": "3de9112c6a1f80f097b1c308b090a1e1",
+    "embedOk": true
   },
   {
     "slug": "xero-workflows-for-claude-opus-5-5",
@@ -140,7 +145,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f80069366fdb0d43d7ff7",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f80069366fdb0d43d7ff7",
-    "notionPostId": "3e993aa14ae48137b268f4876b3c6938"
+    "notionPostId": "3e993aa14ae48137b268f4876b3c6938",
+    "embedOk": true
   },
   {
     "slug": "opus-5-5-for-uk-accountants",
@@ -163,7 +169,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f8051ae29cb3edbb9cb46",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f8051ae29cb3edbb9cb46",
-    "notionPostId": "3e993aa14ae481a69a95ec8e3eb0c14b"
+    "notionPostId": "3e993aa14ae481a69a95ec8e3eb0c14b",
+    "embedOk": true
   },
   {
     "slug": "ai-practice-manager",
@@ -189,7 +196,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3e99112c6a1f803d9495e7b8da4fab53",
     "resourceLink": "https://impartial-money-fa9.notion.site/3e99112c6a1f803d9495e7b8da4fab53",
-    "notionPostId": "3e993aa14ae481e1945edf4a786ccef4"
+    "notionPostId": "3e993aa14ae481e1945edf4a786ccef4",
+    "embedOk": true
   },
   {
     "slug": "records-chaser",
@@ -212,7 +220,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80338546daee461f194c",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80338546daee461f194c",
-    "notionPostId": "3f493aa14ae481228dbef3177eab4531"
+    "notionPostId": "3f493aa14ae481228dbef3177eab4531",
+    "embedOk": true
   },
   {
     "slug": "firm-of-the-future-blueprint",
@@ -235,7 +244,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f80668ba6cad2dac95678",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f80668ba6cad2dac95678",
-    "notionPostId": "3f493aa14ae48144b387ebce07f2680b"
+    "notionPostId": "3f493aa14ae48144b387ebce07f2680b",
+    "embedOk": true
   },
   {
     "slug": "partner-review-queue",
@@ -258,7 +268,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f493aa14ae48199bcf9d113962f47d9",
     "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f493aa14ae48199bcf9d113962f47d9",
-    "notionPostId": "3f493aa14ae48174a843ed163fbf77ef"
+    "notionPostId": "3f493aa14ae48174a843ed163fbf77ef",
+    "embedOk": true
   },
   {
     "slug": "practice-acquisition-team",
@@ -279,9 +290,10 @@ export default [
       "The letter that tells clients they’ve got a new accountant"
     ],
     "author": "Damon Millar",
-    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f59112c6a1f802bbf1ac6bce80b3f46",
-    "resourceLink": "https://impartial-money-fa9.notion.site/3f59112c6a1f802bbf1ac6bce80b3f46",
-    "notionPostId": "3f493aa14ae481ae8b12f3e81e733e02"
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f493aa14ae481fe9000c1a378b1c513",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f493aa14ae481fe9000c1a378b1c513",
+    "notionPostId": "3f493aa14ae481ae8b12f3e81e733e02",
+    "embedOk": false
   },
   {
     "slug": "claude-playbook-for-accounting-firms",
@@ -301,7 +313,8 @@ export default [
     "author": "Damon Millar",
     "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f8006a3dfdd7f67478d71",
     "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f8006a3dfdd7f67478d71",
-    "notionPostId": "3f193aa14ae481e89d47cfa143b16ad1"
+    "notionPostId": "3f193aa14ae481e89d47cfa143b16ad1",
+    "embedOk": true
   },
   {
     "slug": "claude-cfo-team-for-accounting-firms",
@@ -310,21 +323,22 @@ export default [
     "kicker": "Free prompts",
     "intro": [
       "I built a Claude-powered CFO team for accounting firms. Most firms use AI to rewrite client emails and tidy up file notes. The smarter play: use it to do the CFO work your clients would pay for, if your team had the hours to do it.",
-      "Each prompt owns one job. Give it the client’s numbers, ask the question, and get a first draft of the advice most owners would pay £300 an hour for. Will it replace a partner?"
+      "The resource is the nested page below."
     ],
     "takeaways": [
-      "Tax planning scenarios (dividend vs salary, R&D, allowance timing)",
-      "Margin and pricing pressure tests",
-      "Cash flow forecasting with downside stress tests",
-      "Profit leak detection across the P&L",
-      "Year-end planning, run before year-end",
-      "Investment and acquisition evaluation",
-      "Business value and exit modelling"
+      "ICP: firm owners who want to sell CFO work to clients doing roughly £500k to £5m, without hiring a finance director to do it",
+      "This is the test from the re-run analysis: the original’s comments came from business owners, and firm-side “team” posts have mostly landed between 250 and 350",
+      "Overlap checked. The Claude Practice Team watches every client’s Xero file and produces flags and a call list, with no advice content. This kit produces the CFO work the partner takes into the meeting: extraction scenarios, a stress-tested forecast, a year-end plan, a deal appraisal and a value range. The Client Dashboard Kit shows some of the same numbers as interactive screens. No copy reused",
+      "Damon’s original resource for this post isn’t in Notion (the only copy is Wallace’s US version), so the resource below is new, written for UK firms",
+      "Verified on GOV.UK and in HMRC’s manuals, October 2026: dividend rates 10.75% / 35.75% / 39.35% and the £500 allowance from 6 April 2026; s455 at 35.75% on loans made from 6 April 2026 (CTM61505); employer NI 15% above £5,000 and the £10,500 Employment Allowance; thresholds frozen to 5 April 2031; corporation tax 19% / 25% with 3/200 marginal relief; AIA £1m, full expensing, the new 40% first-year allowance and the 14% writing down allowance; BADR 18% from 6 April 2026; pension annual allowance £60,000; R&D merged scheme 20%. Anthropic’s commercial data terms from its privacy centre and commercial terms",
+      "Checked in code: the price rise example",
+      "Image (21 Oct): light Claude-for-UK-practices style, headline “Claude AI CFO Team for Firms.”, subline “Seven Claude specialists, one master prompt”. An org chart with the Master CFO prompt tile at the top and seven specialists below in two rows, each with an illustrated avatar (not real people). Role names follow the seven jobs in the post. Footer line “(must be [Connected] so I can DM you)”. Replaces the earlier dark Done-board version"
     ],
     "author": "Damon Millar",
-    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f801c919cfc6f77ad4ec8",
-    "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f801c919cfc6f77ad4ec8",
-    "notionPostId": "3f193aa14ae48178a1efc78f1dddca74"
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f193aa14ae4813a8ca7e447639ae9bc",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f193aa14ae4813a8ca7e447639ae9bc",
+    "notionPostId": "3f193aa14ae48178a1efc78f1dddca74",
+    "embedOk": false
   },
   {
     "slug": "uk-accounting-firm-guide-to-claude",
@@ -333,7 +347,7 @@ export default [
     "kicker": "Free guide",
     "intro": [
       "A guide for firm owners who want to use Claude to structure, speed up and run their practice with AI. Because in 2026, the way an accountancy firm makes its money is changing fast. The best firms won’t be the ones whose staff use AI occasionally.",
-      "I documented everything in one practical guide, written for the person who runs the firm."
+      "I documented everything in one practical guide, written for the person who runs the firm. The Image Build notes"
     ],
     "takeaways": [
       "How the firm owner’s job is changing with AI",
@@ -347,9 +361,10 @@ export default [
       "Prompts and resources to help you take action"
     ],
     "author": "Damon Millar",
-    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3f19112c6a1f80b19a20c0736bb17ea9",
-    "resourceLink": "https://impartial-money-fa9.notion.site/3f19112c6a1f80b19a20c0736bb17ea9",
-    "notionPostId": "3f193aa14ae4810ba015fd0a797ac130"
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f193aa14ae4817cb171fbe9904153be",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f193aa14ae4817cb171fbe9904153be",
+    "notionPostId": "3f193aa14ae4810ba015fd0a797ac130",
+    "embedOk": false
   },
   {
     "slug": "client-dashboard-kit",
@@ -358,7 +373,7 @@ export default [
     "kicker": "Free kit",
     "intro": [
       "Most management accounts get read once, if that. The client flicks through the PDF, asks about one figure on page three, and the meeting turns into you explaining the layout instead of talking about what they should do next. Then they ask what a 5% price rise would do, you say you’ll work it out and come back to them, and by the time you do they’ve already made the decision without you.",
-      "Every figure traces back to a named Xero report, and anything assumed is labelled on screen before a client sees it."
+      "Every figure traces back to a named Xero report, and anything assumed is labelled on screen before a client sees it. The Image Build notes"
     ],
     "takeaways": [
       "Cash Runway",
@@ -373,9 +388,10 @@ export default [
       "The Hiring Decision"
     ],
     "author": "Damon Millar",
-    "notionUrl": "https://impartial-money-fa9.notion.site/ebd/3ef9112c6a1f8077aa01e16032717ea0",
-    "resourceLink": "https://impartial-money-fa9.notion.site/3ef9112c6a1f8077aa01e16032717ea0",
-    "notionPostId": "3ee93aa14ae4819bbda7f4d013ac9b1a"
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3ef93aa14ae4817aa59eea8649fa6cdd",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3ef93aa14ae4817aa59eea8649fa6cdd",
+    "notionPostId": "3ee93aa14ae4819bbda7f4d013ac9b1a",
+    "embedOk": false
   },
   {
     "slug": "ten-practice-methods-as-claude-skills",
@@ -397,7 +413,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/f2afc55ab54f47ba885ab290856bb010",
     "resourceLink": "https://freebie-for-you.notion.site/f2afc55ab54f47ba885ab290856bb010",
-    "notionPostId": "3f192e2e92e9809591b7feaa7c062808"
+    "notionPostId": "3f192e2e92e9809591b7feaa7c062808",
+    "embedOk": false
   },
   {
     "slug": "fd-board",
@@ -420,7 +437,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/f7e742be2f5b4076a56bb45751ca9a5d",
     "resourceLink": "https://freebie-for-you.notion.site/f7e742be2f5b4076a56bb45751ca9a5d",
-    "notionPostId": "3f192e2e92e980b89b0beb9c143d0b98"
+    "notionPostId": "3f192e2e92e980b89b0beb9c143d0b98",
+    "embedOk": false
   },
   {
     "slug": "57-jobs-in-an-accounting-firm-sorted-for-claude",
@@ -443,7 +461,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/cefb4a02c90c4d2cb765e91c82d0124b",
     "resourceLink": "https://freebie-for-you.notion.site/cefb4a02c90c4d2cb765e91c82d0124b",
-    "notionPostId": "bba7a3c8a8ff407e849d8ed7853d0493"
+    "notionPostId": "bba7a3c8a8ff407e849d8ed7853d0493",
+    "embedOk": false
   },
   {
     "slug": "practice-stack",
@@ -466,7 +485,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/02fb24ca54794bbe967c79fb6d562016",
     "resourceLink": "https://freebie-for-you.notion.site/02fb24ca54794bbe967c79fb6d562016",
-    "notionPostId": "35e28d24796a48a4b190a12781a6d98a"
+    "notionPostId": "35e28d24796a48a4b190a12781a6d98a",
+    "embedOk": false
   },
   {
     "slug": "morning-brief-on-your-own-practice",
@@ -489,7 +509,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/e4dd3627c8a44617b80435f9e48b6615",
     "resourceLink": "https://freebie-for-you.notion.site/e4dd3627c8a44617b80435f9e48b6615",
-    "notionPostId": "3f192e2e92e98019a991c89d2c915275"
+    "notionPostId": "3f192e2e92e98019a991c89d2c915275",
+    "embedOk": true
   },
   {
     "slug": "vat-review-on-xero",
@@ -512,7 +533,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/56b8d722bcd244f68c7ed0f149a137ea",
     "resourceLink": "https://freebie-for-you.notion.site/56b8d722bcd244f68c7ed0f149a137ea",
-    "notionPostId": "187eb43fabf6420d820379fe6a60617a"
+    "notionPostId": "187eb43fabf6420d820379fe6a60617a",
+    "embedOk": false
   },
   {
     "slug": "xero-cleanup-score",
@@ -535,7 +557,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/11514b99db40431a9165434d2c54eb7d",
     "resourceLink": "https://freebie-for-you.notion.site/11514b99db40431a9165434d2c54eb7d",
-    "notionPostId": "5ce7b78b822147d9b84e294e4a0cba85"
+    "notionPostId": "5ce7b78b822147d9b84e294e4a0cba85",
+    "embedOk": false
   },
   {
     "slug": "client-fd-team",
@@ -557,7 +580,8 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/98367a64b3564ec29e8103f7c78c176d",
     "resourceLink": "https://freebie-for-you.notion.site/98367a64b3564ec29e8103f7c78c176d",
-    "notionPostId": "f5c4c79c1b9143dba5c9efedfdfab3aa"
+    "notionPostId": "f5c4c79c1b9143dba5c9efedfdfab3aa",
+    "embedOk": false
   },
   {
     "slug": "self-assessment-agent-team",
@@ -579,6 +603,7 @@ export default [
     "author": "Clare Thompson",
     "notionUrl": "https://freebie-for-you.notion.site/ebd/3d14c476d37a45579bb66b87c0227401",
     "resourceLink": "https://freebie-for-you.notion.site/3d14c476d37a45579bb66b87c0227401",
-    "notionPostId": "4e44ead2f9ca4e8fa558f8fb046df905"
+    "notionPostId": "4e44ead2f9ca4e8fa558f8fb046df905",
+    "embedOk": true
   }
 ];
