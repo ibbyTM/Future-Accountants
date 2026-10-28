@@ -31,6 +31,9 @@ export function needsRebuild(rows, deployed, builtAt) {
   for (const id of deployedIds) {
     if (inDb.has(id) && !tickedIds.has(id)) return `page unticked: ${id}`;
   }
+  /* A page waiting for its Notion resource to be published: rebuild each hour until it is. */
+  const waiting = deployed.find(e => e.embedOk === false);
+  if (waiting) return `waiting for a resource page to be published: ${waiting.slug}`;
   return null;
 }
 

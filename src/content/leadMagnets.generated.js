@@ -1,6 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
-export const generatedAt = "2026-10-27T21:33:35.128Z";
+export const generatedAt = "2026-10-28T11:14:33.577Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
@@ -364,7 +364,7 @@ export default [
     "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f193aa14ae4817cb171fbe9904153be",
     "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f193aa14ae4817cb171fbe9904153be",
     "notionPostId": "3f193aa14ae4810ba015fd0a797ac130",
-    "embedOk": false
+    "embedOk": true
   },
   {
     "slug": "client-dashboard-kit",
