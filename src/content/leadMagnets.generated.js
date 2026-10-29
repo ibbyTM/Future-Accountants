@@ -1,6 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
-export const generatedAt = "2026-10-28T11:14:33.577Z";
+export const generatedAt = "2026-10-29T12:15:56.800Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
@@ -338,7 +338,7 @@ export default [
     "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3f193aa14ae4813a8ca7e447639ae9bc",
     "resourceLink": "https://glimmer-farmhouse-441.notion.site/3f193aa14ae4813a8ca7e447639ae9bc",
     "notionPostId": "3f193aa14ae48178a1efc78f1dddca74",
-    "embedOk": false
+    "embedOk": true
   },
   {
     "slug": "uk-accounting-firm-guide-to-claude",
@@ -391,7 +391,7 @@ export default [
     "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3ef93aa14ae4817aa59eea8649fa6cdd",
     "resourceLink": "https://glimmer-farmhouse-441.notion.site/3ef93aa14ae4817aa59eea8649fa6cdd",
     "notionPostId": "3ee93aa14ae4819bbda7f4d013ac9b1a",
-    "embedOk": false
+    "embedOk": true
   },
   {
     "slug": "ten-practice-methods-as-claude-skills",

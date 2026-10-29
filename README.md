@@ -91,7 +91,11 @@ dropped, so a flaky hour never removes a live page. The file also records
 
 Per-page overrides are columns on the Notion row: Web title, Web summary, Web
 kicker, Web slug, Web takeaways (one per line), and Author (Damon Millar or
-Clare Thompson). The author appears as a byline on the page and travels to
+Clare Thompson). After each build the row's Website URL column is filled in
+with the page's live address (`https://damonmillarai.com/resources/<slug>`),
+so the team can paste it into the post without asking. The slug is the
+resource page title up to any colon, lower case, hyphens for spaces and
+punctuation, with a leading "The" dropped, unless Web slug says otherwise. The author appears as a byline on the page and travels to
 GoHighLevel as `author`, so leads can be tagged per person. Authors and their
 role lines live in `src/site.config.js`.
 

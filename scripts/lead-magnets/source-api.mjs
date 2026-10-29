@@ -15,6 +15,7 @@ export const PROPS = {
   slug: 'Web slug',
   takeaways: 'Web takeaways',
   author: 'Author',
+  url: 'Website URL',
 };
 
 export const AUTHORS = ['Damon Millar', 'Clare Thompson'];
@@ -73,6 +74,7 @@ export function apiSource(token) {
             id: p.id.replace(/-/g, ''),
             createdTime: p.created_time,
             pageTitle: plain(titleProp?.title),
+            websiteUrl: props[PROPS.url]?.url ?? '',
             overrides: {
               title: rt(PROPS.title),
               summary: rt(PROPS.summary),
@@ -156,11 +158,12 @@ export function apiSource(token) {
       return out;
     },
 
-    /* Sets the publish box and, when given, the Author on one row. */
-    async update(pageId, { published, author } = {}) {
+    /* Sets the publish box, the Author or the Website URL on one row, whichever are given. */
+    async update(pageId, { published, author, websiteUrl } = {}) {
       const properties = {};
       if (typeof published === 'boolean') properties[PROPS.publish] = { checkbox: published };
       if (author) properties[PROPS.author] = { select: { name: author } };
+      if (websiteUrl) properties[PROPS.url] = { url: websiteUrl };
       if (!Object.keys(properties).length) return;
       await call(`/pages/${pageId}`, { method: 'PATCH', body: JSON.stringify({ properties }) });
     },
@@ -177,6 +180,7 @@ export function apiSource(token) {
       if (!have[PROPS.author]) {
         add[PROPS.author] = { select: { options: AUTHORS.map(name => ({ name })) } };
       }
+      if (!have[PROPS.url]) add[PROPS.url] = { url: {} };
       if (Object.keys(add).length) {
         await call(`/databases/${databaseId}`, { method: 'PATCH', body: JSON.stringify({ properties: add }) });
       }

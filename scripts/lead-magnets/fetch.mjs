@@ -48,6 +48,8 @@ for (const f of ['.env', '.env.local']) {
 /* Where Damon's posts were published before they moved into the new workspace. */
 const LEGACY_SITE = 'impartial-money-fa9.notion.site';
 const SITE = process.env.NOTION_SITE || LEGACY_SITE;
+/* The live site, for the Website URL written back to each row. */
+const SITE_URL = process.env.SITE_URL || 'https://damonmillarai.com';
 const TOKEN = process.env.NOTION_TOKEN;
 const DB = process.env.NOTION_DATABASE_ID;
 
@@ -338,8 +340,33 @@ async function refresh(source, { dry = false } = {}) {
     log(`only ${entries.length} rows ticked but ${have} pages are committed; keeping the committed file. Set LEAD_MAGNETS_ALLOW_SHRINK=1 to allow it.`);
     return { ok: false, reason: `shrink guard: ${entries.length} pages would replace ${have}`, entries };
   }
-  if (!dry) write(entries);
+  if (!dry) {
+    write(entries);
+    await writeBackUrls(source, rows, entries);
+  }
   return { ok: true, entries };
+}
+
+/*
+ * Each row gets its page's live address in the Website URL column, so the
+ * team can paste it into the post without asking. Only rows whose value
+ * differs are touched.
+ */
+async function writeBackUrls(source, rows, entries) {
+  let n = 0;
+  for (const row of rows) {
+    const entry = entries.find(e => e.notionPostId === row.id);
+    if (!entry) continue;
+    const url = `${SITE_URL}/resources/${entry.slug}`;
+    if (row.websiteUrl === url) continue;
+    try {
+      await source.update(row.id, { websiteUrl: url });
+      n += 1;
+    } catch (e) {
+      log(`could not write the Website URL for ${entry.slug}: ${e.message}`);
+    }
+  }
+  if (n) log(`wrote the Website URL to ${n} row(s) in Notion`);
 }
 
 /* Read-only health check. Exit code 1 when a real run would not publish. */
