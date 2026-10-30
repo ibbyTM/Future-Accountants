@@ -1,6 +1,6 @@
 /* Generated from Notion by scripts/lead-magnets/fetch.mjs. Do not edit: tick
    "Publish to website" on a post in Notion and rebuild. */
-export const generatedAt = "2026-10-29T12:15:56.800Z";
+export const generatedAt = "2026-10-30T12:34:29.074Z";
 export default [
   {
     "slug": "ai-native-accounting-firm-playbook",
@@ -604,6 +604,126 @@ export default [
     "notionUrl": "https://freebie-for-you.notion.site/ebd/3d14c476d37a45579bb66b87c0227401",
     "resourceLink": "https://freebie-for-you.notion.site/3d14c476d37a45579bb66b87c0227401",
     "notionPostId": "4e44ead2f9ca4e8fa558f8fb046df905",
+    "embedOk": true
+  },
+  {
+    "slug": "claude-course-for-firm-owners",
+    "title": "The Claude Course for Firm Owners",
+    "summary": "Five modules that take you from using it at your own desk to the whole team using it the same way.",
+    "kicker": "Free course",
+    "intro": [
+      "In most firms AI didn’t arrive with a plan. One person tried it on an awkward client letter, got something good back and became the person everyone asks, while half the team won’t touch it and the other half use free accounts on their phones, sometimes with a client’s name in the prompt. The owner usually knows all of this, and hasn’t had a spare week to work out how it should be done, never mind teach it to eight people.",
+      "The resource is the nested page below."
+    ],
+    "takeaways": [
+      "ICP: written to the firm owner who wants AI in the practice and has to get the team using it, not to juniors. The owner does each exercise first, then runs the team session. The 20 September course repost got 9 comments leading with “accountants”; this one leads with firm owners",
+      "Reused on purpose, because it’s material Damon has already given away and it worked: the Team-plan-only rule for client data, the seven sections of the one-page policy, and the seven-line check (condensed from the AI-Native Firm Playbook’s Review Standard). The house style idea also appears in Opus 5.5 for UK Accountants, written fresh here",
+      "New in this one: the course structure, the five-part brief with the weak prompt and the proper brief side by side, the four team session scripts, the planted-mistakes exercise, the prompt library format, and a pass or fail test for every module",
+      "Facts: the Team and Enterprise position on training and the data processing agreement, from Anthropic’s privacy and Team plan pages. ICAEW’s generative AI guide and ACCA’s accountability position, as cited in the AI-Native Firm Playbook",
+      "Harbour Lane Bakery Ltd is invented and labelled illustrative in the resource",
+      "Image (v6, light house style, same series as the Growth Team and Accounting Teams course graphics): real Claude logo, owner avatar turning into the team at the top, then one UI mock-up per module. 1: signed AI use policy doc. 2: the owner’s Claude chat with a Gmail draft. 3: a shared “House style” project with its files. 4: a review checklist that catches a wrong amount against Xero and locks Send. 5: the team session with pass/fail results. 3D avatars are illustrated, not real people. Real Gmail, Drive and Xero logos",
+      "Overlap: this and “Claude for Accounting Teams” (TEAM) are both course giveaways. Don’t post both in the same month"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3ef93aa14ae481d38212d680e6893cdf",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3ef93aa14ae481d38212d680e6893cdf",
+    "notionPostId": "3ee93aa14ae481c58f92d663357b2dda",
+    "embedOk": true
+  },
+  {
+    "slug": "new-client-setup-kit",
+    "title": "The New Client Setup Kit",
+    "summary": "One intake form and nine documents that take a new client from the day they say yes to their first deadline.",
+    "kicker": "Free guide",
+    "intro": [
+      "Most firms take on a new client from memory. The engagement letter goes out when the partner finds a free hour, the ID checks wait for a chaser, the letter to the previous accountant leaves a week late, and the client’s first real contact with the firm is a list of paperwork they didn’t know they’d need. Nobody sets out to do it badly, but it’s never been written down, so it happens a bit differently every time, depends on who’s in that week, and costs a senior person most of a morning per client.",
+      "It drafts and it lists, and the fee, the money laundering decision and every signature stay with a person. The Image Build notes"
+    ],
+    "takeaways": [
+      "The Intake Form",
+      "The Onboarding Tracker",
+      "The Welcome Email",
+      "The ID and Money Laundering Request",
+      "The Engagement Letter",
+      "The Clearance Letter",
+      "The Authorisation Plan",
+      "The Records and Access Request",
+      "The Client Context File",
+      "The First 90 Days"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/3ee93aa14ae481b38678dcf3470ae33e",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/3ee93aa14ae481b38678dcf3470ae33e",
+    "notionPostId": "3ee93aa14ae481e69fc9e60116702d18",
+    "embedOk": true
+  },
+  {
+    "slug": "your-firms-ai-advisory-team",
+    "title": "Your Firm’s AI Advisory Team",
+    "summary": "Every accounting firm needs an advisory team.",
+    "kicker": "Free guide",
+    "intro": [
+      "Every accounting firm needs an advisory team. It runs your reviews the way a good advisory manager does. It reads the client’s Xero file before anyone walks into the meeting, then writes the follow-up and the action list from the recording. Then it picks which things the client said are worth a proposal. 1/ You connect the client’s Xero file and book the review",
+      "The resource is the nested page below."
+    ],
+    "takeaways": [
+      "ICP: firm owners of 5 to 30 people who say they want more advisory work and already hold client reviews. Every part of the kit is a job a partner or manager does by hand today, or doesn’t do at all",
+      "Overlap checked. The Claude Practice Team’s Advisory Flagger ranks clients for a call from Xero flags, with no meeting in it. The Client Dashboard Kit puts numbers on screen during the meeting. Chapter 4 of the UK Accounting Firm Guide turns finished accounts into five discussion points. The CFO Team does the advisory work itself. This one owns the review: the prep pack, the follow-up and action list from the recording, the client’s own words matched to a priced service, and the log. No copy reused",
+      "Proof line is Damon’s own proof point, used as stated in his brief (record month, £220k added to turnover, £180k from one client buying a new service). The post doesn’t claim it came from this kit or from a review. No country attached, since that wasn’t confirmed",
+      "Prices in the advisory menu are left as [your price] on purpose. Both projects are told never to quote a price that isn’t in the menu",
+      "Recording guidance is kept general: tell the client, ask, check the privacy notice and engagement letter, follow the retention policy. ICO right-to-be-informed pages cited. Worth Damon reading that section against how his own practice records meetings",
+      "Not re-verified this time: the Xero connector and Composio setup steps are summarised from the earlier Xero resources in this project",
+      "Image (v8, approved 24 Oct, CTA keyword FIRM): headline “Your firm’s AI [Claude logo] advisory team.” with subline “One client review, prepped and followed up for you”. Three rows, each with a numbered label on the left and one screen on the right. 1 Before the review: a Xero-style Profit and Loss (sales up 12%, margin down 4 pts, net profit down 21%, cash down 41%) next to a Claude chat giving the opening question. 2 During the review: a video call with real webcam photos and a live transcript flagging three moments (hiring plan, expansion, cash forecast). 3 After the review: a Gmail-style compose with the three next steps, marked “Drafted by Claude”. Claude logo supplied by Daniel. Webcam photos are free Unsplash images. Harbour Lane Ltd, Sam Turner and every figure are illustrative"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/9f4de838f31e48689535019fb81ce165",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/9f4de838f31e48689535019fb81ce165",
+    "notionPostId": "40393aa14ae48179af6cdc66750ed2b1",
+    "embedOk": true
+  },
+  {
+    "slug": "claude-for-accounting-teams",
+    "title": "Claude for Accounting Teams",
+    "summary": "The owner is sold on AI.",
+    "kicker": "Free course",
+    "intro": [
+      "The owner is sold on AI. The team isn’t using it. One manager has a folder of prompts nobody else can find.",
+      "The resource is the nested page below."
+    ],
+    "takeaways": [
+      "ICP: owners of 5 to 30 person firms. The reader is the owner, the user is the team, and the resource opens with a section for the owner on what to set up first",
+      "Overlap checked against the Claude Course for Firm Owners (rules, own desk, firm voice, check, teach the team). This one is written to the staff, uses different jobs throughout (year-end query list from two trial balances, explaining payments on account, fixed asset register in Excel), and the Excel module is new. Module 1 and 5 cover the same ground as the owner course’s rules and check modules in shorter, team-facing form",
+      "Every module is demo, not lecture: the exact prompt next to what came back, and a weak prompt against a good one on the same job",
+      "Verified: Claude for Excel is generally available on Pro, Max, Team and Enterprise, installs from Microsoft AppSource as “Claude for Microsoft 365”, doesn’t support macros, VBA or data tables, and Anthropic warns about hidden instructions in outside spreadsheets (Anthropic’s Claude for Excel docs). Payments on account from GOV.UK (due 31 January and 31 July, each usually half of last year’s bill, not needed if last year’s bill was under £1,000 or more than 80% was paid another way). Worked example arithmetic checked: £8,400 + £4,200 = £12,600; £612k on £540k is 13.3%",
+      "Kestrel Joinery Ltd, Sam Kerr and every figure are illustrative",
+      "Image (v7, 24 Oct): headline “[Claude logo] Claude for accounting teams.” with a FREE COURSE tag. Left: a video course player (Module 3 “Client emails” at 7:12 / 18:05) above a “Course content” list with ticks and durations. Right: the Module 3 exercise as two Claude chats side by side. The weak prompt gets a vague reply (“No figure, no date”). The good prompt uses three connectors, shown as tool-use chips with the real Xero, Google Drive and Gmail logos (files supplied by Daniel): Xero reads Sam’s tax account, Drive opens Letter style.docx, Gmail creates the draft. It returns an email draft to Sam with £12,600 (“Ready to send”). Team strip with five 3D-rendered avatars (new faces in the style of Clare’s “57 jobs” graphic, generated in Figma), a check on the three who’ve passed module 3 and a one-line status under each. Real Claude logo throughout. Ruth, Priya, Amira, Marcus and Josh are invented"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/40393aa14ae48113a780f0d0a9594bed",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/40393aa14ae48113a780f0d0a9594bed",
+    "notionPostId": "40393aa14ae48126b966e6d72c7085ca",
+    "embedOk": true
+  },
+  {
+    "slug": "growth-team",
+    "title": "The Growth Team",
+    "summary": "I built a Claude-powered growth team for accounting firms.",
+    "kicker": "Free prompts",
+    "intro": [
+      "I built a Claude-powered growth team for accounting firms. Most firms use AI to draft client emails and tidy up file notes. The smarter play: use it to sell more to the clients you already have, because most of them only buy one thing from you.",
+      "The resource is the nested page below."
+    ],
+    "takeaways": [
+      "ICP: owners of 5 to 30 person firms with a compliance-heavy client list. The whole kit runs on the firm’s own client list, so it only makes sense to a firm owner or partner",
+      "Overlap checked. The Advisory Team owns the client review meeting; this owns the whole book (who to contact, what to offer, the campaign, the pipeline). The Blueprint lists services to sell; this is the campaign that sells them. The CFO Team does advisory work for one client; this finds which clients to offer it to. No copy reused",
+      "Verified: UK marketing email rules from the ICO’s PECR guide (limited companies and LLPs are corporate subscribers; sole traders and other partnerships count as individuals and need consent or the soft opt-in; opt-out in every message). The ICO says the page is under review after the Data (Use and Access) Act 2025, and the resource says so. Claude commercial-plan data terms as in the earlier resources",
+      "Prices in the service menu are the reader’s own on purpose; the house rules stop Claude quoting any price that isn’t in the menu",
+      "Image (v4, 24 Oct): the three steps are three agents shown as 3D-rendered avatars (same set as the Team Course graphic), each with a small role badge: Agent 1 Scanner reads the client list, Agent 2 Matcher picks who to call, Agent 3 Writer drafts the emails. Green status chips: 412 clients scored, 10 picked, 350 drafts ready. Real Claude logo in the headline, chat and “Drafted by Claude” chip; selected Fit cell in the sheet; Claude’s reply lists the clients it picked; dashed flow lines between steps; email signed by Damon; stacked drafts behind the mail window. Light Claude-for-UK-practices style, headline “Your firm’s AI [Claude logo] growth team.”, subline “Sell more to the clients you already have”. Every client name and figure is illustrative"
+    ],
+    "author": "Damon Millar",
+    "notionUrl": "https://glimmer-farmhouse-441.notion.site/ebd/40393aa14ae481faa9a8d6b776785c2f",
+    "resourceLink": "https://glimmer-farmhouse-441.notion.site/40393aa14ae481faa9a8d6b776785c2f",
+    "notionPostId": "40393aa14ae481308b8be161df9be29e",
     "embedOk": true
   }
 ];

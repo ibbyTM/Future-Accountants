@@ -224,11 +224,13 @@ async function build(source, posts) {
       const src = post.site ? publicSource(post.site) : source;
       const kid = post.alias ?? post.id;
       const known = KNOWN[kid] ?? {};
+      /* Once a page is live its address is written to the row; keep that slug so a title edit never breaks a link. */
+      const pinned = post.websiteUrl?.includes('/resources/') ? post.websiteUrl.split('/resources/')[1].replace(/[?#].*$/, '') : undefined;
       const page = await src.page(post.id);
       const { entry, warnings } = await parsePost({
         ...page,
         overrides: {
-          slug: known.slug,
+          slug: known.slug ?? pinned,
           kicker: known.kicker,
           author: known.author,
           summary: known.summary,

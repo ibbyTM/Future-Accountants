@@ -16,6 +16,8 @@ const NOTION_ID = /([0-9a-f]{32})(?:\?|$|[^0-9a-f])/i;
 
 export const clean = s =>
   String(s ?? '')
+    /* LinkedIn "bold" is really mathematical letters (𝗙𝗿𝗲𝗲); fold them back to plain text. */
+    .replace(/[\u{1D400}-\u{1D7FF}]/gu, c => c.normalize('NFKC'))
     .replace(EMOJI, '')
     .replace(/\s*[–—]\s+/g, ', ')
     .replace(/\s+[–—]\s*/g, ', ')
@@ -54,6 +56,7 @@ const DROP = [
 ];
 
 const KICKERS = [
+  [/course/i, 'Free course'],
   [/playbook/i, 'Free playbook'],
   [/blueprint/i, 'Free blueprint'],
   [/workflow/i, 'Free workflows'],
