@@ -273,7 +273,8 @@ async function build(source, posts) {
       entries.push(entry);
     } catch (e) {
       /* Notion did not answer properly: keep the last good copy of that page rather than drop it. */
-      const last = (await committed()).find(c => c.notionPostId === post.id);
+      const knownSlug = KNOWN[post.alias ?? post.id]?.slug;
+      const last = (await committed()).find(c => c.notionPostId === post.id || (knownSlug && c.slug === knownSlug));
       if (last && !entries.some(e => e.slug === last.slug)) {
         const embedOk = await embeds(last);
         log(`${last.slug}  kept the committed copy${embedOk ? '' : ', its resource page is no longer public so it shows the holding notice'}, Notion said: ${e.message}`);
