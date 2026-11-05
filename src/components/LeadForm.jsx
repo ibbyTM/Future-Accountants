@@ -25,7 +25,7 @@ export const COUNTRIES = [
   'New Zealand',
   'Other',
 ];
-export const ROLES = ['Accountant', 'Business Owner', 'Other'];
+export const ROLES = ['Accounting Firm Owner', 'Business Owner', 'Accounting Role', 'Business Role', 'Other'];
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE = /^\+?[\d\s().-]{6,}$/;
@@ -299,7 +299,7 @@ export default function LeadForm({ leadMagnet, resourceLink, author, variant, on
           error={errors.country}
         />
       </Field>
-      <Field id={id('role')} label="Are you an accountant, or a business owner?" error={errors.role}>
+      <Field id={id('role')} label="Which best describes you?" error={errors.role}>
         <Select
           id={id('role')}
           value={values.role}

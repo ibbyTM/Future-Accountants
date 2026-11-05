@@ -12,7 +12,7 @@
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE = /^\+?[\d\s().-]{6,}$/;
 const COUNTRIES = ['United Kingdom', 'United States', 'Canada', 'Australia', 'New Zealand', 'Other'];
-const ROLES = ['Accountant', 'Business Owner', 'Other'];
+const ROLES = ['Accounting Firm Owner', 'Business Owner', 'Accounting Role', 'Business Role', 'Other'];
 
 const str = v => (typeof v === 'string' ? v.trim() : '');
 
