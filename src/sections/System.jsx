@@ -1,7 +1,6 @@
+import LoomVideo from '../components/LoomVideo.jsx';
 import Reveal from '../components/Reveal.jsx';
-
-/* Damon's two-minute walkthrough of the system, hosted on Loom. */
-const LOOM = 'https://www.loom.com/embed/52b833cad61a42038deac493b526c208?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
+import { site } from '../site.config.js';
 
 export default function System() {
   return (
@@ -17,20 +16,8 @@ export default function System() {
         covers strategy, pricing, positioning, marketing, sales, advisory services, teams and
         growth. One system. One goal: build a better firm and live a better life.
       </p>
-      <Reveal as="figure" className="mt-12 sm:pl-12">
-        <div className="aspect-video w-full overflow-hidden border border-line bg-ink shadow-[0_24px_48px_rgba(26,26,24,0.18)]">
-          <iframe
-            src={LOOM}
-            title="Building the Accountancy Firm of the Future"
-            loading="lazy"
-            allow="fullscreen"
-            allowFullScreen
-            className="size-full"
-          />
-        </div>
-        <figcaption className="mt-4 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-          Building the Accountancy Firm of the Future · 2 min
-        </figcaption>
+      <Reveal className="mt-12 sm:pl-12">
+        <LoomVideo {...site.videos.system} />
       </Reveal>
     </section>
   );

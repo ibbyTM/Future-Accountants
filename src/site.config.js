@@ -43,6 +43,13 @@ export const site = {
    * Who writes the guides. Each resource page carries a byline and sends the
    * author to the CRM so leads can be tagged. Role lines are their own words.
    */
+  /* Loom videos: `system` sits on the home page, `pitch` plays after the lead
+     form on every guide page and sits under the offer page hero. To change
+     one, swap the id (the part after loom.com/share/) and the title. */
+  videos: {
+    system: { id: '52b833cad61a42038deac493b526c208', title: 'Building the Accountancy Firm of the Future', length: '2 min', aspect: 'video' },
+    pitch: { id: 'def0c6bb9de14658b615c655400c044b', title: 'The AI System We Use for Our Practice to Do 65% of the Work', length: '36 min' },
+  },
   defaultAuthor: 'Damon Millar',
   authors: {
     'Damon Millar': { role: 'Founder, Switch Accountants Group' },

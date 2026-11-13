@@ -5,6 +5,7 @@ import FinalCta from '../sections/FinalCta.jsx';
 import Footer from '../sections/Footer.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
+import LoomVideo from '../components/LoomVideo.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { site } from '../site.config.js';
 import { departments, departmentsResult } from '../content/departments.js';
@@ -94,6 +95,9 @@ export default function OfferPage() {
             the right order, working across your whole practice. The difference is who does the
             work and how fast.
           </p>
+          <Reveal className="mt-12 max-w-4xl">
+            <LoomVideo {...site.videos.pitch} />
+          </Reveal>
         </section>
 
         {/* What both routes build: the ten departments in full */}

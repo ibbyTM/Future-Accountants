@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import CtaButton from '../components/CtaButton.jsx';
 import GhostNumeral from '../components/GhostNumeral.jsx';
 import LeadForm, { pickVariant } from '../components/LeadForm.jsx';
+import LoomVideo from '../components/LoomVideo.jsx';
 import PageGrain from '../components/PageGrain.jsx';
 import Reveal from '../components/Reveal.jsx';
 import Footer from '../sections/Footer.jsx';
 import Navbar from '../sections/Navbar.jsx';
 import StickyMobileCta from '../components/StickyMobileCta.jsx';
 import { resourceLinkFor } from '../content/leadMagnets.js';
-import { authorOf, withBase } from '../site.config.js';
+import { authorOf, site, withBase } from '../site.config.js';
 
 /*
  * One lead magnet. The intro, takeaways and CTA are real HTML so search
@@ -157,6 +158,9 @@ export default function LeadMagnetPage({ magnet }) {
                     </button>
                   </p>
                 </div>
+                <div className="col-span-12 lg:col-span-9">
+                  <LoomVideo {...site.videos.pitch} className="mt-4" />
+                </div>
               </div>
             ) : (
               <div>
@@ -190,6 +194,9 @@ export default function LeadMagnetPage({ magnet }) {
                     </a>
                   </div>
                 </div>
+
+                {/* Damon's video starts as the confirmation appears; the guide sits below it. */}
+                <LoomVideo {...site.videos.pitch} autoplay className="mt-10" />
 
                 <div className="mt-12 overflow-hidden border border-line bg-ground">
                   <iframe

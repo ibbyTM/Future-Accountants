@@ -148,6 +148,10 @@ environment variable. Set that in Vercel under Project, Settings, Environment
 Variables, and locally in `.env` (see `.env.example`). Without it, dev and
 preview print the payload to the terminal and the form still succeeds.
 
+After a successful submit the confirmation screen plays Damon's pitch video
+(`site.videos.pitch` in `src/site.config.js`) above the embedded guide; the
+same video sits under the offer page hero. Swap the Loom id there to change it.
+
 Fields sent, as JSON keys: `full_name`, `first_name`, `last_name`, `email`,
 `phone`, `country`, `qualifying_answer`, `lead_magnet`, `resource_link`,
 `form_variant`, `page_url`, `source`, `submitted_at`. Map them once in the
